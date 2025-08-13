@@ -1,0 +1,102 @@
+import React, { useEffect, useState } from 'react';
+import { CheckCircle, TrendingUp, DollarSign, Clock, Users, Target } from 'lucide-react';
+
+const CaseStudy = () => {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    setIsVisible(true);
+  }, []);
+
+  const whatWeDid = [
+    'Ran a quick diagnostic, created a 12-month operating plan, and set a governance calendar with owners.',
+    'Implemented on-time MIS, a 13-week cash forecast, collections cadence, and a disciplined payment calendar.',
+    'Installed spend controls and variance checks to stop leaks.'
+  ];
+
+  const results = [
+    {
+      icon: Clock,
+      title: 'On-time MIS every month',
+      description: 'Close by Day +7'
+    },
+    {
+      icon: TrendingUp,
+      title: 'DSO reduced by ~12–15 days',
+      description: 'Faster collections'
+    },
+    {
+      icon: DollarSign,
+      title: 'Cash runway extended by 6–8 weeks',
+      description: 'Better liquidity'
+    },
+    {
+      icon: Target,
+      title: 'Non-essential spend down ~8–10%',
+      description: 'Cost optimization'
+    },
+    {
+      icon: Users,
+      title: 'Clear accountability across finance and ops',
+      description: 'Better governance'
+    }
+  ];
+
+  return (
+    <section className="py-20 relative overflow-hidden">
+      {/* Background decoration */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute top-0 left-0 w-64 h-64 bg-blue-400 rounded-full mix-blend-multiply filter blur-3xl"></div>
+        <div className="absolute bottom-0 right-0 w-64 h-64 bg-purple-400 rounded-full mix-blend-multiply filter blur-3xl"></div>
+      </div>
+
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        {/* Header */}
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            Case Study
+          </h2>
+          <p className="text-xl text-gray-600">
+            What changed in 90 days
+          </p>
+        </div>
+
+        {/* Content Grid */}
+        <div className="grid lg:grid-cols-2 gap-12 items-start">
+          {/* What We Did */}
+          <div className="bg-white rounded-xl p-8 shadow-sm border border-gray-100 h-full">
+            <h3 className="text-2xl font-bold text-gray-900 mb-6">What we did:</h3>
+            <ul className="space-y-4">
+              {whatWeDid.map((item, index) => (
+                <li key={index} className="flex items-start gap-3">
+                  <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                  <p className="text-gray-700 leading-relaxed">{item}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Results */}
+          <div className="bg-white rounded-xl p-8 shadow-sm border border-gray-100 h-full">
+            <h3 className="text-2xl font-bold text-gray-900 mb-6">Results in 90 days:</h3>
+            <div className="space-y-4">
+              {results.map((result, index) => (
+                <div key={index} className="flex items-start gap-3 p-4 bg-gray-50 rounded-lg">
+                  <div className="w-10 h-10 bg-blue-50 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <result.icon className="w-5 h-5 text-blue-600" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-gray-900 mb-1">{result.title}</h4>
+                    <p className="text-gray-600 text-sm">{result.description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default CaseStudy;

@@ -1,5 +1,48 @@
 import React, { useEffect, useState } from 'react';
 import { TrendingUp, Shield, BarChart3, CheckCircle, ArrowRight, Play, Pause, Volume2 } from 'lucide-react';
+import { motion } from 'framer-motion';
+
+// --- Data for hub and spoke diagram ---
+const sources = [
+  { id: "s1", title: "Main job", icon: "💼", color: "bg-blue-500" },
+  { id: "s2", title: "Freelance client", icon: "👨‍💻", color: "bg-green-500" },
+  { id: "s3", title: "Freelance client", icon: "👩‍💼", color: "bg-purple-500" },
+];
+
+const destinations = [
+  { id: "d1", title: "Main account", value: "$1,800", icon: "🏦", color: "bg-blue-500" },
+  { id: "d2", title: "Savings", value: "$600", icon: "🐷", color: "bg-purple-500" },
+  { id: "d3", title: "Salary", value: "$2,400", icon: "👤", color: "bg-green-500" },
+  { id: "d4", title: "Taxes", value: "$200", icon: "📄", color: "bg-orange-500" },
+];
+
+// --- Framer Motion Variants ---
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, scale: 0.8 },
+  visible: { opacity: 1, scale: 1 },
+};
+
+const pathVariants = {
+  hidden: { pathLength: 0, opacity: 0 },
+  visible: {
+    pathLength: 1,
+    opacity: 1,
+    transition: {
+      duration: 1.5,
+      ease: "easeInOut",
+    },
+  },
+};
 
 const ValueProposition = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -166,60 +209,92 @@ const ValueProposition = () => {
             </button>
           </div>
 
-          {/* Right Column - Enhanced Visual */}
+          {/* Right Column - Hub and Spoke Diagram */}
           <div className="relative">
-            {/* Main Dashboard Card */}
-            <div className={`bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl p-8 transform rotate-1 hover:rotate-0 transition-all duration-700 hover:scale-105 border border-white/20 ${
-              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-            }`} style={{ transitionDelay: '400ms' }}>
-              <div className="space-y-6">
-                <div className="flex items-center justify-between">
-                  <h3 className="text-lg font-semibold text-gray-900">Live Cash Flow Overview</h3>
-                  <div className="flex items-center gap-2">
-                    <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
-                    <span className="text-xs text-green-600 font-medium">LIVE</span>
-                  </div>
-                </div>
+            <motion.div
+              className="relative flex items-center justify-between h-[450px] w-full bg-gradient-to-br from-gray-50/50 to-blue-50/50 rounded-3xl p-8 border border-gray-200/50 backdrop-blur-sm"
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.5 }}
+            >
+              {/* SVG Container for the lines */}
+              <svg
+                width="100%"
+                height="100%"
+                viewBox="0 0 600 400"
+                className="absolute top-0 left-0"
+              >
+                <defs>
+                  <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stopColor="rgba(156, 163, 175, 0.4)" />
+                    <stop offset="50%" stopColor="rgba(156, 163, 175, 0.6)" />
+                    <stop offset="100%" stopColor="rgba(156, 163, 175, 0.4)" />
+                  </linearGradient>
+                </defs>
                 
-                <div className="space-y-4">
-                  <div className="flex justify-between items-center p-3 bg-gradient-to-r from-green-50 to-emerald-50 rounded-lg border border-green-100 hover:shadow-md transition-all duration-300">
-                    <span className="text-sm font-medium text-gray-700">Cash In</span>
-                    <span className="text-green-600 font-semibold animate-pulse">₹2,45,000</span>
-                  </div>
-                  <div className="flex justify-between items-center p-3 bg-gradient-to-r from-red-50 to-pink-50 rounded-lg border border-red-100 hover:shadow-md transition-all duration-300">
-                    <span className="text-sm font-medium text-gray-700">Cash Out</span>
-                    <span className="text-red-600 font-semibold">₹1,82,000</span>
-                  </div>
-                  <div className="flex justify-between items-center p-3 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg border border-blue-100 hover:shadow-md transition-all duration-300">
-                    <span className="text-sm font-medium text-gray-700">Net Flow</span>
-                    <span className="text-blue-600 font-bold text-lg">₹63,000</span>
-                  </div>
-                </div>
+                {/* Lines from sources to center */}
+                <motion.path d="M 50 80 C 150 80, 250 200, 300 200" stroke="url(#lineGradient)" strokeWidth="2" fill="none" variants={pathVariants} />
+                <motion.path d="M 50 200 C 150 200, 250 200, 300 200" stroke="url(#lineGradient)" strokeWidth="2" fill="none" variants={pathVariants} />
+                <motion.path d="M 50 320 C 150 320, 250 200, 300 200" stroke="url(#lineGradient)" strokeWidth="2" fill="none" variants={pathVariants} />
+                
+                {/* Lines from center to destinations */}
+                <motion.path d="M 350 200 C 450 200, 500 50, 550 50" stroke="url(#lineGradient)" strokeWidth="2" fill="none" variants={pathVariants} />
+                <motion.path d="M 350 200 C 450 200, 500 130, 550 130" stroke="url(#lineGradient)" strokeWidth="2" fill="none" variants={pathVariants} />
+                <motion.path d="M 350 200 C 450 200, 500 220, 550 220" stroke="url(#lineGradient)" strokeWidth="2" fill="none" variants={pathVariants} />
+                <motion.path d="M 350 200 C 450 200, 500 350, 550 350" stroke="url(#lineGradient)" strokeWidth="2" fill="none" variants={pathVariants} />
+              </svg>
 
-                {/* Animated Chart */}
-                <div className="h-32 bg-gradient-to-br from-gray-50 to-gray-100 rounded-lg flex items-center justify-center p-4 border border-gray-200">
-                  <div className="flex items-end space-x-2 w-full">
-                    {[40, 60, 30, 80, 45, 70, 55, 65, 75, 50].map((height, i) => (
-                      <div 
-                        key={i} 
-                        className="flex-1 bg-gradient-to-t from-blue-600 to-indigo-500 rounded-t hover:from-blue-700 hover:to-indigo-600 transition-all duration-300 hover:scale-110"
-                        style={{
-                          height: `${height}%`,
-                          animationDelay: `${i * 100}ms`,
-                          animation: isPlaying ? 'chartGrow 2s ease-out forwards' : 'none'
-                        }}
-                      ></div>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Real-time Updates */}
-                <div className="flex items-center gap-2 text-xs text-gray-500">
-                  <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                  <span>Last updated: {new Date().toLocaleTimeString()}</span>
-                </div>
+              {/* Column 1: Sources */}
+              <div className="flex flex-col justify-between h-full py-6">
+                {sources.map(source => (
+                  <motion.div 
+                    key={source.id} 
+                    variants={itemVariants} 
+                    className="group flex items-center gap-4 p-4 bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl border border-gray-100 hover:shadow-2xl hover:scale-105 transition-all duration-300"
+                    whileHover={{ y: -5 }}
+                  >
+                    <div className={`p-3 rounded-xl ${source.color} shadow-lg group-hover:shadow-xl transition-all duration-300`}>
+                      <span className="text-2xl filter drop-shadow-lg">{source.icon}</span>
+                    </div>
+                    <div className="flex flex-col">
+                      <span className="text-sm font-semibold text-gray-800 group-hover:text-gray-900 transition-colors">{source.title}</span>
+                      <span className="text-xs text-gray-500">Income Source</span>
+                    </div>
+                  </motion.div>
+                ))}
               </div>
-            </div>
+
+              {/* Column 2: Central Hub */}
+              <motion.div 
+                variants={itemVariants} 
+                className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center w-24 h-24 bg-gradient-to-br from-blue-600 via-indigo-600 to-purple-600 rounded-full border-4 border-white shadow-2xl hover:shadow-3xl transition-all duration-300"
+                whileHover={{ scale: 1.1, rotate: 5 }}
+              >
+                <div className="text-white text-3xl filter drop-shadow-lg">💼</div>
+                <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent rounded-full"></div>
+              </motion.div>
+
+              {/* Column 3: Destinations */}
+              <div className="flex flex-col justify-between h-full py-2">
+                {destinations.map(dest => (
+                  <motion.div 
+                    key={dest.id} 
+                    variants={itemVariants} 
+                    className="group flex items-center gap-4 p-4 bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl border border-gray-100 hover:shadow-2xl hover:scale-105 transition-all duration-300"
+                    whileHover={{ y: -5 }}
+                  >
+                    <div className={`p-3 rounded-xl ${dest.color} shadow-lg group-hover:shadow-xl transition-all duration-300`}>
+                      <span className="text-2xl filter drop-shadow-lg">{dest.icon}</span>
+                    </div>
+                    <div className="flex flex-col">
+                      <span className="text-sm font-semibold text-gray-800 group-hover:text-gray-900 transition-colors">{dest.title}</span>
+                      <span className="text-xs font-bold text-gray-600">{dest.value}</span>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
             
             {/* Enhanced Floating Elements */}
             <div className={`absolute -top-4 -right-4 w-20 h-20 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-full flex items-center justify-center text-white font-bold shadow-lg animate-bounce-slow ${
@@ -239,7 +314,7 @@ const ValueProposition = () => {
         </div>
       </div>
 
-      <style jsx>{`
+      <style>{`
         @keyframes chartGrow {
           0% { height: 0%; }
           100% { height: var(--target-height); }

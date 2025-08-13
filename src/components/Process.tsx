@@ -1,12 +1,24 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { CheckCircle, ArrowRight, Target, Users, BarChart3, TrendingUp } from 'lucide-react';
 
 const Process = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const targetRef = useRef(null);
 
   useEffect(() => {
     setIsVisible(true);
   }, []);
+
+  // Scroll progress for horizontal scroll effect
+  const { scrollYProgress } = useScroll({
+    target: targetRef,
+    offset: ["start end", "end start"],
+  });
+
+  // Transform scroll progress to horizontal movement
+  const x = useTransform(scrollYProgress, [0.3, 0.8], ["25%", "-35%"]);
+  const textX = useTransform(scrollYProgress, [0.3, 0.8], ["0%", "-25%"]);
 
   const steps = [
     {
@@ -39,50 +51,64 @@ const Process = () => {
     }
   ];
 
-  return (
-    <section className="py-20 relative overflow-hidden">
-      {/* Background decoration */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-0 right-0 w-64 h-64 bg-blue-400 rounded-full mix-blend-multiply filter blur-3xl"></div>
-        <div className="absolute bottom-0 left-0 w-64 h-64 bg-purple-400 rounded-full mix-blend-multiply filter blur-3xl"></div>
+  // Process Card Component
+  const ProcessCard = ({ step, index }: { step: any; index: number }) => (
+    <div className="bg-white/95 backdrop-blur-sm shadow-lg rounded-2xl p-8 w-[450px] h-[350px] flex-shrink-0 border border-gray-100 hover:shadow-xl transition-all duration-300 flex flex-col">
+      <div className="flex items-center gap-4 mb-6">
+        <div className="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center text-sm font-bold">
+          {step.step}
+        </div>
+        <div className="w-10 h-10 bg-blue-50 rounded-lg flex items-center justify-center">
+          <step.icon className="w-5 h-5 text-blue-600" />
+        </div>
       </div>
+      
+      <h3 className="font-semibold text-gray-900 mb-4 text-xl">{step.title}</h3>
+      <p className="text-gray-600 text-base mb-6 leading-relaxed flex-1">{step.description}</p>
+      <p className="text-blue-600 text-sm font-medium mt-auto">{step.result}</p>
+    </div>
+  );
 
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            A simple, reliable way to work together
-          </h2>
+  // Text Card Component (same size as process cards)
+  const TextCard = () => (
+    <div className="bg-white/95 backdrop-blur-sm shadow-lg rounded-2xl p-6 w-[450px] h-[350px] flex-shrink-0 border border-gray-100 flex flex-col">
+      <p className="text-blue-600 font-semibold mb-3 text-sm uppercase tracking-wide">Our Process</p>
+      <h2 className="text-xl font-bold leading-tight text-gray-900 mb-3">
+        A simple, reliable way to work together
+      </h2>
+      <p className="text-gray-600 text-sm leading-relaxed mb-4 flex-1">
+        We follow a proven methodology that ensures clarity, accountability, and results. 
+        Our structured approach helps you move from uncertainty to confident decision-making.
+      </p>
+      <div className="space-y-2 mt-auto">
+        <div className="flex items-center gap-2">
+          <div className="w-1.5 h-1.5 bg-blue-600 rounded-full"></div>
+          <span className="text-gray-700 text-xs">Clear methodology</span>
         </div>
-
-        {/* Process Steps */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {steps.map((step, index) => (
-            <div key={index} className="group">
-              <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100 hover:shadow-md transition-all duration-300 h-full">
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center text-sm font-bold">
-                    {step.step}
-                  </div>
-                  <div className="w-8 h-8 bg-blue-50 rounded-lg flex items-center justify-center">
-                    <step.icon className="w-4 h-4 text-blue-600" />
-                  </div>
-                </div>
-                
-                <h3 className="font-semibold text-gray-900 mb-2">{step.title}</h3>
-                <p className="text-gray-600 text-sm mb-3">{step.description}</p>
-                <p className="text-blue-600 text-xs font-medium">{step.result}</p>
-              </div>
-            </div>
-          ))}
+        <div className="flex items-center gap-2">
+          <div className="w-1.5 h-1.5 bg-blue-600 rounded-full"></div>
+          <span className="text-gray-700 text-xs">Proven results</span>
         </div>
+        <div className="flex items-center gap-2">
+          <div className="w-1.5 h-1.5 bg-blue-600 rounded-full"></div>
+          <span className="text-gray-700 text-xs">Ongoing support</span>
+        </div>
+      </div>
+    </div>
+  );
 
-        {/* CTA */}
-        <div className="text-center mt-12">
-          <button className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 flex items-center gap-2 mx-auto hover:scale-105 hover:shadow-lg">
-            Start with a 30-min Call
-            <ArrowRight size={20} />
-          </button>
+  return (
+    <section ref={targetRef} className="relative h-[300vh] bg-gradient-to-br from-slate-50 to-blue-50/30">
+      {/* Sticky container */}
+      <div className="sticky top-0 h-screen flex items-center justify-center overflow-hidden">
+        <div className="flex justify-center">
+          {/* All Cards in Horizontal Row - Centered */}
+          <motion.div style={{ x }} className="flex gap-8">
+            <TextCard />
+            {steps.map((step, index) => (
+              <ProcessCard key={index} step={step} index={index} />
+            ))}
+          </motion.div>
         </div>
       </div>
     </section>

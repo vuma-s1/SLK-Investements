@@ -144,109 +144,157 @@ const Pricing = () => {
             initial={{ y: 50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.5 }}
-            className="grid lg:grid-cols-3 gap-8 mb-16"
+            className="mb-16"
           >
-            {plans.map((plan, index) => (
-              <div key={index} className={`bg-white rounded-xl shadow-sm border border-gray-100 ${plan.popular ? 'ring-2 ring-[#24525c]' : ''}`}>
-                {plan.popular && (
-                  <div className="bg-[#24525c] text-white text-center py-2 rounded-t-xl text-sm font-semibold">
-                    Most Popular
-                  </div>
-                )}
-                
-                <div className="p-6">
-                  <div className="mb-6">
-                    <h3 className="text-xl font-bold text-slate-900 mb-2">{plan.name}</h3>
-                    <div className="text-sm text-slate-500 mb-4">{plan.duration}</div>
-                    <p className="text-slate-600 text-sm leading-relaxed mb-4">{plan.purpose}</p>
-                    <p className="text-slate-700 text-sm font-medium">Best for: {plan.bestFor}</p>
-                  </div>
-
-                  {!expandedCards[plan.name] ? (
-                    <div className="space-y-4">
-                      <div>
-                        <h4 className="font-semibold text-slate-900 mb-2 text-sm">How it runs:</h4>
-                        <ul className="space-y-1">
-                          {plan.howItRuns.slice(0, 2).map((item, idx) => (
-                            <li key={idx} className="flex items-start gap-2 text-xs text-slate-600">
-                              <CheckCircle className="w-3 h-3 text-green-500 flex-shrink-0 mt-0.5" />
-                              {item}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                      
-                      <div>
-                        <h4 className="font-semibold text-slate-900 mb-2 text-sm">What you get:</h4>
-                        <ul className="space-y-1">
-                          {plan.whatYouGet.slice(0, 3).map((item, idx) => (
-                            <li key={idx} className="flex items-start gap-2 text-xs text-slate-600">
-                              <CheckCircle className="w-3 h-3 text-green-500 flex-shrink-0 mt-0.5" />
-                              {item}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                      
-                      <button
-                        onClick={() => toggleCard(plan.name)}
-                        className="w-full bg-gray-50 text-slate-700 py-2 rounded-lg text-sm font-medium hover:bg-gray-100 transition-colors duration-300"
-                      >
-                        View Full Details
-                      </button>
-                    </div>
-                  ) : (
-                    <div className="space-y-4">
-                      <div>
-                        <h4 className="font-semibold text-slate-900 mb-2 text-sm">How it runs:</h4>
-                        <ul className="space-y-1">
-                          {plan.howItRuns.map((item, idx) => (
-                            <li key={idx} className="flex items-start gap-2 text-xs text-slate-600">
-                              <CheckCircle className="w-3 h-3 text-green-500 flex-shrink-0 mt-0.5" />
-                              {item}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                      
-                      <div>
-                        <h4 className="font-semibold text-slate-900 mb-2 text-sm">What you get:</h4>
-                        <ul className="space-y-1">
-                          {plan.whatYouGet.map((item, idx) => (
-                            <li key={idx} className="flex items-start gap-2 text-xs text-slate-600">
-                              <CheckCircle className="w-3 h-3 text-green-500 flex-shrink-0 mt-0.5" />
-                              {item}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                      
-                      <div>
-                        <h4 className="font-semibold text-slate-900 mb-1 text-sm">Your time needed:</h4>
-                        <p className="text-xs text-slate-600">{plan.timeNeeded}</p>
-                      </div>
-                      
-                      <div>
-                        <h4 className="font-semibold text-slate-900 mb-1 text-sm">What's not included:</h4>
-                        <p className="text-xs text-slate-600">{plan.notIncluded}</p>
-                      </div>
-                      
-                      <button
-                        onClick={() => toggleCard(plan.name)}
-                        className="w-full bg-gray-50 text-slate-700 py-2 rounded-lg text-sm font-medium hover:bg-gray-100 transition-colors duration-300"
-                      >
-                        Show Less
-                      </button>
+            {/* Desktop Layout */}
+            <div className="hidden lg:grid lg:grid-cols-3 gap-8">
+              {plans.map((plan, index) => (
+                <div key={index} className={`bg-white rounded-xl shadow-sm border border-gray-100 ${plan.popular ? 'ring-2 ring-[#24525c]' : ''}`}>
+                  {plan.popular && (
+                    <div className="bg-[#24525c] text-white text-center py-2 rounded-t-xl text-sm font-semibold">
+                      Most Popular
                     </div>
                   )}
                   
-                  <button className="w-full bg-[#24525c] text-white py-3 rounded-lg font-semibold hover:bg-[#1e424a] transition-all duration-300 flex items-center justify-center gap-2 mt-6">
-                    Get a quote
-                    <ArrowRight className="w-4 h-4" />
-                  </button>
+                  <div className="p-6">
+                    <div className="mb-6">
+                      <h3 className="text-xl font-bold text-slate-900 mb-2">{plan.name}</h3>
+                      <div className="text-sm text-slate-500 mb-4">{plan.duration}</div>
+                      <p className="text-slate-600 text-sm leading-relaxed mb-4">{plan.purpose}</p>
+                      <p className="text-slate-700 text-sm font-medium">Best for: {plan.bestFor}</p>
+                    </div>
+
+                    {!expandedCards[plan.name] ? (
+                      <div className="space-y-4">
+                        <div>
+                          <h4 className="font-semibold text-slate-900 mb-2 text-sm">How it runs:</h4>
+                          <ul className="space-y-1">
+                            {plan.howItRuns.slice(0, 2).map((item, idx) => (
+                              <li key={idx} className="flex items-start gap-2 text-xs text-slate-600">
+                                <CheckCircle className="w-3 h-3 text-green-500 flex-shrink-0 mt-0.5" />
+                                {item}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                        
+                        <div>
+                          <h4 className="font-semibold text-slate-900 mb-2 text-sm">What you get:</h4>
+                          <ul className="space-y-1">
+                            {plan.whatYouGet.slice(0, 3).map((item, idx) => (
+                              <li key={idx} className="flex items-start gap-2 text-xs text-slate-600">
+                                <CheckCircle className="w-3 h-3 text-green-500 flex-shrink-0 mt-0.5" />
+                                {item}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                        
+                        <button
+                          onClick={() => toggleCard(plan.name)}
+                          className="w-full bg-gray-50 text-slate-700 py-2 rounded-lg text-sm font-medium hover:bg-gray-100 transition-colors duration-300"
+                        >
+                          View Full Details
+                        </button>
+                      </div>
+                    ) : (
+                      <div className="space-y-4">
+                        <div>
+                          <h4 className="font-semibold text-slate-900 mb-2 text-sm">How it runs:</h4>
+                          <ul className="space-y-1">
+                            {plan.howItRuns.map((item, idx) => (
+                              <li key={idx} className="flex items-start gap-2 text-xs text-slate-600">
+                                <CheckCircle className="w-3 h-3 text-green-500 flex-shrink-0 mt-0.5" />
+                                {item}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                        
+                        <div>
+                          <h4 className="font-semibold text-slate-900 mb-2 text-sm">What you get:</h4>
+                          <ul className="space-y-1">
+                            {plan.whatYouGet.map((item, idx) => (
+                              <li key={idx} className="flex items-start gap-2 text-xs text-slate-600">
+                                <CheckCircle className="w-3 h-3 text-green-500 flex-shrink-0 mt-0.5" />
+                                {item}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                        
+                        <div>
+                          <h4 className="font-semibold text-slate-900 mb-1 text-sm">Your time needed:</h4>
+                          <p className="text-xs text-slate-600">{plan.timeNeeded}</p>
+                        </div>
+                        
+                        <div>
+                          <h4 className="font-semibold text-slate-900 mb-1 text-sm">What's not included:</h4>
+                          <p className="text-xs text-slate-600">{plan.notIncluded}</p>
+                        </div>
+                        
+                        <button
+                          onClick={() => toggleCard(plan.name)}
+                          className="w-full bg-gray-50 text-slate-700 py-2 rounded-lg text-sm font-medium hover:bg-gray-100 transition-colors duration-300"
+                        >
+                          Show Less
+                        </button>
+                      </div>
+                    )}
+                    
+                    <button className="w-full bg-[#24525c] text-white py-3 rounded-lg font-semibold hover:bg-[#1e424a] transition-all duration-300 flex items-center justify-center gap-2 mt-6">
+                      Get a quote
+                      <ArrowRight className="w-4 h-4" />
+                    </button>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
+
+            {/* Mobile Layout - Minimal Design */}
+            <div className="lg:hidden space-y-4 max-w-sm mx-auto">
+              {plans.map((plan, index) => (
+                <div key={index} className={`bg-white rounded-lg shadow-sm border border-gray-100 ${plan.popular ? 'ring-1 ring-[#24525c]' : ''}`}>
+                  {plan.popular && (
+                    <div className="bg-[#24525c] text-white text-center py-1.5 rounded-t-lg text-xs font-medium">
+                      Most Popular
+                    </div>
+                  )}
+                  
+                  <div className="p-3">
+                    <div className="mb-3">
+                      <h3 className="text-lg font-bold text-slate-900 mb-1">{plan.name}</h3>
+                      <div className="text-xs text-slate-500 mb-2">{plan.duration}</div>
+                      <p className="text-slate-600 text-xs leading-relaxed mb-2">{plan.purpose}</p>
+                    </div>
+
+                    <div className="space-y-2 mb-3">
+                      <div>
+                        <h4 className="font-medium text-slate-900 mb-1 text-xs">Key Features:</h4>
+                        <ul className="space-y-0.5">
+                          {plan.whatYouGet.slice(0, 2).map((item, idx) => (
+                            <li key={idx} className="flex items-start gap-1.5 text-xs text-slate-600">
+                              <CheckCircle className="w-3 h-3 text-green-500 flex-shrink-0 mt-0.5" />
+                              <span className="leading-tight">{item}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                      
+                      <div>
+                        <h4 className="font-medium text-slate-900 mb-1 text-xs">Best for:</h4>
+                        <p className="text-xs text-slate-600 leading-tight">{plan.bestFor}</p>
+                      </div>
+                    </div>
+                    
+                    <button className="w-full bg-[#24525c] text-white py-2.5 rounded-lg font-medium hover:bg-[#1e424a] transition-all duration-300 flex items-center justify-center gap-2 text-sm">
+                      Get a quote
+                      <ArrowRight className="w-3 h-3" />
+                    </button>
+                  </div>
+                </div>
+              ))}
+            </div>
           </motion.div>
 
           {/* Guarantees Section */}

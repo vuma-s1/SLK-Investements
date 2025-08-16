@@ -46,9 +46,9 @@ const About = () => {
             <span className="w-2 h-2 bg-blue-500 rounded-full"></span>
             About Us
           </div>
-          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-            About <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">SLK Investments</span>
-          </h2>
+          <h1 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
+            About <span className="text-[#24525c]">SLK Investments</span>
+          </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             We help Indian businesses plan, operate, and scale with confidence through strategic financial guidance.
           </p>

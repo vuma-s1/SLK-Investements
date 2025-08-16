@@ -88,7 +88,7 @@ const Contact = () => {
 
               <div className="space-y-6 mb-10">
                 <div className="flex items-center gap-3 p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-300">
-                  <div className="w-10 h-10 bg-blue-50 rounded-lg flex items-center justify-center text-blue-600">
+                  <div className="w-10 h-10 bg-[#24525c]/10 rounded-lg flex items-center justify-center text-[#24525c]">
                     <Mail className="w-6 h-6" />
                   </div>
                   <div>
@@ -98,7 +98,7 @@ const Contact = () => {
                 </div>
 
                 <div className="flex items-center gap-3 p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-300">
-                  <div className="w-10 h-10 bg-blue-50 rounded-lg flex items-center justify-center text-blue-600">
+                  <div className="w-10 h-10 bg-[#24525c]/10 rounded-lg flex items-center justify-center text-[#24525c]">
                     <Phone className="w-6 h-6" />
                   </div>
                   <div>
@@ -108,7 +108,7 @@ const Contact = () => {
                 </div>
 
                 <div className="flex items-center gap-3 p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-300">
-                  <div className="w-10 h-10 bg-green-50 rounded-lg flex items-center justify-center text-green-600">
+                  <div className="w-10 h-10 bg-[#24525c]/10 rounded-lg flex items-center justify-center text-[#24525c]">
                     <MessageCircle className="w-6 h-6" />
                   </div>
                   <div>
@@ -118,23 +118,23 @@ const Contact = () => {
                 </div>
               </div>
 
-              <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-6">
+              <div className="bg-gradient-to-r from-[#24525c]/10 to-[#24525c]/5 rounded-xl p-6">
                 <h3 className="font-semibold text-gray-900 mb-3">Why choose SLK Investments?</h3>
                 <ul className="space-y-2 text-sm text-gray-600">
                   <li className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                    <div className="w-2 h-2 bg-[#24525c] rounded-full"></div>
                     Clear financial planning and strategy
                   </li>
                   <li className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                    <div className="w-2 h-2 bg-[#24525c] rounded-full"></div>
                     Proven track record with 500+ businesses
                   </li>
                   <li className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                    <div className="w-2 h-2 bg-[#24525c] rounded-full"></div>
                     Personalized approach for Indian businesses
                   </li>
                   <li className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                    <div className="w-2 h-2 bg-[#24525c] rounded-full"></div>
                     Transparent pricing and no hidden costs
                   </li>
                 </ul>
@@ -163,7 +163,7 @@ const Contact = () => {
                       value={formData.name}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#24525c] focus:border-transparent transition-all duration-300"
                       placeholder="Your full name"
                     />
                   </div>
@@ -180,7 +180,7 @@ const Contact = () => {
                       value={formData.email}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#24525c] focus:border-transparent transition-all duration-300"
                       placeholder="your.email@company.com"
                     />
                   </div>
@@ -197,7 +197,7 @@ const Contact = () => {
                       value={formData.phone}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#24525c] focus:border-transparent transition-all duration-300"
                       placeholder="+91 98765 43210"
                     />
                   </div>
@@ -213,7 +213,7 @@ const Contact = () => {
                       name="company"
                       value={formData.company}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#24525c] focus:border-transparent transition-all duration-300"
                       placeholder="Your company name"
                     />
                   </div>
@@ -228,7 +228,7 @@ const Contact = () => {
                       name="revenue"
                       value={formData.revenue}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#24525c] focus:border-transparent transition-all duration-300"
                     >
                       <option value="">Select revenue range</option>
                       {revenueRanges.map((range) => (
@@ -249,7 +249,7 @@ const Contact = () => {
                             type="checkbox"
                             checked={formData.services.includes(service)}
                             onChange={() => handleServiceChange(service)}
-                            className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+                            className="w-4 h-4 text-[#24525c] border-gray-300 rounded focus:ring-[#24525c]"
                           />
                           <span className="text-sm text-gray-700">{service}</span>
                         </label>
@@ -268,7 +268,7 @@ const Contact = () => {
                       value={formData.message}
                       onChange={handleInputChange}
                       rows={4}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#24525c] focus:border-transparent transition-all duration-300"
                       placeholder="Tell us about your business and how we can help..."
                     />
                   </div>
@@ -282,7 +282,7 @@ const Contact = () => {
                       checked={formData.consent}
                       onChange={handleInputChange}
                       required
-                      className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500 mt-1"
+                      className="w-4 h-4 text-[#24525c] border-gray-300 rounded focus:ring-[#24525c] mt-1"
                     />
                     <label htmlFor="consent" className="text-sm text-gray-600">
                       I agree to receive communications from SLK Investments Corporation. *
@@ -292,7 +292,7 @@ const Contact = () => {
                   {/* Submit Button */}
                   <button
                     type="submit"
-                    className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-4 rounded-lg font-semibold hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 flex items-center justify-center gap-2"
+                    className="w-full bg-[#24525c] text-white py-4 rounded-lg font-semibold hover:bg-[#1e424a] transition-all duration-300 flex items-center justify-center gap-2"
                   >
                     <Send className="w-5 h-5" />
                     Submit Enquiry
@@ -309,10 +309,10 @@ const Contact = () => {
             transition={{ delay: 0.7 }}
             className="mt-16 text-center"
           >
-            <div className="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl p-8 text-white">
-              <h3 className="text-2xl font-bold mb-4">Book a 30-minute consultation</h3>
-              <p className="text-blue-100 mb-6">Pick a time that suits you. We'll review your goals and suggest next steps.</p>
-              <button className="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-50 transition-all duration-300">
+            <div className="bg-gradient-to-r from-slate-800 to-slate-900 rounded-2xl p-6 text-white max-w-2xl mx-auto">
+              <h3 className="text-xl font-bold mb-3">Book a 30-minute consultation</h3>
+              <p className="text-slate-300 mb-4 text-sm">Pick a time that suits you. We'll review your goals and suggest next steps.</p>
+              <button className="bg-white text-slate-900 px-6 py-2.5 rounded-full font-semibold hover:bg-gray-50 transition-all duration-300 text-sm">
                 Book a Call
               </button>
             </div>

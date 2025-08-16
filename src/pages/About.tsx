@@ -24,22 +24,22 @@ const About = () => {
       icon: Shield,
       title: 'Integrity',
       description: 'Unwavering ethics and transparency in all interactions',
-              bgColor: 'from-[#24525c]/10 to-[#24525c]/5',
-        color: 'text-[#24525c]'
+      bgColor: 'from-[#24525c]/10 to-[#24525c]/5',
+      color: 'text-[#24525c]'
     },
     {
       icon: Zap,
       title: 'Personalised Service',
       description: 'Tailored solutions to your distinct context and goals',
-      bgColor: 'from-purple-50 to-violet-50',
-      color: 'text-purple-600'
+      bgColor: 'from-[#24525c]/10 to-[#24525c]/5',
+      color: 'text-[#24525c]'
     },
     {
       icon: CheckCircle,
       title: 'Expertise',
       description: 'Deep understanding of the financial landscape and market trends',
-      bgColor: 'from-green-50 to-emerald-50',
-      color: 'text-green-600'
+      bgColor: 'from-[#24525c]/10 to-[#24525c]/5',
+      color: 'text-[#24525c]'
     }
   ];
 
@@ -131,10 +131,10 @@ const About = () => {
             transition={{ delay: 1.1 }}
             className="text-center"
           >
-            <div className="bg-[#24525c] rounded-2xl p-8 text-white">
-              <h3 className="text-2xl font-bold mb-4">Ready to transform your financial operations?</h3>
-                              <p className="text-white/90 mb-6">Let's discuss how we can help you achieve clarity, control, and confidence in your financial decisions.</p>
-                <button className="bg-white text-[#24525c] px-8 py-3 rounded-full font-semibold hover:bg-gray-50 transition-all duration-300">
+            <div className="bg-gradient-to-r from-slate-800 to-slate-900 rounded-2xl p-6 text-white max-w-2xl mx-auto">
+              <h3 className="text-xl font-bold mb-3">Ready to transform your financial operations?</h3>
+              <p className="text-slate-300 mb-4 text-sm">Let's discuss how we can help you achieve clarity, control, and confidence in your financial decisions.</p>
+              <button className="bg-white text-slate-900 px-6 py-2.5 rounded-full font-semibold hover:bg-gray-50 transition-all duration-300 text-sm">
                 Book a Call
               </button>
             </div>

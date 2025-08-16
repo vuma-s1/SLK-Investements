@@ -89,7 +89,7 @@ const Header = () => {
               <button
                 key={item.name}
                 onClick={() => handleNavClick(item.href, item.isPage)}
-                className={`px-4 py-2 rounded-md text-sm font-medium transition-all duration-300 hover:text-[#1a1a1a] hover:scale-105 ${
+                className={`px-4 py-2 rounded-md text-sm font-medium transition-all duration-300 hover:text-[#1a1a1a] hover:scale-105 focus:outline-none ${
                   location.pathname === item.href
                     ? 'bg-[#24525c] text-white font-semibold'
                     : 'text-[#4a5568] hover:bg-gray-50 hover:text-[#1a1a1a]'
@@ -102,10 +102,10 @@ const Header = () => {
 
           {/* CTA Button - Right Side */}
           <div className="hidden lg:block -mr-8">
-            <button className={`px-5 py-2.5 rounded-lg font-semibold text-sm transition-all duration-500 ease-in-out hover:scale-105 ${
+            <button className={`px-5 py-2.5 rounded-lg font-semibold text-sm transition-all duration-500 ease-in-out hover:scale-105 focus:outline-none ${
               isScrolled 
-                ? 'bg-[#facc15] text-[#1D1D1F] border-[#facc15] shadow-md' 
-                : 'bg-white text-[#1D1D1F] border border-[#d2d2d7] hover:border-[#facc15]'
+                ? 'bg-[#facc15] text-[#1D1D1F] shadow-md' 
+                : 'bg-white text-[#1D1D1F] border border-gray-200 hover:border-gray-300'
             }`}>
               Contact Us
             </button>
@@ -132,7 +132,7 @@ const Header = () => {
                 <button
                   key={item.name}
                   onClick={() => handleNavClick(item.href, item.isPage)}
-                  className={`block w-full text-left px-3 py-2 font-medium rounded-md transition-all duration-300 hover:scale-105 ${
+                  className={`block w-full text-left px-3 py-2 font-medium rounded-md transition-all duration-300 hover:scale-105 focus:outline-none ${
                     location.pathname === item.href
                       ? 'bg-[#24525c] text-white font-semibold'
                       : 'text-slate-700 hover:bg-slate-100 hover:text-[#24525c]'
@@ -141,10 +141,10 @@ const Header = () => {
                   {item.name}
                 </button>
               ))}
-              <button className={`w-full px-4 py-3 rounded-md font-medium transition-all duration-500 ease-in-out flex items-center justify-center gap-2 hover:scale-105 ${
+              <button className={`w-full px-4 py-3 rounded-md font-medium transition-all duration-500 ease-in-out flex items-center justify-center gap-2 hover:scale-105 focus:outline-none ${
                 isScrolled 
-                  ? 'bg-[#facc15] text-[#1D1D1F] border-[#facc15] shadow-md' 
-                  : 'bg-white text-[#1D1D1F] border border-[#d2d2d7] hover:border-[#facc15]'
+                  ? 'bg-[#facc15] text-[#1D1D1F] shadow-md' 
+                  : 'bg-white text-[#1D1D1F] border border-gray-200 hover:border-gray-300'
               }`}>
                 Contact Us
               </button>

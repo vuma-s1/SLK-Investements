@@ -31,8 +31,8 @@ const Services = () => {
       youGet: ['Operating plan', 'Budgets & forecasts (with scenarios)', 'Clear runway', 'Board-ready dashboard'],
       idealFor: 'Founders/CFOs in bootstrapped or VC-backed companies',
       setup: 'Initial plan in 2–3 weeks, then monthly reviews',
-              bgColor: 'from-[#24525c]/10 to-[#24525c]/5',
-        color: 'text-[#24525c]'
+      bgColor: 'from-[#24525c]/10 to-[#24525c]/5',
+      color: 'text-[#24525c]'
     },
     {
       icon: TrendingUp,
@@ -41,8 +41,8 @@ const Services = () => {
       youGet: ['Rolling 13-week cash forecast', 'Collections cadence & DSO targets', 'Vendor-term playbook', 'Expense controls'],
       idealFor: 'Businesses with variable or seasonal revenue',
       setup: 'Live in 2 weeks; weekly cash huddles + monthly oversight',
-      bgColor: 'from-green-50 to-emerald-50',
-      color: 'text-green-600'
+      bgColor: 'from-[#24525c]/10 to-[#24525c]/5',
+      color: 'text-[#24525c]'
     },
     {
       icon: Shield,
@@ -51,8 +51,8 @@ const Services = () => {
       youGet: ['Risk register with owners & triggers', 'Control library & SOPs', 'Compliance calendar', 'Insurance review'],
       idealFor: 'Teams scaling operations or credit exposure',
       setup: '2–4 weeks for full assessment; quarterly refresh',
-      bgColor: 'from-purple-50 to-violet-50',
-      color: 'text-purple-600'
+      bgColor: 'from-[#24525c]/10 to-[#24525c]/5',
+      color: 'text-[#24525c]'
     },
     {
       icon: Zap,
@@ -61,8 +61,8 @@ const Services = () => {
       youGet: ['Pricing & contribution margins', 'Channel ROI map', 'Capacity & hiring plan', 'Scale-up operating cadence'],
       idealFor: 'Teams ready to grow without chaos',
       setup: '4–6 weeks to design; quarterly execution cycles',
-      bgColor: 'from-orange-50 to-red-50',
-      color: 'text-orange-600'
+      bgColor: 'from-[#24525c]/10 to-[#24525c]/5',
+      color: 'text-[#24525c]'
     }
   ];
 
@@ -159,8 +159,8 @@ const Services = () => {
 
       {/* Sticky Horizontal Scroll Section */}
       <section ref={targetRef} className="relative h-[300vh] bg-gradient-to-br from-slate-50 to-blue-50/30">
-        {/* Sticky container */}
-        <div className="sticky top-0 h-screen flex items-center justify-center overflow-hidden">
+        {/* Desktop: Sticky container */}
+        <div className="hidden lg:block sticky top-0 h-screen flex items-center justify-center overflow-hidden">
           <div className="flex justify-center">
             {/* All Cards in Horizontal Row - Centered */}
             <motion.div style={{ x }} className="flex gap-8">
@@ -195,6 +195,76 @@ const Services = () => {
                 <ServiceCard key={index} service={service} index={index} />
               ))}
             </motion.div>
+          </div>
+        </div>
+
+        {/* Mobile: Vertical layout */}
+        <div className="lg:hidden py-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            {/* Mobile Text Card */}
+            <div className="bg-white/95 backdrop-blur-sm shadow-lg rounded-2xl p-6 mb-8 border border-gray-100">
+              <p className="text-[#24525c] font-semibold mb-3 text-sm uppercase tracking-wide">Our Services</p>
+              <h2 className="text-xl font-bold leading-tight text-slate-900 mb-3">
+                Comprehensive solutions for your business growth
+              </h2>
+              <p className="text-slate-600 text-sm leading-relaxed mb-4">
+                We provide end-to-end financial services that help businesses make better decisions, 
+                manage risks, and accelerate growth. Our data-driven approach ensures you have the 
+                insights you need when you need them.
+              </p>
+              <div className="space-y-2">
+                <div className="flex items-center gap-2">
+                  <div className="w-1.5 h-1.5 bg-[#24525c] rounded-full"></div>
+                  <span className="text-slate-700 text-xs">Data-driven insights</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="w-1.5 h-1.5 bg-[#24525c] rounded-full"></div>
+                  <span className="text-slate-700 text-xs">Real-time monitoring</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="w-1.5 h-1.5 bg-[#24525c] rounded-full"></div>
+                  <span className="text-slate-700 text-xs">Expert guidance</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Mobile Service Cards */}
+            <div className="grid grid-cols-1 gap-6">
+              {services.map((service, index) => (
+                <div key={index} className="bg-white/95 backdrop-blur-sm shadow-lg rounded-2xl p-6 border border-gray-100">
+                  <div className={`w-10 h-10 bg-gradient-to-br ${service.bgColor} rounded-lg flex items-center justify-center mb-3`}>
+                    <service.icon className={`w-5 h-5 ${service.color}`} />
+                  </div>
+                  
+                  <h3 className="text-lg font-bold text-slate-900 mb-2">{service.title}</h3>
+                  <p className="text-slate-600 mb-3 leading-relaxed text-sm">{service.oneLiner}</p>
+                  
+                  <div className="space-y-3 mb-4">
+                    <div>
+                      <h4 className="font-semibold text-slate-900 mb-2 text-sm">You get:</h4>
+                      <ul className="space-y-1">
+                        {service.youGet.slice(0, 2).map((item: string, idx: number) => (
+                          <li key={idx} className="flex items-start gap-2 text-xs text-slate-600">
+                            <CheckCircle className="w-3 h-3 text-green-500 flex-shrink-0 mt-0.5" />
+                            <span className="leading-tight">{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    
+                    <div>
+                      <h4 className="font-semibold text-slate-900 mb-1 text-sm">Ideal for:</h4>
+                      <p className="text-xs text-slate-600 leading-tight">{service.idealFor}</p>
+                    </div>
+                  </div>
+                  
+                  <button className="bg-[#24525c] text-white px-6 py-2.5 rounded-lg font-semibold hover:bg-[#1e424a] transition-all duration-300 flex items-center gap-2 text-sm">
+                    Get a quote
+                    <ArrowRight className="w-4 h-4" />
+                  </button>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -255,10 +325,10 @@ const Services = () => {
             transition={{ delay: 1.1 }}
             className="text-center"
           >
-            <div className="bg-[#24525c] rounded-2xl p-8 text-white">
-              <h3 className="text-2xl font-bold mb-4">Ready to get started?</h3>
-              <p className="text-white/90 mb-6">Start with a 30-min call to discuss your needs and see how we can help.</p>
-              <button className="bg-white text-[#24525c] px-8 py-3 rounded-full font-semibold hover:bg-gray-50 transition-all duration-300">
+            <div className="bg-gradient-to-r from-slate-800 to-slate-900 rounded-2xl p-6 text-white max-w-2xl mx-auto">
+              <h3 className="text-xl font-bold mb-3">Ready to get started?</h3>
+              <p className="text-slate-300 mb-4 text-sm">Start with a 30-min call to discuss your needs and see how we can help.</p>
+              <button className="bg-white text-slate-900 px-6 py-2.5 rounded-full font-semibold hover:bg-gray-50 transition-all duration-300 text-sm">
                 Start with a 30-min Call
               </button>
             </div>

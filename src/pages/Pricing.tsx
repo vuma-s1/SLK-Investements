@@ -41,8 +41,8 @@ const Pricing = () => {
       ],
       timeNeeded: '2 short calls per week (30–45 mins)',
       notIncluded: 'Bookkeeping, tax filing, ERP/CRM builds, or fundraising execution (we can coordinate if needed)',
-      bgColor: 'from-blue-50 to-indigo-50',
-      color: 'text-blue-600',
+      bgColor: 'from-[#24525c]/10 to-[#24525c]/5',
+      color: 'text-[#24525c]',
       popular: false
     },
     {
@@ -64,8 +64,8 @@ const Pricing = () => {
       ],
       timeNeeded: '1 weekly 30-min call + 1 monthly 60-min review',
       notIncluded: 'Accounting entries, payroll processing, invoicing—your CA/finance team handles those; we lead the rhythm and decisions',
-      bgColor: 'from-purple-50 to-violet-50',
-      color: 'text-purple-600',
+      bgColor: 'from-[#24525c]/10 to-[#24525c]/5',
+      color: 'text-[#24525c]',
       popular: true
     },
     {
@@ -86,8 +86,8 @@ const Pricing = () => {
       ],
       timeNeeded: '1–2 workshops per week during design; weekly 30-min check-ins',
       notIncluded: 'Media buying, sales ops builds, recruitment services—happy to coordinate with your teams/partners',
-      bgColor: 'from-green-50 to-emerald-50',
-      color: 'text-green-600',
+      bgColor: 'from-[#24525c]/10 to-[#24525c]/5',
+      color: 'text-[#24525c]',
       popular: false
     }
   ];
@@ -130,7 +130,7 @@ const Pricing = () => {
           >
             <h1 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
               Clear plans.
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600 block">
+              <span className="text-[#24525c] block">
                 Custom quotes.
               </span>
             </h1>
@@ -147,9 +147,9 @@ const Pricing = () => {
             className="grid lg:grid-cols-3 gap-8 mb-16"
           >
             {plans.map((plan, index) => (
-              <div key={index} className={`bg-white rounded-xl shadow-sm border border-gray-100 ${plan.popular ? 'ring-2 ring-blue-500' : ''}`}>
+              <div key={index} className={`bg-white rounded-xl shadow-sm border border-gray-100 ${plan.popular ? 'ring-2 ring-[#24525c]' : ''}`}>
                 {plan.popular && (
-                  <div className="bg-blue-500 text-white text-center py-2 rounded-t-xl text-sm font-semibold">
+                  <div className="bg-[#24525c] text-white text-center py-2 rounded-t-xl text-sm font-semibold">
                     Most Popular
                   </div>
                 )}
@@ -240,7 +240,7 @@ const Pricing = () => {
                     </div>
                   )}
                   
-                  <button className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-3 rounded-lg font-semibold hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 flex items-center justify-center gap-2 mt-6">
+                  <button className="w-full bg-[#24525c] text-white py-3 rounded-lg font-semibold hover:bg-[#1e424a] transition-all duration-300 flex items-center justify-center gap-2 mt-6">
                     Get a quote
                     <ArrowRight className="w-4 h-4" />
                   </button>
@@ -260,8 +260,8 @@ const Pricing = () => {
             <div className="grid md:grid-cols-3 gap-6">
               {benefits.map((benefit, index) => (
                 <div key={index} className="bg-white rounded-xl p-6 shadow-sm border border-gray-100 text-center">
-                  <div className="w-12 h-12 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-lg flex items-center justify-center mx-auto mb-4">
-                    <benefit.icon className="w-6 h-6 text-blue-600" />
+                  <div className="w-12 h-12 bg-gradient-to-br from-[#24525c]/10 to-[#24525c]/5 rounded-lg flex items-center justify-center mx-auto mb-4">
+                    <benefit.icon className="w-6 h-6 text-[#24525c]" />
                   </div>
                   <h3 className="font-semibold text-slate-900 mb-2">{benefit.title}</h3>
                   <p className="text-slate-600 text-sm">{benefit.description}</p>
@@ -277,10 +277,10 @@ const Pricing = () => {
             transition={{ delay: 0.9 }}
             className="text-center"
           >
-            <div className="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl p-8 text-white">
-              <h3 className="text-2xl font-bold mb-4">Ready to get started?</h3>
-              <p className="text-blue-100 mb-6">Book a quick call to discuss your needs and get a custom quote.</p>
-              <button className="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-50 transition-all duration-300">
+            <div className="bg-gradient-to-r from-slate-800 to-slate-900 rounded-2xl p-6 text-white max-w-2xl mx-auto">
+              <h3 className="text-xl font-bold mb-3">Ready to get started?</h3>
+              <p className="text-slate-300 mb-4 text-sm">Book a quick call to discuss your needs and get a custom quote.</p>
+              <button className="bg-white text-slate-900 px-6 py-2.5 rounded-full font-semibold hover:bg-gray-50 transition-all duration-300 text-sm">
                 Book a Call
               </button>
             </div>

@@ -127,7 +127,7 @@ const CaseStudies = () => {
             {stats.map((stat, index) => (
               <div key={index} className="text-center">
                 <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
-                  <stat.icon className="w-8 h-8 text-blue-600 mx-auto mb-3" />
+                  <stat.icon className="w-8 h-8 text-[#24525c] mx-auto mb-3" />
                   <div className="text-2xl font-bold text-slate-900 mb-1">{stat.number}</div>
                   <div className="text-sm text-slate-600">{stat.label}</div>
                 </div>
@@ -144,7 +144,7 @@ const CaseStudies = () => {
             {caseStudies.map((study, index) => (
               <div key={index} className="bg-white rounded-xl p-8 shadow-sm border border-gray-100 w-full min-w-[240px] case-study-card">
                 <div className="mb-6">
-                  <span className="inline-block bg-blue-50 text-blue-600 px-3 py-1 rounded-full text-xs font-medium mb-3">
+                  <span className="inline-block bg-[#24525c]/10 text-[#24525c] px-3 py-1 rounded-full text-xs font-medium mb-3">
                     {study.industry}
                   </span>
                   <h3 className="text-xl font-bold text-slate-900 mb-3">{study.title}</h3>
@@ -174,7 +174,7 @@ const CaseStudies = () => {
                   </div>
                 </div>
 
-                <button className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-3 rounded-lg font-semibold hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 flex items-center justify-center gap-2">
+                <button className="w-full bg-[#24525c] text-white py-3 rounded-lg font-semibold hover:bg-[#1e424a] transition-all duration-300 flex items-center justify-center gap-2">
                   Read Full Case Study
                   <ArrowRight className="w-4 h-4" />
                 </button>
@@ -190,10 +190,10 @@ const CaseStudies = () => {
             transition={{ delay: 0.9 }}
             className="text-center"
           >
-            <div className="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl p-8 text-white">
-              <h3 className="text-2xl font-bold mb-4">Ready to see similar results?</h3>
-              <p className="text-blue-100 mb-6">Let's discuss how we can help your business achieve its financial goals.</p>
-              <button className="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-50 transition-all duration-300">
+            <div className="bg-gradient-to-r from-slate-800 to-slate-900 rounded-2xl p-6 text-white max-w-2xl mx-auto">
+              <h3 className="text-xl font-bold mb-3">Ready to see similar results?</h3>
+              <p className="text-slate-300 mb-4 text-sm">Let's discuss how we can help your business achieve its financial goals.</p>
+              <button className="bg-white text-slate-900 px-6 py-2.5 rounded-full font-semibold hover:bg-gray-50 transition-all duration-300 text-sm">
                 Book a Call
               </button>
             </div>

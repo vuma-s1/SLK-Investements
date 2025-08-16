@@ -20,8 +20,8 @@ const Services = () => {
   });
 
   // Transform scroll progress to horizontal movement
-  const x = useTransform(scrollYProgress, [0.1, 0.9], ["0%", "-75%"]);
-  const textX = useTransform(scrollYProgress, [0.1, 0.9], ["0%", "-25%"]);
+  const x = useTransform(scrollYProgress, [0.3, 0.8], ["25%", "-35%"]);
+  const textX = useTransform(scrollYProgress, [0.3, 0.8], ["0%", "-25%"]);
 
   const services = [
     {
@@ -31,8 +31,8 @@ const Services = () => {
       youGet: ['Operating plan', 'Budgets & forecasts (with scenarios)', 'Clear runway', 'Board-ready dashboard'],
       idealFor: 'Founders/CFOs in bootstrapped or VC-backed companies',
       setup: 'Initial plan in 2–3 weeks, then monthly reviews',
-      bgColor: 'from-blue-50 to-indigo-50',
-      color: 'text-blue-600'
+              bgColor: 'from-[#24525c]/10 to-[#24525c]/5',
+        color: 'text-[#24525c]'
     },
     {
       icon: TrendingUp,
@@ -75,34 +75,34 @@ const Services = () => {
 
   // Service Card Component
   const ServiceCard = ({ service, index }: { service: any; index: number }) => (
-    <div className="bg-white/95 backdrop-blur-sm shadow-lg rounded-2xl p-8 w-[500px] h-[400px] flex-shrink-0 border border-gray-100 hover:shadow-xl transition-all duration-300">
-      <div className={`w-12 h-12 bg-gradient-to-br ${service.bgColor} rounded-lg flex items-center justify-center mb-6`}>
-        <service.icon className={`w-6 h-6 ${service.color}`} />
+    <div className="bg-white/95 backdrop-blur-sm shadow-lg rounded-2xl p-6 w-[450px] h-[400px] flex-shrink-0 border border-gray-100 hover:shadow-xl transition-all duration-300 flex flex-col">
+      <div className={`w-10 h-10 bg-gradient-to-br ${service.bgColor} rounded-lg flex items-center justify-center mb-3`}>
+        <service.icon className={`w-5 h-5 ${service.color}`} />
       </div>
       
-      <h3 className="text-xl font-bold text-slate-900 mb-3">{service.title}</h3>
-      <p className="text-slate-600 mb-6 leading-relaxed">{service.oneLiner}</p>
+      <h3 className="text-lg font-bold text-slate-900 mb-2">{service.title}</h3>
+      <p className="text-slate-600 mb-3 leading-relaxed text-sm flex-shrink-0">{service.oneLiner}</p>
       
-      <div className="space-y-4 mb-6">
+      <div className="space-y-3 mb-4 flex-1">
         <div>
-          <h4 className="font-semibold text-slate-900 mb-2">You get:</h4>
+          <h4 className="font-semibold text-slate-900 mb-2 text-sm">You get:</h4>
           <ul className="space-y-1">
             {service.youGet.slice(0, 2).map((item: string, idx: number) => (
-              <li key={idx} className="flex items-center gap-2 text-sm text-slate-600">
-                <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
-                {item}
+              <li key={idx} className="flex items-start gap-2 text-xs text-slate-600">
+                <CheckCircle className="w-3 h-3 text-green-500 flex-shrink-0 mt-0.5" />
+                <span className="leading-tight">{item}</span>
               </li>
             ))}
           </ul>
         </div>
         
         <div>
-          <h4 className="font-semibold text-slate-900 mb-1">Ideal for:</h4>
-          <p className="text-sm text-slate-600">{service.idealFor}</p>
+          <h4 className="font-semibold text-slate-900 mb-1 text-sm">Ideal for:</h4>
+          <p className="text-xs text-slate-600 leading-tight">{service.idealFor}</p>
         </div>
       </div>
       
-      <button className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 py-3 rounded-lg font-semibold hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 flex items-center gap-2">
+                  <button className="bg-[#24525c] text-white px-6 py-2.5 rounded-lg font-semibold hover:bg-[#1e424a] transition-all duration-300 flex items-center gap-2 text-sm flex-shrink-0">
         Get a quote
         <ArrowRight className="w-4 h-4" />
       </button>
@@ -115,7 +115,6 @@ const Services = () => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5 }}
-      className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-50/50"
       style={{ paddingTop: '80px' }}
     >
       {/* Hero Section */}
@@ -129,7 +128,7 @@ const Services = () => {
           >
             <h1 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
               Make decisions with
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600 block">
+              <span className="text-[#24525c] block">
                 confidence
               </span>
             </h1>
@@ -148,7 +147,7 @@ const Services = () => {
             {stats.map((stat, index) => (
               <div key={index} className="text-center">
                 <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
-                  <stat.icon className="w-8 h-8 text-blue-600 mx-auto mb-3" />
+                  <stat.icon className="w-8 h-8 text-[#24525c] mx-auto mb-3" />
                   <div className="text-2xl font-bold text-slate-900 mb-1">{stat.number}</div>
                   <div className="text-sm text-slate-600">{stat.label}</div>
                 </div>
@@ -158,47 +157,40 @@ const Services = () => {
         </div>
       </div>
 
-             {/* Sticky Horizontal Scroll Section */}
-       <section ref={targetRef} className="relative h-[300vh] bg-white">
-         {/* Sticky container */}
-         <div className="sticky top-0 h-screen flex items-center overflow-hidden">
-           <div className="container mx-auto flex items-center gap-12 px-4">
-             {/* Left Column - Moving Text */}
-             <motion.div style={{ x: textX }} className="w-2/5 flex-shrink-0">
-               <motion.div
-                 initial={{ opacity: 0, x: -50 }}
-                 animate={{ opacity: 1, x: 0 }}
-                 transition={{ delay: 0.5, duration: 0.8 }}
-                 className="bg-white/95 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-gray-100"
-               >
-                 <p className="text-blue-600 font-semibold mb-4 text-sm uppercase tracking-wide">Our Services</p>
-                 <h2 className="text-4xl lg:text-5xl font-bold leading-tight text-slate-900 mb-6">
-                   Comprehensive solutions for your business growth
-                 </h2>
-                 <p className="text-slate-600 text-lg leading-relaxed mb-8">
-                   We provide end-to-end financial services that help businesses make better decisions, 
-                   manage risks, and accelerate growth. Our data-driven approach ensures you have the 
-                   insights you need when you need them.
-                 </p>
-                 <div className="space-y-4">
-                   <div className="flex items-center gap-3">
-                     <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
-                     <span className="text-slate-700">Data-driven insights</span>
-                   </div>
-                   <div className="flex items-center gap-3">
-                     <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
-                     <span className="text-slate-700">Real-time monitoring</span>
-                   </div>
-                   <div className="flex items-center gap-3">
-                     <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
-                     <span className="text-slate-700">Expert guidance</span>
-                   </div>
-                 </div>
-               </motion.div>
-             </motion.div>
-
-            {/* Right Column - Horizontally Scrolling Cards */}
+      {/* Sticky Horizontal Scroll Section */}
+      <section ref={targetRef} className="relative h-[300vh] bg-gradient-to-br from-slate-50 to-blue-50/30">
+        {/* Sticky container */}
+        <div className="sticky top-0 h-screen flex items-center justify-center overflow-hidden">
+          <div className="flex justify-center">
+            {/* All Cards in Horizontal Row - Centered */}
             <motion.div style={{ x }} className="flex gap-8">
+              {/* Text Card Component (same size as service cards) */}
+              <div className="bg-white/95 backdrop-blur-sm shadow-lg rounded-2xl p-6 w-[450px] h-[400px] flex-shrink-0 border border-gray-100 flex flex-col">
+                <p className="text-[#24525c] font-semibold mb-3 text-sm uppercase tracking-wide">Our Services</p>
+                <h2 className="text-xl font-bold leading-tight text-slate-900 mb-3">
+                  Comprehensive solutions for your business growth
+                </h2>
+                <p className="text-slate-600 text-sm leading-relaxed mb-4 flex-1">
+                  We provide end-to-end financial services that help businesses make better decisions, 
+                  manage risks, and accelerate growth. Our data-driven approach ensures you have the 
+                  insights you need when you need them.
+                </p>
+                <div className="space-y-2 mt-auto">
+                  <div className="flex items-center gap-2">
+                    <div className="w-1.5 h-1.5 bg-[#24525c] rounded-full"></div>
+                    <span className="text-slate-700 text-xs">Data-driven insights</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="w-1.5 h-1.5 bg-[#24525c] rounded-full"></div>
+                    <span className="text-slate-700 text-xs">Real-time monitoring</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="w-1.5 h-1.5 bg-[#24525c] rounded-full"></div>
+                    <span className="text-slate-700 text-xs">Expert guidance</span>
+                  </div>
+                </div>
+              </div>
+              
               {services.map((service, index) => (
                 <ServiceCard key={index} service={service} index={index} />
               ))}
@@ -245,12 +237,12 @@ const Services = () => {
                 }
               ].map((process, index) => (
                 <div key={index} className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
-                  <div className="w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center text-sm font-bold mb-4">
+                  <div className="w-8 h-8 bg-[#24525c] text-white rounded-full flex items-center justify-center text-sm font-bold mb-4">
                     {process.step}
                   </div>
                   <h3 className="font-semibold text-slate-900 mb-2">{process.title}</h3>
                   <p className="text-sm text-slate-600 mb-3">{process.description}</p>
-                  <p className="text-xs text-blue-600 font-medium">{process.result}</p>
+                  <p className="text-xs text-[#24525c] font-medium">{process.result}</p>
                 </div>
               ))}
             </div>
@@ -263,10 +255,10 @@ const Services = () => {
             transition={{ delay: 1.1 }}
             className="text-center"
           >
-            <div className="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl p-8 text-white">
+            <div className="bg-[#24525c] rounded-2xl p-8 text-white">
               <h3 className="text-2xl font-bold mb-4">Ready to get started?</h3>
-              <p className="text-blue-100 mb-6">Start with a 30-min call to discuss your needs and see how we can help.</p>
-              <button className="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-50 transition-all duration-300">
+              <p className="text-white/90 mb-6">Start with a 30-min call to discuss your needs and see how we can help.</p>
+              <button className="bg-white text-[#24525c] px-8 py-3 rounded-full font-semibold hover:bg-gray-50 transition-all duration-300">
                 Start with a 30-min Call
               </button>
             </div>

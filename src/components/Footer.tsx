@@ -31,13 +31,13 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-slate-900 text-white">
+    <footer className="bg-black text-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="lg:col-span-2">
             <h3 className="text-xl font-bold mb-4">SLK Investments Corporation</h3>
-            <p className="text-slate-300 mb-6 leading-relaxed">
+            <p className="text-white/80 mb-6 leading-relaxed">
               We help Indian businesses plan, operate, and scale with confidence. 
               Clear numbers, calm execution.
             </p>
@@ -45,16 +45,16 @@ const Footer = () => {
             {/* Contact Info */}
             <div className="space-y-3">
               <div className="flex items-center gap-3">
-                <Mail className="w-4 h-4 text-blue-400" />
-                <span className="text-slate-300">{contactInfo.email}</span>
+                <Mail className="w-4 h-4 text-white" />
+                <span className="text-white/80">{contactInfo.email}</span>
               </div>
               <div className="flex items-center gap-3">
-                <Phone className="w-4 h-4 text-blue-400" />
-                <span className="text-slate-300">{contactInfo.phone}</span>
+                <Phone className="w-4 h-4 text-white" />
+                <span className="text-white/80">{contactInfo.phone}</span>
               </div>
               <div className="flex items-center gap-3">
-                <MessageCircle className="w-4 h-4 text-blue-400" />
-                <span className="text-slate-300">{contactInfo.whatsapp}</span>
+                <MessageCircle className="w-4 h-4 text-white" />
+                <span className="text-white/80">{contactInfo.whatsapp}</span>
               </div>
             </div>
           </div>
@@ -67,7 +67,7 @@ const Footer = () => {
                 <li key={link.name}>
                   <Link 
                     to={link.href}
-                    className="text-slate-300 hover:text-white transition-colors duration-300 text-sm"
+                    className="text-white/80 hover:text-white transition-colors duration-300 text-sm"
                   >
                     {link.name}
                   </Link>
@@ -82,7 +82,7 @@ const Footer = () => {
                   <li key={link.name}>
                     <Link 
                       to={link.href}
-                      className="text-blue-400 hover:text-blue-300 transition-colors duration-300 text-sm font-medium"
+                      className="text-white/80 hover:text-white transition-colors duration-300 text-sm font-medium"
                     >
                       {link.name}
                     </Link>
@@ -100,7 +100,7 @@ const Footer = () => {
                 <li key={link.name}>
                   <Link 
                     to={link.href}
-                    className="text-slate-300 hover:text-white transition-colors duration-300 text-sm"
+                    className="text-white/80 hover:text-white transition-colors duration-300 text-sm"
                   >
                     {link.name}
                   </Link>
@@ -116,7 +116,7 @@ const Footer = () => {
                   href="https://linkedin.com" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="w-8 h-8 bg-slate-800 rounded-lg flex items-center justify-center hover:bg-slate-700 transition-colors duration-300"
+                  className="w-8 h-8 bg-white/10 rounded-lg flex items-center justify-center hover:bg-white/20 transition-colors duration-300"
                 >
                   <Linkedin className="w-4 h-4" />
                 </a>
@@ -124,7 +124,7 @@ const Footer = () => {
                   href="https://twitter.com" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="w-8 h-8 bg-slate-800 rounded-lg flex items-center justify-center hover:bg-slate-700 transition-colors duration-300"
+                  className="w-8 h-8 bg-white/10 rounded-lg flex items-center justify-center hover:bg-white/20 transition-colors duration-300"
                 >
                   <Twitter className="w-4 h-4" />
                 </a>
@@ -134,12 +134,12 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-slate-800 mt-12 pt-8">
+        <div className="border-t border-white/20 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-slate-400 text-sm">
+            <p className="text-white/60 text-sm">
               © {currentYear} SLK Investments Corporation. All rights reserved.
             </p>
-            <p className="text-slate-400 text-sm">
+            <p className="text-white/60 text-sm">
               Made with ❤️ for Indian businesses
             </p>
           </div>

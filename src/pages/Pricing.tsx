@@ -116,7 +116,6 @@ const Pricing = () => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5 }}
-      className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-50/50"
       style={{ paddingTop: '80px' }}
     >
       {/* Main Content */}

@@ -82,9 +82,9 @@ const CaseStudy = () => {
             <div className="space-y-4">
               {results.map((result, index) => (
                 <div key={index} className="flex items-start gap-3 p-4 bg-gray-50 rounded-lg">
-                  <div className="w-10 h-10 bg-blue-50 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <result.icon className="w-5 h-5 text-blue-600" />
-                  </div>
+                                  <div className="w-10 h-10 bg-[#24525c]/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <result.icon className="w-5 h-5 text-[#24525c]" />
+                </div>
                   <div>
                     <h4 className="font-semibold text-gray-900 mb-1">{result.title}</h4>
                     <p className="text-gray-600 text-sm">{result.description}</p>

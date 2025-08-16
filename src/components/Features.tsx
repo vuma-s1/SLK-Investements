@@ -162,18 +162,18 @@ const StackedCardsSection = () => {
   return (
     <section 
       ref={containerRef} 
-      className="relative bg-gradient-to-br from-slate-50 via-white to-blue-50/30" 
+      className="relative" 
       style={{ height: `calc(100vh + ${featureCards.length * 80}vh)` }}
     >
       {/* Title Section */}
       <div className="mb-16 flex flex-col items-center gap-6 pt-32 text-center">
-        <div className="inline-flex items-center rounded-full bg-gradient-to-r from-blue-500 to-purple-600 px-6 py-2 text-sm font-semibold text-white shadow-lg">
+                    <div className="inline-flex items-center rounded-full bg-[#24525c] px-6 py-2 text-sm font-semibold text-white shadow-lg">
           <span className="mr-2">✨</span>
           What you get—beyond advice
         </div>
         <h2 className="max-w-4xl text-4xl font-bold leading-tight text-gray-900 lg:text-6xl">
           Transform your finance function with
-          <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"> proven systems</span>
+          <span className="text-[#24525c]"> proven systems</span>
         </h2>
         <p className="max-w-2xl text-lg text-gray-600">
           Get the tools, processes, and insights that turn financial chaos into clear, actionable intelligence.
@@ -234,32 +234,32 @@ const Card = ({ card, index, progress, totalCards }: {
       }}
     >
             {/* Card Content */}
-      <div className={`flex h-[600px] w-full max-w-5xl flex-col overflow-hidden rounded-3xl bg-gray-50 shadow-2xl lg:flex-row border border-gray-200`}>
+      <div className={`flex h-[600px] w-full max-w-5xl flex-col overflow-hidden rounded-3xl bg-[#24525c] shadow-2xl lg:flex-row border border-gray-200`}>
         {/* Left Side: Text Content */}
-        <div className="flex flex-1 flex-col justify-center p-8 lg:p-12 bg-gray-50">
+        <div className="flex flex-1 flex-col justify-center p-8 lg:p-12 bg-[#24525c]">
           <div className="mb-8">
             {/* Small Icon */}
-            <div className={`inline-flex h-12 w-12 items-center justify-center rounded-full bg-gray-200 text-gray-600 mb-6`}>
+            <div className={`inline-flex h-12 w-12 items-center justify-center rounded-full bg-[#facc15] text-[#24525c] mb-6`}>
               {card.features[0].icon}
             </div>
             
             {/* Main Headline */}
-            <h3 className="text-3xl font-bold text-gray-900 mb-4">
+            <h3 className="text-3xl font-bold text-white mb-4">
               {card.title}
             </h3>
             
             {/* Body Text */}
-            <p className="text-gray-600 text-lg leading-relaxed max-w-md">
+            <p className="text-white/80 text-lg leading-relaxed max-w-md">
               {card.subtitle}
             </p>
           </div>
           
           {/* Progress Indicator */}
-          <div className="flex items-center text-sm text-gray-500">
+          <div className="flex items-center text-sm text-white/60">
             <span className="mr-2">Card {index + 1} of {totalCards}</span>
-            <div className="flex-1 h-1 bg-gray-200 rounded-full overflow-hidden">
+            <div className="flex-1 h-1 bg-white/20 rounded-full overflow-hidden">
               <motion.div 
-                className={`h-full bg-gradient-to-r ${card.color} rounded-full`}
+                className={`h-full bg-[#facc15] rounded-full`}
                 style={{
                   width: useTransform(progress, [start, end], ['0%', '100%'])
                 }}
@@ -269,23 +269,23 @@ const Card = ({ card, index, progress, totalCards }: {
         </div>
         
         {/* Right Side: Feature Cards */}
-        <div className="flex flex-1 items-center justify-center p-8 lg:p-12 bg-gray-50 relative">
+        <div className="flex flex-1 items-center justify-center p-8 lg:p-12 bg-[#24525c] relative">
           {/* Two Overlapping Cards */}
           <div className="relative">
             {/* Bottom Card */}
-            <div className="w-80 h-48 bg-gradient-to-br from-gray-300 to-gray-400 rounded-2xl shadow-lg transform rotate-3 translate-y-2">
+            <div className="w-80 h-48 bg-gradient-to-br from-[#facc15] to-[#eab308] rounded-2xl shadow-lg transform rotate-3 translate-y-2">
               <div className="p-6 h-full flex flex-col justify-between">
                 {/* EMV Chip */}
-                <div className="w-12 h-8 bg-gray-500 rounded-md flex items-center justify-center">
-                  <div className="w-8 h-5 bg-gray-400 rounded-sm"></div>
+                <div className="w-12 h-8 bg-[#24525c] rounded-md flex items-center justify-center">
+                  <div className="w-8 h-5 bg-[#24525c]/80 rounded-sm"></div>
                 </div>
                 
                 {/* Card Content */}
                 <div className="flex justify-between items-end">
-                  <div className="text-orange-500 font-semibold text-sm">
+                  <div className="text-[#24525c] font-semibold text-sm">
                     SLK INVESTMENTS
                   </div>
-                  <div className="text-gray-700 font-bold text-lg">
+                  <div className="text-[#24525c] font-bold text-lg">
                     {card.features[1].title.split(' ').slice(0, 2).join(' ')}
                   </div>
                 </div>
@@ -293,19 +293,19 @@ const Card = ({ card, index, progress, totalCards }: {
             </div>
             
             {/* Top Card */}
-            <div className="absolute top-0 left-0 w-80 h-48 bg-gradient-to-br from-gray-200 to-gray-300 rounded-2xl shadow-xl transform -rotate-3 -translate-y-2">
+            <div className="absolute top-0 left-0 w-80 h-48 bg-gradient-to-br from-[#facc15] to-[#eab308] rounded-2xl shadow-xl transform -rotate-3 -translate-y-2">
               <div className="p-6 h-full flex flex-col justify-between">
                 {/* EMV Chip */}
-                <div className="w-12 h-8 bg-gray-500 rounded-md flex items-center justify-center">
-                  <div className="w-8 h-5 bg-gray-400 rounded-sm"></div>
+                <div className="w-12 h-8 bg-[#24525c] rounded-md flex items-center justify-center">
+                  <div className="w-8 h-5 bg-[#24525c]/80 rounded-sm"></div>
                 </div>
                 
                 {/* Card Content */}
                 <div className="flex justify-between items-end">
-                  <div className="text-orange-500 font-semibold text-sm">
+                  <div className="text-[#24525c] font-semibold text-sm">
                     SLK INVESTMENTS
                   </div>
-                  <div className="text-gray-700 font-bold text-lg">
+                  <div className="text-[#24525c] font-bold text-lg">
                     {card.features[0].title.split(' ').slice(0, 2).join(' ')}
                   </div>
                 </div>

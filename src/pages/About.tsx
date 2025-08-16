@@ -24,8 +24,8 @@ const About = () => {
       icon: Shield,
       title: 'Integrity',
       description: 'Unwavering ethics and transparency in all interactions',
-      bgColor: 'from-blue-50 to-indigo-50',
-      color: 'text-blue-600'
+              bgColor: 'from-[#24525c]/10 to-[#24525c]/5',
+        color: 'text-[#24525c]'
     },
     {
       icon: Zap,
@@ -49,7 +49,6 @@ const About = () => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5 }}
-      className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-50/50"
       style={{ paddingTop: '80px' }}
     >
       {/* Main Content */}
@@ -64,7 +63,7 @@ const About = () => {
           >
             <h1 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
               About
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600 block">
+              <span className="text-[#24525c] block">
                 SLK Investments Corporation
               </span>
             </h1>
@@ -96,7 +95,7 @@ const About = () => {
             {stats.map((stat, index) => (
               <div key={index} className="text-center">
                 <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
-                  <stat.icon className="w-8 h-8 text-blue-600 mx-auto mb-3" />
+                  <stat.icon className="w-8 h-8 text-[#24525c] mx-auto mb-3" />
                   <div className="text-2xl font-bold text-slate-900 mb-1">{stat.number}</div>
                   <div className="text-sm text-slate-600">{stat.label}</div>
                 </div>
@@ -132,10 +131,10 @@ const About = () => {
             transition={{ delay: 1.1 }}
             className="text-center"
           >
-            <div className="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl p-8 text-white">
+            <div className="bg-[#24525c] rounded-2xl p-8 text-white">
               <h3 className="text-2xl font-bold mb-4">Ready to transform your financial operations?</h3>
-              <p className="text-blue-100 mb-6">Let's discuss how we can help you achieve clarity, control, and confidence in your financial decisions.</p>
-              <button className="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-50 transition-all duration-300">
+                              <p className="text-white/90 mb-6">Let's discuss how we can help you achieve clarity, control, and confidence in your financial decisions.</p>
+                <button className="bg-white text-[#24525c] px-8 py-3 rounded-full font-semibold hover:bg-gray-50 transition-all duration-300">
                 Book a Call
               </button>
             </div>

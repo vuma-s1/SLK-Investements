@@ -13,7 +13,7 @@ function App() {
   const location = useLocation();
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-[#f5f5f0]">
       <Header />
       <AnimatePresence mode="wait">
         <Routes location={location} key={location.pathname}>

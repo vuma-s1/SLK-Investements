@@ -52,8 +52,8 @@ const UseCases = () => {
           {useCases.map((useCase, index) => (
             <div key={index} className="group">
               <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100 hover:shadow-md transition-all duration-300 h-full text-center">
-                <div className="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                  <useCase.icon className="w-6 h-6 text-blue-600" />
+                <div className="w-12 h-12 bg-[#24525c]/10 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <useCase.icon className="w-6 h-6 text-[#24525c]" />
                 </div>
                 <h3 className="font-semibold text-gray-900 mb-2">{useCase.title}</h3>
                 <p className="text-gray-600 text-sm leading-relaxed">{useCase.description}</p>
@@ -67,3 +67,4 @@ const UseCases = () => {
 };
 
 export default UseCases;
+

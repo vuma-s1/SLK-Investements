@@ -62,18 +62,18 @@ const FAQ = () => {
                 className="w-full px-6 py-5 text-left bg-white hover:bg-gray-50 flex items-center justify-between transition-all duration-300 group"
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
               >
-                <span className="font-semibold text-gray-900 pr-4 group-hover:text-blue-600 transition-colors duration-300">
+                <span className="font-semibold text-gray-900 pr-4 group-hover:text-[#24525c] transition-colors duration-300">
                   {faq.question}
                 </span>
                 <motion.div
-                  className="flex items-center justify-center w-8 h-8 rounded-full bg-gray-100 group-hover:bg-blue-100 transition-colors duration-300"
+                  className="flex items-center justify-center w-8 h-8 rounded-full bg-gray-100 group-hover:bg-[#24525c]/10 transition-colors duration-300"
                   animate={{ rotate: openIndex === index ? 180 : 0 }}
                   transition={{ duration: 0.3, ease: "easeInOut" }}
                 >
                   {openIndex === index ? (
-                    <Minus className="w-4 h-4 text-gray-600 group-hover:text-blue-600 transition-colors duration-300" />
-                  ) : (
-                    <Plus className="w-4 h-4 text-gray-600 group-hover:text-blue-600 transition-colors duration-300" />
+                                      <Minus className="w-4 h-4 text-gray-600 group-hover:text-[#24525c] transition-colors duration-300" />
+                ) : (
+                  <Plus className="w-4 h-4 text-gray-600 group-hover:text-[#24525c] transition-colors duration-300" />
                   )}
                 </motion.div>
               </button>

@@ -2,6 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+/* CSS Variables for Navigation Bar */
+:root {
+  --nav-bg-color: #F9F9F7;
+  --text-color-dark: #1D1D1F;
+  --accent-color-gold: #facc15;
+  --nav-padding-initial: 2rem; /* 32px */
+  --nav-padding-scrolled: 1.25rem; /* 20px */
+  --animation-duration: 0.3s;
+  --animation-easing: ease-out;
+  --button-border-light: #d2d2d7;
+}
+
 /* Smooth page transitions */
 * {
   scroll-behavior: smooth;
@@ -176,4 +188,113 @@ button {
 
 .glow-green {
   box-shadow: 0 0 20px rgba(34, 197, 94, 0.3);
+}
+
+/* Case Studies Staggered Animation */
+.case-study-card {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.case-studies-grid.is-visible .case-study-card {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.case-studies-grid.is-visible .case-study-card:nth-child(1) {
+  transition-delay: 0ms;
+}
+
+.case-studies-grid.is-visible .case-study-card:nth-child(2) {
+  transition-delay: 200ms;
+}
+
+.case-studies-grid.is-visible .case-study-card:nth-child(3) {
+  transition-delay: 400ms;
+}
+
+@media (max-width: 768px) {
+  .case-studies-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Pricing Cards Staggered Animation */
+.pricing-card {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.pricing-cards-grid.is-visible .pricing-card {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.pricing-cards-grid.is-visible .pricing-card:nth-child(1) {
+  transition-delay: 0ms;
+}
+
+.pricing-cards-grid.is-visible .pricing-card:nth-child(2) {
+  transition-delay: 200ms;
+}
+
+.pricing-cards-grid.is-visible .pricing-card:nth-child(3) {
+  transition-delay: 400ms;
+}
+
+/* Trusted By Marquee Animation */
+.marquee-container {
+  display: flex;
+  width: fit-content;
+}
+
+.marquee-item {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+/* Hero Section Animations */
+.hero-content {
+  animation: fadeIn 1s ease-out forwards;
+}
+
+.hero-badge {
+  animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+.hero-headline {
+  animation: fadeInUp 0.8s ease-out 0.4s both;
+}
+
+.hero-subheadline {
+  animation: fadeInUp 0.8s ease-out 0.6s both;
+}
+
+.hero-button {
+  animation: fadeInUp 0.8s ease-out 0.8s both;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

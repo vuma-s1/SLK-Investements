@@ -10,16 +10,16 @@ const Testimonials = () => {
 
   const testimonials = [
     {
+      quote: "SLK Investments transformed our financial planning. Their strategic approach helped us scale from ₹5Cr to ₹25Cr in just 18 months.",
+      author: "Rahul Sharma, CEO TechCorp"
+    },
+    {
       quote: "We finally have numbers we trust—and a plan we follow.",
       author: "Founder, D2C brand"
     },
     {
       quote: "Cash anxiety is gone. The team knows the guardrails.",
       author: "CEO, Services firm"
-    },
-    {
-      quote: "They cut noise, showed us true unit economics, and we grew sanely.",
-      author: "Director, Manufacturing"
     }
   ];
 
@@ -45,9 +45,9 @@ const Testimonials = () => {
             <div key={index} className="group">
               <div className="bg-white rounded-xl p-8 shadow-sm border border-gray-100 hover:shadow-md transition-all duration-300 h-full">
                 <div className="flex items-start gap-4 mb-6">
-                  <div className="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center flex-shrink-0">
-                    <Quote className="w-6 h-6 text-blue-600" />
-                  </div>
+                                  <div className="w-12 h-12 bg-[#24525c]/10 rounded-full flex items-center justify-center flex-shrink-0">
+                  <Quote className="w-6 h-6 text-[#24525c]" />
+                </div>
                   <div className="flex">
                     {[1, 2, 3, 4, 5].map((star) => (
                       <Star key={star} className="w-4 h-4 text-yellow-400 fill-current" />

@@ -81,68 +81,6 @@ const ValueProposition = () => {
 
   return (
     <section className="py-24 relative overflow-hidden">
-      {/* Background Video Effect */}
-      <div className="absolute inset-0">
-        {/* Animated Background Pattern */}
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute inset-0" style={{
-            backgroundImage: `radial-gradient(circle at 1px 1px, rgba(59,130,246,0.15) 1px, transparent 0)`,
-            backgroundSize: '40px 40px',
-            animation: 'gridMove 15s linear infinite'
-          }}></div>
-        </div>
-
-        {/* Floating Data Points */}
-        <div className="absolute inset-0 overflow-hidden">
-          {[...Array(15)].map((_, i) => (
-            <div
-              key={i}
-              className="absolute text-blue-600/20 font-mono text-xs animate-float"
-              style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-                animationDelay: `${Math.random() * 5}s`,
-                animationDuration: `${4 + Math.random() * 3}s`
-              }}
-            >
-              {['₹', '₹', '₹', '₹', '₹', '₹', '₹', '₹', '₹', '₹'][Math.floor(Math.random() * 10)]}
-              {Math.floor(Math.random() * 100)}K
-            </div>
-          ))}
-        </div>
-
-        {/* Animated Lines */}
-        <div className="absolute inset-0">
-          <svg className="w-full h-full opacity-10" viewBox="0 0 100 100" preserveAspectRatio="none">
-            <defs>
-              <linearGradient id="valueGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="rgba(59,130,246,0)" />
-                <stop offset="50%" stopColor="rgba(59,130,246,0.3)" />
-                <stop offset="100%" stopColor="rgba(59,130,246,0)" />
-              </linearGradient>
-            </defs>
-            <path
-              d="M0,30 Q25,10 50,30 T100,30"
-              stroke="url(#valueGradient)"
-              strokeWidth="0.3"
-              fill="none"
-              className="animate-wave"
-            />
-            <path
-              d="M0,70 Q25,50 50,70 T100,70"
-              stroke="url(#valueGradient)"
-              strokeWidth="0.2"
-              fill="none"
-              className="animate-wave"
-              style={{ animationDelay: '2s' }}
-            />
-          </svg>
-        </div>
-
-        {/* Gradient Orbs */}
-        <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-blue-400/10 to-purple-500/10 rounded-full mix-blend-multiply filter blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-0 left-0 w-48 h-48 bg-gradient-to-tr from-indigo-500/10 to-cyan-400/10 rounded-full mix-blend-multiply filter blur-3xl animate-pulse delay-1000"></div>
-      </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -152,12 +90,12 @@ const ValueProposition = () => {
             <div className="flex items-center gap-3 mb-6">
               <button 
                 onClick={() => setIsPlaying(!isPlaying)}
-                className="flex items-center gap-2 bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-blue-700 transition-all duration-300 hover:scale-105"
+                className="flex items-center gap-2 bg-[#24525c] text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-[#1e424a] transition-all duration-300 hover:scale-105"
               >
                 {isPlaying ? <Pause size={16} /> : <Play size={16} />}
                 {isPlaying ? 'Pause' : 'Play'} Demo
               </button>
-              <div className="flex items-center gap-2 text-blue-600 text-sm">
+              <div className="flex items-center gap-2 text-[#24525c] text-sm">
                 <Volume2 size={16} />
                 <span>Live Financial Data</span>
               </div>
@@ -167,7 +105,7 @@ const ValueProposition = () => {
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}>
               From uncertainty to a 
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600 block animate-gradient-x">
+              <span className="text-[#24525c] block">
                 clear financial gameplan.
               </span>
             </h2>
@@ -190,18 +128,18 @@ const ValueProposition = () => {
                   }`}
                   style={{ transitionDelay: `${feature.delay}ms` }}
                 >
-                  <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-blue-100 to-indigo-100 rounded-lg flex items-center justify-center text-blue-600 group-hover:from-blue-600 group-hover:to-indigo-600 group-hover:text-white transition-all duration-300 group-hover:scale-110">
+                  <div className="flex-shrink-0 w-12 h-12 bg-[#24525c]/10 rounded-lg flex items-center justify-center text-[#24525c] group-hover:bg-[#24525c] group-hover:text-white transition-all duration-300 group-hover:scale-110">
                     {feature.icon}
                   </div>
                   <div>
-                    <h3 className="font-semibold text-gray-900 mb-1 group-hover:text-blue-600 transition-colors duration-300">{feature.title}</h3>
+                    <h3 className="font-semibold text-gray-900 mb-1 group-hover:text-[#24525c] transition-colors duration-300">{feature.title}</h3>
                     <p className="text-gray-600 text-sm">{feature.description}</p>
                   </div>
                 </div>
               ))}
             </div>
 
-            <button className={`bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-8 py-4 rounded-full font-semibold flex items-center gap-2 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-blue-500/25 transform hover:-translate-y-1 ${
+            <button className={`bg-[#24525c] hover:bg-[#1e424a] text-white px-8 py-4 rounded-full font-semibold flex items-center gap-2 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-[#24525c]/25 transform hover:-translate-y-1 ${
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`} style={{ transitionDelay: '800ms' }}>
               See How We Work
@@ -256,14 +194,14 @@ const ValueProposition = () => {
                   >
                     <div className={`p-3 rounded-xl ${source.color} shadow-lg group-hover:shadow-xl transition-all duration-300`}>
                       <span className="text-2xl filter drop-shadow-lg">{source.icon}</span>
-                    </div>
+                  </div>
                     <div className="flex flex-col">
                       <span className="text-sm font-semibold text-gray-800 group-hover:text-gray-900 transition-colors">{source.title}</span>
                       <span className="text-xs text-gray-500">Income Source</span>
-                    </div>
+                  </div>
                   </motion.div>
                 ))}
-              </div>
+                </div>
 
               {/* Column 2: Central Hub */}
               <motion.div 
@@ -286,11 +224,11 @@ const ValueProposition = () => {
                   >
                     <div className={`p-3 rounded-xl ${dest.color} shadow-lg group-hover:shadow-xl transition-all duration-300`}>
                       <span className="text-2xl filter drop-shadow-lg">{dest.icon}</span>
-                    </div>
+                  </div>
                     <div className="flex flex-col">
                       <span className="text-sm font-semibold text-gray-800 group-hover:text-gray-900 transition-colors">{dest.title}</span>
                       <span className="text-xs font-bold text-gray-600">{dest.value}</span>
-                    </div>
+                </div>
                   </motion.div>
                 ))}
               </div>

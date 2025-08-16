@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { CheckCircle, Clock, Users, Zap, ArrowRight, ChevronDown, ChevronUp, Star, Shield, TrendingUp } from 'lucide-react';
 
 const Pricing = () => {
   const [expandedCards, setExpandedCards] = useState<number[]>([]);
+  const [isCardsVisible, setIsCardsVisible] = useState(false);
+  const cardsRef = useRef(null);
 
   const toggleCard = (index: number) => {
     setExpandedCards(prev => 
@@ -13,6 +15,34 @@ const Pricing = () => {
     );
   };
 
+  // Intersection Observer for cards animation
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const [entry] = entries;
+        if (entry.isIntersecting) {
+          setIsCardsVisible(true);
+          observer.unobserve(entry.target);
+        }
+      },
+      {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.3,
+      }
+    );
+
+    if (cardsRef.current) {
+      observer.observe(cardsRef.current);
+    }
+
+    return () => {
+      if (cardsRef.current) {
+        observer.unobserve(cardsRef.current);
+      }
+    };
+  }, []);
+
   const packages = [
     {
       icon: <Zap className="w-6 h-6" />,
@@ -21,9 +51,9 @@ const Pricing = () => {
       purpose: 'Fast reset with clarity and working plan in one month.',
       bestFor: 'New engagements, leadership changes, or when things feel messy.',
       timeNeeded: '2 calls/week (30–45 mins)',
-      color: 'bg-blue-500',
-      borderColor: 'border-blue-200',
-      hoverBg: 'hover:bg-blue-50',
+      color: 'bg-[#24525c]',
+      borderColor: 'border-[#24525c]/20',
+      hoverBg: 'hover:bg-[#24525c]/5',
       weeks: [
         {
           week: 'Week 1 — Discover',
@@ -58,9 +88,9 @@ const Pricing = () => {
       purpose: 'Ongoing finance leadership so decisions stay clear and there are no surprises.',
       bestFor: 'Teams that want steady discipline after the Sprint (or as a standalone).',
       timeNeeded: '1 weekly call + 1 monthly review',
-      color: 'bg-green-500',
-      borderColor: 'border-green-200', 
-      hoverBg: 'hover:bg-green-50',
+      color: 'bg-[#24525c]',
+      borderColor: 'border-[#24525c]/20',
+      hoverBg: 'hover:bg-[#24525c]/5',
       monthlyFlow: [
         {
           frequency: 'Weekly',
@@ -91,9 +121,9 @@ const Pricing = () => {
       purpose: 'A profit-first plan to scale—pricing, channels, capacity, and hiring without chaos.',
       bestFor: 'Teams ready to grow and want safeguards in place.',
       timeNeeded: '1–2 workshops/week + weekly check-ins',
-      color: 'bg-purple-500',
-      borderColor: 'border-purple-200',
-      hoverBg: 'hover:bg-purple-50',
+      color: 'bg-[#24525c]',
+      borderColor: 'border-[#24525c]/20',
+      hoverBg: 'hover:bg-[#24525c]/5',
       phases: [
         {
           phase: 'Design (4–6 weeks)',
@@ -118,10 +148,7 @@ const Pricing = () => {
   return (
     <section id="pricing" className="py-24 relative overflow-hidden">
       {/* Background Elements */}
-      <div className="absolute inset-0">
-        <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-blue-400/10 to-purple-500/10 rounded-full mix-blend-multiply filter blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-0 left-0 w-48 h-48 bg-gradient-to-tr from-indigo-500/10 to-cyan-400/10 rounded-full mix-blend-multiply filter blur-3xl animate-pulse delay-1000"></div>
-      </div>
+
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <motion.div 
@@ -132,7 +159,7 @@ const Pricing = () => {
           transition={{ duration: 0.6 }}
         >
           <motion.div
-            className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-50 to-indigo-50 px-4 py-2 rounded-full text-blue-600 text-sm font-medium mb-6"
+            className="inline-flex items-center gap-2 bg-[#24525c]/10 px-4 py-2 rounded-full text-[#24525c] text-sm font-medium mb-6"
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
@@ -150,7 +177,7 @@ const Pricing = () => {
             transition={{ delay: 0.3, duration: 0.6 }}
           >
             Clear plans. 
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600"> Custom quotes.</span>
+            <span className="text-[#24525c]"> Custom quotes.</span>
           </motion.h2>
           
           <motion.p 
@@ -164,14 +191,17 @@ const Pricing = () => {
           </motion.p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-3 gap-6">
+        <div 
+          ref={cardsRef}
+          className={`grid lg:grid-cols-3 gap-6 pricing-cards-grid ${isCardsVisible ? 'is-visible' : ''}`}
+        >
           {packages.map((pkg, index) => (
-            <div key={index} className={`bg-white rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 border ${pkg.borderColor} ${pkg.hoverBg} transform hover:-translate-y-1`}>
+            <div key={index} className={`bg-white rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 border ${pkg.borderColor} ${pkg.hoverBg} transform hover:-translate-y-1 pricing-card`}>
               {/* Header - Compact */}
               <div className="p-4 border-b border-gray-100">
                 <div className="flex items-center gap-3 mb-3">
                   <div className={`${pkg.color} p-2 rounded-lg text-white`}>
-                    {pkg.icon}
+                  {pkg.icon}
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold text-gray-900">{pkg.name}</h3>
@@ -179,7 +209,7 @@ const Pricing = () => {
                   </div>
                 </div>
                 <p className="text-gray-600 text-sm mb-2">{pkg.purpose}</p>
-                <p className="text-xs text-blue-600">
+                <p className="text-xs text-[#24525c]">
                   <span className="font-medium">Best for:</span> {pkg.bestFor}
                 </p>
               </div>
@@ -200,7 +230,7 @@ const Pricing = () => {
                         <span>{deliverable}</span>
                       </div>
                     ))}
-                    <div className="text-blue-600 text-xs mt-1">
+                    <div className="text-[#24525c] text-xs mt-1">
                       +{pkg.deliverables.length - 1} more deliverables
                     </div>
                   </div>
@@ -209,7 +239,7 @@ const Pricing = () => {
                 {/* Expand/Collapse Button */}
                 <button 
                   onClick={() => toggleCard(index)}
-                  className="w-full flex items-center justify-center gap-2 text-blue-600 hover:text-blue-700 text-xs font-medium py-1 transition-all duration-300"
+                  className="w-full flex items-center justify-center gap-2 text-[#24525c] hover:text-[#1e424a] text-xs font-medium py-1 transition-all duration-300"
                 >
                   {expandedCards.includes(index) ? (
                     <>
@@ -228,59 +258,59 @@ const Pricing = () => {
               {/* Expanded Content */}
               {expandedCards.includes(index) && (
                 <>
-                  {/* Process */}
+              {/* Process */}
                   <div className="p-4 border-b border-gray-100">
                     <h4 className="font-medium text-gray-900 mb-2 text-xs">How it runs:</h4>
                     <div className="space-y-2">
-                      {pkg.weeks?.map((week, i) => (
+                  {pkg.weeks?.map((week, i) => (
                         <div key={i} className="flex gap-2">
-                          <div className="w-1 h-1 bg-blue-500 rounded-full mt-1.5 flex-shrink-0"></div>
-                          <div>
-                            <div className="font-medium text-gray-900 text-xs">{week.week}</div>
-                            <div className="text-gray-600 text-xs">{week.activity}</div>
-                          </div>
-                        </div>
-                      ))}
-                      {pkg.monthlyFlow?.map((flow, i) => (
+                          <div className="w-1 h-1 bg-[#24525c] rounded-full mt-1.5 flex-shrink-0"></div>
+                      <div>
+                        <div className="font-medium text-gray-900 text-xs">{week.week}</div>
+                        <div className="text-gray-600 text-xs">{week.activity}</div>
+                      </div>
+                    </div>
+                  ))}
+                  {pkg.monthlyFlow?.map((flow, i) => (
                         <div key={i} className="flex gap-2">
                           <div className="w-1 h-1 bg-green-500 rounded-full mt-1.5 flex-shrink-0"></div>
-                          <div>
-                            <div className="font-medium text-gray-900 text-xs">{flow.frequency}:</div>
-                            <div className="text-gray-600 text-xs">{flow.activity}</div>
-                          </div>
-                        </div>
-                      ))}
-                      {pkg.phases?.map((phase, i) => (
+                      <div>
+                        <div className="font-medium text-gray-900 text-xs">{flow.frequency}:</div>
+                        <div className="text-gray-600 text-xs">{flow.activity}</div>
+                      </div>
+                    </div>
+                  ))}
+                  {pkg.phases?.map((phase, i) => (
                         <div key={i} className="flex gap-2">
                           <div className="w-1 h-1 bg-purple-500 rounded-full mt-1.5 flex-shrink-0"></div>
-                          <div>
-                            <div className="font-medium text-gray-900 text-xs">{phase.phase}:</div>
-                            <div className="text-gray-600 text-xs">{phase.activity}</div>
-                          </div>
-                        </div>
-                      ))}
+                      <div>
+                        <div className="font-medium text-gray-900 text-xs">{phase.phase}:</div>
+                        <div className="text-gray-600 text-xs">{phase.activity}</div>
+                      </div>
                     </div>
-                  </div>
+                  ))}
+                </div>
+              </div>
 
                   {/* Full Deliverables */}
                   <div className="p-4 border-b border-gray-100">
                     <h4 className="font-medium text-gray-900 mb-2 text-xs">What you get:</h4>
                     <ul className="space-y-1">
-                      {pkg.deliverables.map((deliverable, i) => (
-                        <li key={i} className="flex items-start gap-2">
+                  {pkg.deliverables.map((deliverable, i) => (
+                    <li key={i} className="flex items-start gap-2">
                           <CheckCircle className="w-3 h-3 text-green-500 flex-shrink-0 mt-0.5" />
                           <span className="text-gray-600 text-xs">{deliverable}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+                    </li>
+                  ))}
+                </ul>
+              </div>
 
                   {/* What's Not Included */}
                   <div className="p-4">
                     <div className="mb-3">
-                      <div className="text-xs text-gray-900 font-medium mb-1">What's not included:</div>
-                      <div className="text-xs text-gray-600">{pkg.notIncluded}</div>
-                    </div>
+                  <div className="text-xs text-gray-900 font-medium mb-1">What's not included:</div>
+                  <div className="text-xs text-gray-600">{pkg.notIncluded}</div>
+                </div>
                   </div>
                 </>
               )}

@@ -49,7 +49,7 @@ const ServicesAccordion = () => {
   const pathLength = useTransform(scrollYProgress, [0.15, 0.4], [0, 1]);
 
   return (
-    <section ref={targetRef} className="relative h-[350vh] bg-gradient-to-br from-slate-50 to-blue-50/30">
+    <section ref={targetRef} className="relative h-[350vh]">
       <div className="sticky top-0 h-screen flex flex-col items-center justify-center overflow-hidden">
                  {/* Central Text */}
          <motion.div style={{ opacity: textOpacity, y: textY }} className="absolute text-center max-w-3xl mx-auto z-10 top-1/2 mt-20">

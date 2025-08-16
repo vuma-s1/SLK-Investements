@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Users, Target, Award, TrendingUp, CheckCircle, ArrowRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
@@ -6,10 +6,40 @@ import Footer from '../components/Footer';
 
 const CaseStudies = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const [isCardsVisible, setIsCardsVisible] = useState(false);
   const navigate = useNavigate();
+  const cardsRef = useRef(null);
 
   useEffect(() => {
     setIsVisible(true);
+  }, []);
+
+  // Intersection Observer for cards animation
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const [entry] = entries;
+        if (entry.isIntersecting) {
+          setIsCardsVisible(true);
+          observer.unobserve(entry.target);
+        }
+      },
+      {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.3,
+      }
+    );
+
+    if (cardsRef.current) {
+      observer.observe(cardsRef.current);
+    }
+
+    return () => {
+      if (cardsRef.current) {
+        observer.unobserve(cardsRef.current);
+      }
+    };
   }, []);
 
   const stats = [
@@ -64,7 +94,6 @@ const CaseStudies = () => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5 }}
-      className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-50/50"
       style={{ paddingTop: '80px' }}
     >
       {/* Main Content */}
@@ -79,7 +108,7 @@ const CaseStudies = () => {
           >
             <h1 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
               Case
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600 block">
+              <span className="text-[#24525c] block">
                 Studies
               </span>
             </h1>
@@ -105,16 +134,15 @@ const CaseStudies = () => {
               </div>
             ))}
           </motion.div>
+        </div>
 
-          {/* Case Studies Grid */}
-          <motion.div
-            initial={{ y: 50, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.7 }}
-            className="grid lg:grid-cols-3 gap-8 mb-16"
-          >
+        {/* Case Studies Grid - BREAK OUT OF PARENT CONTAINER */}
+        <div
+          ref={cardsRef}
+          className={`grid lg:grid-cols-3 gap-8 mb-16 max-w-[1800px] mx-auto px-4 case-studies-grid ${isCardsVisible ? 'is-visible' : ''}`}
+        >
             {caseStudies.map((study, index) => (
-              <div key={index} className="bg-white rounded-xl p-8 shadow-sm border border-gray-100">
+              <div key={index} className="bg-white rounded-xl p-8 shadow-sm border border-gray-100 w-full min-w-[240px] case-study-card">
                 <div className="mb-6">
                   <span className="inline-block bg-blue-50 text-blue-600 px-3 py-1 rounded-full text-xs font-medium mb-3">
                     {study.industry}
@@ -152,9 +180,10 @@ const CaseStudies = () => {
                 </button>
               </div>
             ))}
-          </motion.div>
+        </div>
 
-          {/* CTA Section */}
+        {/* CTA Section */}
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ y: 50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}

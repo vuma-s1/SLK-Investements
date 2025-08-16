@@ -10,10 +10,18 @@ const Header = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
+      const scrollPosition = window.scrollY;
+      const shouldBeScrolled = scrollPosition > 10;
+      setIsScrolled(shouldBeScrolled);
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+
+    // Check initial scroll position
+    handleScroll();
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
 
   const navItems = [
@@ -54,21 +62,21 @@ const Header = () => {
   };
 
   return (
-    <header className={`fixed top-0 left-0 right-0 w-full z-50 transition-all duration-500 ${
+    <header className={`fixed left-1/2 transform -translate-x-1/2 z-50 transition-all duration-500 ease-in-out ${
       isScrolled 
-        ? 'bg-white/95 backdrop-blur-md shadow-lg border-b border-gray-100' 
-        : 'bg-white/90 backdrop-blur-sm shadow-sm'
+        ? 'bg-[#F9F9F7] shadow-xl py-5 w-full rounded-none top-0' 
+        : 'bg-[#F9F9F7] py-5 shadow-md w-11/12 rounded-2xl top-10'
     }`}>
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center py-4">
+        <div className="flex justify-between items-center">
           {/* Logo - Left Side */}
-          <div className="flex-shrink-0 -ml-8">
+          <div className="flex-shrink-0 ml-2 md:-ml-8">
             <button 
               onClick={scrollToTop}
               className="transition-transform duration-300 hover:scale-105"
             >
-              <h1 className={`text-xl font-bold transition-colors duration-300 ${
-                isScrolled ? 'text-slate-800' : 'text-slate-800'
+              <h1 className={`text-sm md:text-xl font-bold transition-colors duration-300 ${
+                isScrolled ? 'text-[#1a1a1a]' : 'text-[#1a1a1a]'
               }`}>
                 SLK Investments Corporation
               </h1>
@@ -81,10 +89,10 @@ const Header = () => {
               <button
                 key={item.name}
                 onClick={() => handleNavClick(item.href, item.isPage)}
-                className={`px-4 py-2 rounded-md text-sm font-medium transition-all duration-300 hover:text-blue-600 hover:scale-105 ${
+                className={`px-4 py-2 rounded-md text-sm font-medium transition-all duration-300 hover:text-[#1a1a1a] hover:scale-105 ${
                   location.pathname === item.href
-                    ? 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold'
-                    : 'text-slate-700 hover:bg-slate-100 hover:text-blue-600'
+                    ? 'bg-[#1a1a1a] text-white font-semibold'
+                    : 'text-[#4a5568] hover:bg-gray-50 hover:text-[#1a1a1a]'
                 }`}
               >
                 {item.name}
@@ -94,9 +102,12 @@ const Header = () => {
 
           {/* CTA Button - Right Side */}
           <div className="hidden lg:block -mr-8">
-            <button className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 flex items-center gap-2 hover:scale-105 hover:shadow-lg shadow-md">
-              <Phone size={18} />
-              Book a Call
+            <button className={`px-5 py-2.5 rounded-lg font-semibold text-sm transition-all duration-500 ease-in-out hover:scale-105 ${
+              isScrolled 
+                ? 'bg-[#facc15] text-[#1D1D1F] border-[#facc15] shadow-md' 
+                : 'bg-white text-[#1D1D1F] border border-[#d2d2d7] hover:border-[#facc15]'
+            }`}>
+              Contact Us
             </button>
           </div>
 
@@ -130,9 +141,12 @@ const Header = () => {
                   {item.name}
                 </button>
               ))}
-              <button className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-4 py-3 rounded-md font-medium transition-all duration-300 flex items-center justify-center gap-2 hover:scale-105">
-                <Phone size={16} />
-                Book a Call
+              <button className={`w-full px-4 py-3 rounded-md font-medium transition-all duration-500 ease-in-out flex items-center justify-center gap-2 hover:scale-105 ${
+                isScrolled 
+                  ? 'bg-[#facc15] text-[#1D1D1F] border-[#facc15] shadow-md' 
+                  : 'bg-white text-[#1D1D1F] border border-[#d2d2d7] hover:border-[#facc15]'
+              }`}>
+                Contact Us
               </button>
             </div>
           </div>

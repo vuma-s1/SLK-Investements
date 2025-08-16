@@ -91,7 +91,7 @@ const Header = () => {
                 onClick={() => handleNavClick(item.href, item.isPage)}
                 className={`px-4 py-2 rounded-md text-sm font-medium transition-all duration-300 hover:text-[#1a1a1a] hover:scale-105 ${
                   location.pathname === item.href
-                    ? 'bg-[#1a1a1a] text-white font-semibold'
+                    ? 'bg-[#24525c] text-white font-semibold'
                     : 'text-[#4a5568] hover:bg-gray-50 hover:text-[#1a1a1a]'
                 }`}
               >
@@ -134,8 +134,8 @@ const Header = () => {
                   onClick={() => handleNavClick(item.href, item.isPage)}
                   className={`block w-full text-left px-3 py-2 font-medium rounded-md transition-all duration-300 hover:scale-105 ${
                     location.pathname === item.href
-                      ? 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold'
-                      : 'text-slate-700 hover:bg-slate-100 hover:text-blue-600'
+                      ? 'bg-[#24525c] text-white font-semibold'
+                      : 'text-slate-700 hover:bg-slate-100 hover:text-[#24525c]'
                   }`}
                 >
                   {item.name}

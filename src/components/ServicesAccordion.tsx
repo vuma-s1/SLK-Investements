@@ -1,17 +1,18 @@
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
+import { TrendingUp, DollarSign, Shield, Rocket } from 'lucide-react';
 
 // A simple Circle component for reusability
 const Circle = ({ children, style, className, icon }: { children: React.ReactNode; style: any; className: string; icon: React.ReactNode }) => (
   <motion.div
     style={style}
-    className={`w-72 h-72 rounded-full flex flex-col items-center justify-center ${className}`}
+    className={`w-48 h-48 md:w-72 md:h-72 rounded-full flex flex-col items-center justify-center ${className}`}
   >
-    <div className="w-24 h-24 bg-white rounded-lg flex items-center justify-center mb-6 shadow-sm">
+    <div className="w-16 h-16 md:w-24 md:h-24 bg-white rounded-lg flex items-center justify-center mb-4 md:mb-6 shadow-sm">
       {icon}
     </div>
-    <div className="text-center px-6">
-      <p className="font-semibold text-base leading-tight">{children}</p>
+    <div className="text-center px-4 md:px-6">
+      <p className="font-semibold text-sm md:text-base leading-tight text-white">{children}</p>
     </div>
   </motion.div>
 );
@@ -72,30 +73,13 @@ const ServicesAccordion = () => {
         </motion.svg>
         
                  {/* Container for the circles */}
-         <div className="flex items-center space-x-8">
+         <div className="flex items-center space-x-4 md:space-x-8">
              <Circle 
                  style={{ y, x: xCircle1, opacity: circleOpacity }} 
-                 className="bg-yellow-100 shadow-lg"
+                 className="bg-black shadow-lg"
                  icon={
-                     <div className="w-12 h-12 bg-yellow-400 rounded-sm relative overflow-hidden">
-                         <div className="absolute inset-0 grid grid-cols-4 grid-rows-4 gap-0.5 p-0.5">
-                             <div className="bg-yellow-400"></div>
-                             <div className="bg-yellow-400"></div>
-                             <div className="bg-yellow-400"></div>
-                             <div className="bg-yellow-400"></div>
-                             <div className="bg-yellow-400"></div>
-                             <div className="bg-yellow-400"></div>
-                             <div className="bg-yellow-400"></div>
-                             <div className="bg-yellow-400"></div>
-                             <div className="bg-yellow-400"></div>
-                             <div className="bg-yellow-400"></div>
-                             <div className="bg-yellow-400"></div>
-                             <div className="bg-yellow-400"></div>
-                             <div className="bg-yellow-400"></div>
-                             <div className="bg-yellow-400"></div>
-                             <div className="bg-yellow-400"></div>
-                             <div className="bg-yellow-400"></div>
-                         </div>
+                     <div className="w-8 h-8 md:w-12 md:h-12 bg-white rounded-sm flex items-center justify-center">
+                         <TrendingUp className="w-4 h-4 md:w-6 md:h-6 text-[#24525c]" />
                      </div>
                  }
              >
@@ -103,13 +87,10 @@ const ServicesAccordion = () => {
              </Circle>
              <Circle 
                  style={{ y, x: xCircle2, opacity: circleOpacity }} 
-                 className="bg-amber-100 shadow-lg"
+                 className="bg-black shadow-lg"
                  icon={
-                     <div className="w-12 h-12 bg-amber-600 rounded-sm relative overflow-hidden">
-                         <svg className="w-full h-full" viewBox="0 0 48 48" fill="none">
-                             <path d="M12 12C12 18 18 24 24 24C30 24 36 30 36 36" stroke="#92400E" strokeWidth="3" fill="none"/>
-                             <path d="M36 12C36 18 30 24 24 24C18 24 12 30 12 36" stroke="#92400E" strokeWidth="3" fill="none"/>
-                         </svg>
+                     <div className="w-8 h-8 md:w-12 md:h-12 bg-white rounded-sm flex items-center justify-center">
+                         <DollarSign className="w-4 h-4 md:w-6 md:h-6 text-[#24525c]" />
                      </div>
                  }
              >
@@ -117,17 +98,10 @@ const ServicesAccordion = () => {
              </Circle>
              <Circle 
                  style={{ y, x: xCircle3, opacity: circleOpacity }} 
-                 className="bg-teal-100 shadow-lg"
+                 className="bg-black shadow-lg"
                  icon={
-                     <div className="w-12 h-12 bg-teal-400 rounded-sm relative overflow-hidden">
-                         <svg className="w-full h-full" viewBox="0 0 48 48" fill="none">
-                             <circle cx="12" cy="12" r="3" fill="#0D9488"/>
-                             <circle cx="36" cy="12" r="3" fill="#0D9488"/>
-                             <circle cx="12" cy="36" r="3" fill="#0D9488"/>
-                             <circle cx="36" cy="36" r="3" fill="#0D9488"/>
-                             <path d="M24 12A12 12 0 0 1 36 24" stroke="#0D9488" strokeWidth="3" fill="none"/>
-                             <path d="M12 24A12 12 0 0 1 24 36" stroke="#0D9488" strokeWidth="3" fill="none"/>
-                         </svg>
+                     <div className="w-8 h-8 md:w-12 md:h-12 bg-white rounded-sm flex items-center justify-center">
+                         <Shield className="w-4 h-4 md:w-6 md:h-6 text-[#24525c]" />
                      </div>
                  }
              >
@@ -135,14 +109,10 @@ const ServicesAccordion = () => {
              </Circle>
              <Circle 
                  style={{ y, x: xCircle4, opacity: circleOpacity }} 
-                 className="bg-blue-100 shadow-lg"
+                 className="bg-black shadow-lg"
                  icon={
-                     <div className="w-12 h-12 bg-blue-400 rounded-sm relative overflow-hidden">
-                         <svg className="w-full h-full" viewBox="0 0 48 48" fill="none">
-                             <path d="M6 12C12 18 18 12 24 18C30 12 36 18 42 12" stroke="#2563EB" strokeWidth="3" fill="none"/>
-                             <path d="M6 24C12 30 18 24 24 30C30 24 36 30 42 24" stroke="#2563EB" strokeWidth="3" fill="none"/>
-                             <path d="M6 36C12 42 18 36 24 42C30 36 36 42 42 36" stroke="#2563EB" strokeWidth="3" fill="none"/>
-                         </svg>
+                     <div className="w-8 h-8 md:w-12 md:h-12 bg-white rounded-sm flex items-center justify-center">
+                         <Rocket className="w-4 h-4 md:w-6 md:h-6 text-[#24525c]" />
                      </div>
                  }
              >

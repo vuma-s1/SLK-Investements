@@ -59,7 +59,7 @@ const FAQ = () => {
               transition={{ delay: index * 0.1 }}
             >
               <button
-                className="w-full px-6 py-5 text-left bg-white hover:bg-gray-50 flex items-center justify-between transition-all duration-300 group"
+                className="w-full px-6 py-5 text-left bg-white hover:bg-gray-50 flex items-center justify-between transition-all duration-300 group border-b border-gray-200 focus:outline-none focus:ring-0"
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
               >
                 <span className="font-semibold text-gray-900 pr-4 group-hover:text-[#24525c] transition-colors duration-300">
@@ -87,7 +87,7 @@ const FAQ = () => {
                     transition={{ duration: 0.3, ease: "easeInOut" }}
                     className="overflow-hidden"
                   >
-                    <div className="px-6 pb-5 bg-gradient-to-br from-gray-50 to-blue-50/30">
+                    <div className="px-6 pb-5 bg-gradient-to-br from-gray-50 to-gray-100">
                       <motion.p 
                         className="text-gray-600 leading-relaxed"
                         initial={{ opacity: 0, y: 10 }}

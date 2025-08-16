@@ -102,11 +102,7 @@ const Header = () => {
 
           {/* CTA Button - Right Side */}
           <div className="hidden lg:block -mr-8">
-            <button className={`px-5 py-2.5 rounded-lg font-semibold text-sm transition-all duration-500 ease-in-out hover:scale-105 focus:outline-none ${
-              isScrolled 
-                ? 'bg-[#facc15] text-[#1D1D1F] shadow-md' 
-                : 'bg-white text-[#1D1D1F] border border-gray-200 hover:border-gray-300'
-            }`}>
+            <button className="px-5 py-2.5 rounded-lg font-semibold text-sm transition-all duration-500 ease-in-out hover:scale-105 focus:outline-none bg-[#facc15] text-[#1D1D1F] shadow-md">
               Contact Us
             </button>
           </div>
@@ -141,11 +137,7 @@ const Header = () => {
                   {item.name}
                 </button>
               ))}
-              <button className={`w-full px-4 py-3 rounded-md font-medium transition-all duration-500 ease-in-out flex items-center justify-center gap-2 hover:scale-105 focus:outline-none ${
-                isScrolled 
-                  ? 'bg-[#facc15] text-[#1D1D1F] shadow-md' 
-                  : 'bg-white text-[#1D1D1F] border border-gray-200 hover:border-gray-300'
-              }`}>
+              <button className="w-full px-4 py-3 rounded-md font-medium transition-all duration-500 ease-in-out flex items-center justify-center gap-2 hover:scale-105 focus:outline-none bg-[#facc15] text-[#1D1D1F] shadow-md">
                 Contact Us
               </button>
             </div>

@@ -31,8 +31,8 @@ const Services = () => {
       youGet: ['Operating plan', 'Budgets & forecasts (with scenarios)', 'Clear runway', 'Board-ready dashboard'],
       idealFor: 'Founders/CFOs in bootstrapped or VC-backed companies',
       setup: 'Initial plan in 2–3 weeks, then monthly reviews',
-      bgColor: 'from-[#24525c]/10 to-[#24525c]/5',
-      color: 'text-[#24525c]'
+              bgColor: 'from-[#24525c]/10 to-[#24525c]/5',
+        color: 'text-[#24525c]'
     },
     {
       icon: TrendingUp,
@@ -158,9 +158,9 @@ const Services = () => {
       </div>
 
       {/* Sticky Horizontal Scroll Section */}
-      <section ref={targetRef} className="relative h-[300vh] bg-gradient-to-br from-slate-50 to-blue-50/30">
+      <section ref={targetRef} className="relative h-[150vh] bg-gradient-to-br from-slate-50 to-blue-50/30 pt-20 lg:pt-40 hidden lg:block">
         {/* Desktop: Sticky container */}
-        <div className="hidden lg:block sticky top-0 h-screen flex items-center justify-center overflow-hidden">
+        <div className="hidden lg:block sticky top-20 h-screen flex items-center justify-center overflow-hidden">
           <div className="flex justify-center">
             {/* All Cards in Horizontal Row - Centered */}
             <motion.div style={{ x }} className="flex gap-8">
@@ -197,80 +197,80 @@ const Services = () => {
             </motion.div>
           </div>
         </div>
+      </section>
 
-        {/* Mobile: Vertical layout */}
-        <div className="lg:hidden py-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            {/* Mobile Text Card */}
-            <div className="bg-white/95 backdrop-blur-sm shadow-lg rounded-2xl p-6 mb-8 border border-gray-100">
-              <p className="text-[#24525c] font-semibold mb-3 text-sm uppercase tracking-wide">Our Services</p>
-              <h2 className="text-xl font-bold leading-tight text-slate-900 mb-3">
-                Comprehensive solutions for your business growth
-              </h2>
-              <p className="text-slate-600 text-sm leading-relaxed mb-4">
-                We provide end-to-end financial services that help businesses make better decisions, 
-                manage risks, and accelerate growth. Our data-driven approach ensures you have the 
-                insights you need when you need them.
-              </p>
-              <div className="space-y-2">
-                <div className="flex items-center gap-2">
-                  <div className="w-1.5 h-1.5 bg-[#24525c] rounded-full"></div>
-                  <span className="text-slate-700 text-xs">Data-driven insights</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <div className="w-1.5 h-1.5 bg-[#24525c] rounded-full"></div>
-                  <span className="text-slate-700 text-xs">Real-time monitoring</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <div className="w-1.5 h-1.5 bg-[#24525c] rounded-full"></div>
-                  <span className="text-slate-700 text-xs">Expert guidance</span>
-                </div>
+      {/* Mobile: Separate Services Section */}
+      <section className="lg:hidden bg-gradient-to-br from-slate-50 to-blue-50/30 py-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Mobile Text Card */}
+          <div className="bg-white/95 backdrop-blur-sm shadow-lg rounded-2xl p-4 mb-4 border border-gray-100">
+            <p className="text-[#24525c] font-semibold mb-2 text-xs uppercase tracking-wide">Our Services</p>
+            <h2 className="text-lg font-bold leading-tight text-slate-900 mb-2">
+              Comprehensive solutions for your business growth
+            </h2>
+            <p className="text-slate-600 text-xs leading-relaxed mb-3">
+              We provide end-to-end financial services that help businesses make better decisions, 
+              manage risks, and accelerate growth. Our data-driven approach ensures you have the 
+              insights you need when you need them.
+            </p>
+            <div className="space-y-1">
+              <div className="flex items-center gap-2">
+                <div className="w-1 h-1 bg-[#24525c] rounded-full"></div>
+                <span className="text-slate-700 text-xs">Data-driven insights</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="w-1 h-1 bg-[#24525c] rounded-full"></div>
+                <span className="text-slate-700 text-xs">Real-time monitoring</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="w-1 h-1 bg-[#24525c] rounded-full"></div>
+                <span className="text-slate-700 text-xs">Expert guidance</span>
               </div>
             </div>
+          </div>
 
-            {/* Mobile Service Cards */}
-            <div className="grid grid-cols-1 gap-6">
-              {services.map((service, index) => (
-                <div key={index} className="bg-white/95 backdrop-blur-sm shadow-lg rounded-2xl p-6 border border-gray-100">
-                  <div className={`w-10 h-10 bg-gradient-to-br ${service.bgColor} rounded-lg flex items-center justify-center mb-3`}>
-                    <service.icon className={`w-5 h-5 ${service.color}`} />
-                  </div>
-                  
-                  <h3 className="text-lg font-bold text-slate-900 mb-2">{service.title}</h3>
-                  <p className="text-slate-600 mb-3 leading-relaxed text-sm">{service.oneLiner}</p>
-                  
-                  <div className="space-y-3 mb-4">
-                    <div>
-                      <h4 className="font-semibold text-slate-900 mb-2 text-sm">You get:</h4>
-                      <ul className="space-y-1">
-                        {service.youGet.slice(0, 2).map((item: string, idx: number) => (
-                          <li key={idx} className="flex items-start gap-2 text-xs text-slate-600">
-                            <CheckCircle className="w-3 h-3 text-green-500 flex-shrink-0 mt-0.5" />
-                            <span className="leading-tight">{item}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                    
-                    <div>
-                      <h4 className="font-semibold text-slate-900 mb-1 text-sm">Ideal for:</h4>
-                      <p className="text-xs text-slate-600 leading-tight">{service.idealFor}</p>
-                    </div>
-                  </div>
-                  
-                  <button className="bg-[#24525c] text-white px-6 py-2.5 rounded-lg font-semibold hover:bg-[#1e424a] transition-all duration-300 flex items-center gap-2 text-sm">
-                    Get a quote
-                    <ArrowRight className="w-4 h-4" />
-                  </button>
+          {/* Mobile Service Cards */}
+          <div className="grid grid-cols-1 gap-8">
+            {services.map((service, index) => (
+              <div key={index} className="bg-white/95 backdrop-blur-sm shadow-lg rounded-2xl p-4 border border-gray-100">
+                <div className={`w-8 h-8 bg-gradient-to-br ${service.bgColor} rounded-lg flex items-center justify-center mb-2`}>
+                  <service.icon className={`w-4 h-4 ${service.color}`} />
                 </div>
-              ))}
-            </div>
+                
+                <h3 className="text-base font-bold text-slate-900 mb-1">{service.title}</h3>
+                <p className="text-slate-600 mb-2 leading-relaxed text-xs">{service.oneLiner}</p>
+                
+                <div className="space-y-2 mb-3">
+                  <div>
+                    <h4 className="font-semibold text-slate-900 mb-1 text-xs">You get:</h4>
+                    <ul className="space-y-0.5">
+                      {service.youGet.slice(0, 2).map((item: string, idx: number) => (
+                        <li key={idx} className="flex items-start gap-1 text-xs text-slate-600">
+                          <CheckCircle className="w-2.5 h-2.5 text-green-500 flex-shrink-0 mt-0.5" />
+                          <span className="leading-tight">{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  
+                  <div>
+                    <h4 className="font-semibold text-slate-900 mb-0.5 text-xs">Ideal for:</h4>
+                    <p className="text-xs text-slate-600 leading-tight">{service.idealFor}</p>
+                  </div>
+                </div>
+                
+                <button className="bg-[#24525c] text-white px-4 py-2 rounded-lg font-semibold hover:bg-[#1e424a] transition-all duration-300 flex items-center gap-1 text-xs">
+                  Get a quote
+                  <ArrowRight className="w-3 h-3" />
+                </button>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* Process Section */}
-      <div className="py-20 bg-gradient-to-br from-slate-50 to-blue-50/30">
+      <div className="py-4 md:py-20 bg-gradient-to-br from-slate-50 to-blue-50/30 mt-20 lg:mt-0">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ y: 50, opacity: 0 }}

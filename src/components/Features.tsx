@@ -1,331 +1,187 @@
-import React, { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import React, { useEffect, useState } from 'react';
+import { motion } from 'framer-motion';
+import { TrendingUp, Shield, BarChart3, CheckCircle, ArrowRight, Clock, DollarSign, Users, Target, Zap, FileText, PieChart, Globe, Phone } from 'lucide-react';
 
-// Feature data with icons and descriptions - Optimized to 6 cards + 1 final card
-const featureCards = [
-  {
-    id: 1,
-    title: "Financial Planning & Reporting",
-    subtitle: "Board-ready insights and timely delivery",
-    features: [
-      {
-        title: "Board-ready forecasts",
-        description: "Rolling forecasts, budgets, and scenarios on a fixed cadence.",
-        icon: "📊",
-        color: "from-blue-500 to-blue-600"
-      },
-      {
-        title: "On-time MIS",
-        description: "Monthly closes and dashboards delivered consistently.",
-        icon: "⏰",
-        color: "from-green-500 to-green-600"
-      }
-    ],
-    color: "from-blue-500 to-purple-600",
-    bgColor: "bg-gradient-to-br from-blue-50 to-purple-50"
-  },
-  {
-    id: 2,
-    title: "Cash Flow Management",
-    subtitle: "Real-time visibility and control",
-    features: [
-      {
-        title: "Cash runway clarity",
-        description: "Live view of inflows, outflows, and weeks of runway.",
-        icon: "💰",
-        color: "from-purple-500 to-purple-600"
-      },
-      {
-        title: "Weekly cash rhythm",
-        description: "13-week cash model with a clear collections cadence.",
-        icon: "🔄",
-        color: "from-orange-500 to-orange-600"
-      }
-    ],
-    color: "from-purple-500 to-orange-600",
-    bgColor: "bg-gradient-to-br from-purple-50 to-orange-50"
-  },
-  {
-    id: 3,
-    title: "Collections & Vendor Management",
-    subtitle: "Optimize working capital and relationships",
-    features: [
-      {
-        title: "Faster collections",
-        description: "Structured follow-ups and measurable DSO reduction.",
-        icon: "⚡",
-        color: "from-red-500 to-red-600"
-      },
-      {
-        title: "Optimized vendor terms",
-        description: "Negotiated terms with a disciplined payment calendar.",
-        icon: "🤝",
-        color: "from-teal-500 to-teal-600"
-      }
-    ],
-    color: "from-red-500 to-teal-600",
-    bgColor: "bg-gradient-to-br from-red-50 to-teal-50"
-  },
-  {
-    id: 4,
-    title: "Controls & Governance",
-    subtitle: "Build accountability and prevent risks",
-    features: [
-      {
-        title: "Spend controls",
-        description: "Approval guardrails and variance checks that hold.",
-        icon: "🔒",
-        color: "from-indigo-500 to-indigo-600"
-      },
-      {
-        title: "Governance installed",
-        description: "Review cadence, owners, and SLAs embedded.",
-        icon: "🏛️",
-        color: "from-pink-500 to-pink-600"
-      }
-    ],
-    color: "from-indigo-500 to-pink-600",
-    bgColor: "bg-gradient-to-br from-indigo-50 to-pink-50"
-  },
-  {
-    id: 5,
-    title: "Risk & Pricing Strategy",
-    subtitle: "Data-driven decisions and protection",
-    features: [
-      {
-        title: "Risk ownership",
-        description: "Risk register with triggers and accountable owners.",
-        icon: "🛡️",
-        color: "from-yellow-500 to-yellow-600"
-      },
-      {
-        title: "Data-backed pricing",
-        description: "Contribution margins and price tests you can trust.",
-        icon: "📈",
-        color: "from-emerald-500 to-emerald-600"
-      }
-    ],
-    color: "from-yellow-500 to-emerald-600",
-    bgColor: "bg-gradient-to-br from-yellow-50 to-emerald-50"
-  },
-  {
-    id: 6,
-    title: "Growth & Analytics",
-    subtitle: "Scale with confidence and clarity",
-    features: [
-      {
-        title: "Hiring signals",
-        description: "Capacity models tied to demand and delivery.",
-        icon: "👥",
-        color: "from-cyan-500 to-cyan-600"
-      },
-      {
-        title: "Unit economics",
-        description: "Profit by product, channel, and cohort made visible.",
-        icon: "📊",
-        color: "from-violet-500 to-violet-600"
-      }
-    ],
-    color: "from-cyan-500 to-violet-600",
-    bgColor: "bg-gradient-to-br from-cyan-50 to-violet-50"
-  },
-  {
-    id: 7,
-    title: "Channel ROI & Support",
-    subtitle: "Optimize marketing and get expert guidance",
-    features: [
-      {
-        title: "Channel ROI",
-        description: "CAC, LTV, and payback tracked with clarity.",
-        icon: "🎯",
-        color: "from-rose-500 to-rose-600"
-      },
-      {
-        title: "On-call support",
-        description: "Rapid decision support for time-sensitive moves.",
-        icon: "📞",
-        color: "from-slate-500 to-slate-600"
-      }
-    ],
-    color: "from-rose-500 to-slate-600",
-    bgColor: "bg-gradient-to-br from-rose-50 to-slate-50"
-  }
-];
+const Features = () => {
+  const [isVisible, setIsVisible] = useState(false);
 
-const StackedCardsSection = () => {
-  const containerRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start start", "end end"],
-  });
+  useEffect(() => {
+    setIsVisible(true);
+  }, []);
+
+  const features = [
+    {
+      icon: <BarChart3 className="w-6 h-6" />,
+      title: 'Board-ready forecasts',
+      description: 'Rolling forecasts, budgets, and scenarios on a fixed cadence.',
+      color: 'from-blue-500 to-blue-600'
+    },
+    {
+      icon: <Clock className="w-6 h-6" />,
+      title: 'On-time MIS',
+      description: 'Monthly closes and dashboards delivered consistently.',
+      color: 'from-green-500 to-green-600'
+    },
+    {
+      icon: <DollarSign className="w-6 h-6" />,
+      title: 'Cash runway clarity',
+      description: 'Live view of inflows, outflows, and weeks of runway.',
+      color: 'from-purple-500 to-purple-600'
+    },
+    {
+      icon: <TrendingUp className="w-6 h-6" />,
+      title: 'Weekly cash rhythm',
+      description: '13-week cash model with a clear collections cadence.',
+      color: 'from-orange-500 to-orange-600'
+    },
+    {
+      icon: <Zap className="w-6 h-6" />,
+      title: 'Faster collections',
+      description: 'Structured follow-ups and measurable DSO reduction.',
+      color: 'from-red-500 to-red-600'
+    },
+    {
+      icon: <Users className="w-6 h-6" />,
+      title: 'Optimized vendor terms',
+      description: 'Negotiated terms with a disciplined payment calendar.',
+      color: 'from-teal-500 to-teal-600'
+    },
+    {
+      icon: <Shield className="w-6 h-6" />,
+      title: 'Spend controls',
+      description: 'Approval guardrails and variance checks that hold.',
+      color: 'from-indigo-500 to-indigo-600'
+    },
+    {
+      icon: <FileText className="w-6 h-6" />,
+      title: 'Governance installed',
+      description: 'Review cadence, owners, and SLAs embedded.',
+      color: 'from-pink-500 to-pink-600'
+    },
+    {
+      icon: <Target className="w-6 h-6" />,
+      title: 'Risk ownership',
+      description: 'Risk register with triggers and accountable owners.',
+      color: 'from-yellow-500 to-yellow-600'
+    },
+    {
+      icon: <PieChart className="w-6 h-6" />,
+      title: 'Data-backed pricing',
+      description: 'Contribution margins and price tests you can trust.',
+      color: 'from-emerald-500 to-emerald-600'
+    },
+    {
+      icon: <Users className="w-6 h-6" />,
+      title: 'Hiring signals',
+      description: 'Capacity models tied to demand and delivery.',
+      color: 'from-cyan-500 to-cyan-600'
+    },
+    {
+      icon: <BarChart3 className="w-6 h-6" />,
+      title: 'Unit economics',
+      description: 'Profit by product, channel, and cohort made visible.',
+      color: 'from-violet-500 to-violet-600'
+    },
+    {
+      icon: <Globe className="w-6 h-6" />,
+      title: 'Channel ROI',
+      description: 'CAC, LTV, and payback tracked with clarity.',
+      color: 'from-rose-500 to-rose-600'
+    },
+    {
+      icon: <Phone className="w-6 h-6" />,
+      title: 'On-call support',
+      description: 'Rapid decision support for time-sensitive moves.',
+      color: 'from-slate-500 to-slate-600'
+    }
+  ];
 
   return (
-    <section 
-      ref={containerRef} 
-      className="relative" 
-      style={{ height: `calc(100vh + ${featureCards.length * 80}vh)` }}
-    >
-      {/* Title Section */}
-      <div className="mb-16 flex flex-col items-center gap-6 pt-32 text-center">
-                    <div className="inline-flex items-center rounded-full bg-[#24525c] px-6 py-2 text-sm font-semibold text-white shadow-lg">
-          <span className="mr-2">✨</span>
-          What you get—beyond advice
-        </div>
-        <h2 className="max-w-4xl text-4xl font-bold leading-tight text-gray-900 lg:text-6xl">
-          Transform your finance function with
-          <span className="text-[#24525c]"> proven systems</span>
-        </h2>
-        <p className="max-w-2xl text-lg text-gray-600">
-          Get the tools, processes, and insights that turn financial chaos into clear, actionable intelligence.
-        </p>
-      </div>
+    <section className="py-12 md:py-24 bg-gradient-to-br from-slate-50 to-blue-50/30">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Header Section */}
+        <motion.div
+          initial={{ y: 50, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 0.3 }}
+          className="text-center mb-8 md:mb-16"
+        >
+          <div className="inline-flex items-center rounded-full bg-[#24525c] px-6 py-2 text-sm font-semibold text-white shadow-lg mb-4 md:mb-6">
+            <span className="mr-2">✨</span>
+            What you get—beyond advice
+          </div>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 md:mb-6">
+            10 proven systems to
+            <span className="text-[#24525c] block"> transform your finance function</span>
+          </h2>
+          <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
+            Get the tools, processes, and insights that turn financial chaos into clear, actionable intelligence.
+          </p>
+        </motion.div>
 
-      {/* Sticky Container - The "Stage" */}
-      <div className="sticky top-0 h-screen">
-        {featureCards.map((card, index) => (
-          <Card 
-            key={card.id} 
-            card={card} 
-            index={index} 
-            progress={scrollYProgress} 
-            totalCards={featureCards.length} 
-          />
-        ))}
+        {/* Features Grid */}
+        <motion.div
+          initial={{ y: 50, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 0.5 }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6 mb-8 md:mb-16"
+        >
+          {features.map((feature, index) => (
+            <motion.div
+              key={index}
+              initial={{ y: 30, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.1 * index }}
+              className="group relative bg-[#24525c] rounded-2xl p-4 md:p-6 shadow-xl border border-[#24525c]/20 hover:shadow-2xl transition-all duration-300 hover:scale-105 overflow-hidden max-w-sm mx-auto md:max-w-none w-full"
+            >
+              {/* Background Pattern */}
+              <div className="absolute inset-0 opacity-10">
+                <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-32 h-32 bg-gradient-to-t from-white/20 to-transparent rounded-full blur-xl"></div>
+                <div className="absolute top-4 right-4 w-16 h-16 bg-gradient-to-br from-white/10 to-transparent rounded-full"></div>
+                <div className="absolute bottom-4 left-4 w-12 h-12 bg-gradient-to-tr from-white/5 to-transparent rounded-full"></div>
+              </div>
+
+              {/* Content */}
+              <div className="relative z-10">
+                {/* Icon */}
+                <div className="w-10 h-10 md:w-12 md:h-12 bg-white/10 backdrop-blur-sm rounded-xl flex items-center justify-center text-white mb-3 md:mb-4 group-hover:scale-110 transition-transform duration-300">
+                  {feature.icon}
+                </div>
+                
+                {/* Title */}
+                <h3 className="font-bold text-white mb-2 md:mb-3 text-base md:text-lg leading-tight">{feature.title}</h3>
+                
+                {/* Description */}
+                <p className="text-white/80 text-sm md:text-sm leading-relaxed mb-3 md:mb-6">{feature.description}</p>
+                
+                {/* Divider */}
+                <div className="w-full h-px bg-white/20 mb-2 md:mb-4"></div>
+                
+                {/* CTA Button */}
+                <button className="w-full bg-white text-[#24525c] px-3 md:px-4 py-2 md:py-2.5 rounded-lg font-semibold text-sm md:text-sm hover:bg-gray-50 transition-all duration-300 flex items-center justify-center gap-2 group-hover:scale-105">
+                  Get in Touch
+                  <ArrowRight size={14} className="md:w-4 md:h-4" />
+                </button>
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
+
+        {/* CTA Section */}
+        <motion.div
+          initial={{ y: 50, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 0.7 }}
+          className="text-center"
+        >
+          <button className="bg-[#24525c] hover:bg-[#1e424a] text-white px-6 md:px-8 py-3 md:py-4 rounded-full font-semibold flex items-center gap-2 transition-all duration-300 hover:scale-105 hover:shadow-xl mx-auto text-sm md:text-base">
+            See How We Work
+            <ArrowRight size={18} className="md:w-5 md:h-5" />
+          </button>
+        </motion.div>
       </div>
     </section>
   );
 };
 
-// The Individual Card Component
-const Card = ({ card, index, progress, totalCards }: { 
-  card: any; 
-  index: number; 
-  progress: any; 
-  totalCards: number 
-}) => {
-  // Calculate the start and end points for this card's animation
-  const start = index / totalCards;
-  const end = start + 1 / totalCards;
-
-  // For the very first card, we want it to start a bit smaller
-  const initialScale = 1 - (index * 0.03);
-
-  // Animate scale based on its turn in the scroll progress
-  const scale = useTransform(progress, [start, end], [initialScale, 1]);
-  
-  // Animate vertical position. Start at its stacked position and move up out of view.
-  const translateY = useTransform(progress, [start, end], [`${index * 3}%`, '-100%']);
-
-  // Animate opacity for smooth transitions
-  const opacity = useTransform(progress, [start, end], [0.8, 1]);
-
-  // Animate rotation for a subtle 3D effect
-  const rotateX = useTransform(progress, [start, end], [5, 0]);
-
-  return (
-    <motion.div
-      className="absolute top-0 left-0 flex h-full w-full items-center justify-center px-4"
-      style={{
-        scale,
-        translateY,
-        opacity,
-        rotateX,
-        zIndex: totalCards - index,
-      }}
-    >
-            {/* Card Content */}
-      <div className={`flex h-[600px] w-full max-w-5xl flex-col overflow-hidden rounded-3xl bg-[#24525c] shadow-2xl lg:flex-row border border-gray-200`}>
-        {/* Left Side: Text Content */}
-        <div className="flex flex-1 flex-col justify-center p-8 lg:p-12 bg-[#24525c]">
-          <div className="mb-8">
-            {/* Small Icon */}
-            <div className={`inline-flex h-12 w-12 items-center justify-center rounded-full bg-[#facc15] text-[#24525c] mb-6`}>
-              {card.features[0].icon}
-            </div>
-            
-            {/* Main Headline */}
-            <h3 className="text-3xl font-bold text-white mb-4">
-              {card.title}
-            </h3>
-            
-            {/* Body Text */}
-            <p className="text-white/80 text-lg leading-relaxed max-w-md">
-              {card.subtitle}
-            </p>
-          </div>
-          
-          {/* Progress Indicator */}
-          <div className="flex items-center text-sm text-white/60">
-            <span className="mr-2">Card {index + 1} of {totalCards}</span>
-            <div className="flex-1 h-1 bg-white/20 rounded-full overflow-hidden">
-              <motion.div 
-                className={`h-full bg-[#facc15] rounded-full`}
-                style={{
-                  width: useTransform(progress, [start, end], ['0%', '100%'])
-                }}
-              />
-            </div>
-          </div>
-        </div>
-        
-        {/* Right Side: Feature Cards */}
-        <div className="flex flex-1 items-center justify-center p-8 lg:p-12 bg-[#24525c] relative">
-          {/* Two Overlapping Cards */}
-          <div className="relative">
-            {/* Bottom Card */}
-            <div className="w-80 h-48 bg-gradient-to-br from-[#facc15] to-[#eab308] rounded-2xl shadow-lg transform rotate-3 translate-y-2">
-              <div className="p-6 h-full flex flex-col justify-between">
-                {/* EMV Chip */}
-                <div className="w-12 h-8 bg-[#24525c] rounded-md flex items-center justify-center">
-                  <div className="w-8 h-5 bg-[#24525c]/80 rounded-sm"></div>
-                </div>
-                
-                {/* Card Content */}
-                <div className="flex justify-between items-end">
-                  <div className="text-[#24525c] font-semibold text-sm">
-                    SLK INVESTMENTS
-                  </div>
-                  <div className="text-[#24525c] font-bold text-lg">
-                    {card.features[1].title.split(' ').slice(0, 2).join(' ')}
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            {/* Top Card */}
-            <div className="absolute top-0 left-0 w-80 h-48 bg-gradient-to-br from-[#facc15] to-[#eab308] rounded-2xl shadow-xl transform -rotate-3 -translate-y-2">
-              <div className="p-6 h-full flex flex-col justify-between">
-                {/* EMV Chip */}
-                <div className="w-12 h-8 bg-[#24525c] rounded-md flex items-center justify-center">
-                  <div className="w-8 h-5 bg-[#24525c]/80 rounded-sm"></div>
-                </div>
-                
-                {/* Card Content */}
-                <div className="flex justify-between items-end">
-                  <div className="text-[#24525c] font-semibold text-sm">
-                    SLK INVESTMENTS
-                  </div>
-                  <div className="text-[#24525c] font-bold text-lg">
-                    {card.features[0].title.split(' ').slice(0, 2).join(' ')}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          {/* Feature Icons Overlay */}
-          <div className="absolute top-4 right-4 flex space-x-2">
-            <div className={`w-8 h-8 rounded-full bg-gradient-to-r ${card.features[0].color} flex items-center justify-center text-white text-sm`}>
-              {card.features[0].icon}
-            </div>
-            <div className={`w-8 h-8 rounded-full bg-gradient-to-r ${card.features[1].color} flex items-center justify-center text-white text-sm`}>
-              {card.features[1].icon}
-            </div>
-          </div>
-        </div>
-      </div>
-    </motion.div>
-  );
-};
-
-export default StackedCardsSection;
+export default Features;

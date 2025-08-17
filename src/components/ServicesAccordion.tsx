@@ -50,11 +50,11 @@ const ServicesAccordion = () => {
   const pathLength = useTransform(scrollYProgress, [0.15, 0.4], [0, 1]);
 
   return (
-    <section ref={targetRef} className="relative h-[350vh]">
+    <section ref={targetRef} className="relative h-[40vh] md:h-[350vh]">
       <div className="sticky top-0 h-screen flex flex-col items-center justify-center overflow-hidden">
                  {/* Central Text */}
-         <motion.div style={{ opacity: textOpacity, y: textY }} className="absolute text-center max-w-3xl mx-auto z-10 top-1/2 mt-20">
-             <h2 className="text-5xl font-bold text-gray-900">ROOTED IN CASH DISCIPLINE & DATA</h2>
+         <motion.div style={{ opacity: textOpacity, y: textY }} className="absolute text-center max-w-3xl mx-auto z-10 top-1/2 -mt-4 md:mt-20">
+             <h2 className="text-xs md:text-5xl font-bold text-gray-900">ROOTED IN CASH DISCIPLINE & DATA</h2>
          </motion.div>
 
         {/* SVG Connector Lines */}
@@ -73,13 +73,13 @@ const ServicesAccordion = () => {
         </motion.svg>
         
                  {/* Container for the circles */}
-         <div className="flex items-center space-x-4 md:space-x-8">
+         <div className="flex items-center -space-x-2 md:space-x-8">
              <Circle 
                  style={{ y, x: xCircle1, opacity: circleOpacity }} 
-                 className="bg-black shadow-lg"
+                 className="bg-[#1D1D1F] shadow-lg"
                  icon={
-                     <div className="w-8 h-8 md:w-12 md:h-12 bg-white rounded-sm flex items-center justify-center">
-                         <TrendingUp className="w-4 h-4 md:w-6 md:h-6 text-[#24525c]" />
+                     <div className="w-3 h-3 md:w-12 md:h-12 bg-white rounded-sm flex items-center justify-center">
+                         <TrendingUp className="w-1.5 h-1.5 md:w-6 md:h-6 text-[#24525c]" />
                      </div>
                  }
              >
@@ -87,10 +87,10 @@ const ServicesAccordion = () => {
              </Circle>
              <Circle 
                  style={{ y, x: xCircle2, opacity: circleOpacity }} 
-                 className="bg-black shadow-lg"
+                 className="bg-[#1D1D1F] shadow-lg"
                  icon={
-                     <div className="w-8 h-8 md:w-12 md:h-12 bg-white rounded-sm flex items-center justify-center">
-                         <DollarSign className="w-4 h-4 md:w-6 md:h-6 text-[#24525c]" />
+                     <div className="w-3 h-3 md:w-12 md:h-12 bg-white rounded-sm flex items-center justify-center">
+                         <DollarSign className="w-1.5 h-1.5 md:w-6 md:h-6 text-[#24525c]" />
                      </div>
                  }
              >
@@ -98,10 +98,10 @@ const ServicesAccordion = () => {
              </Circle>
              <Circle 
                  style={{ y, x: xCircle3, opacity: circleOpacity }} 
-                 className="bg-black shadow-lg"
+                 className="bg-[#1D1D1F] shadow-lg"
                  icon={
-                     <div className="w-8 h-8 md:w-12 md:h-12 bg-white rounded-sm flex items-center justify-center">
-                         <Shield className="w-4 h-4 md:w-6 md:h-6 text-[#24525c]" />
+                     <div className="w-3 h-3 md:w-12 md:h-12 bg-white rounded-sm flex items-center justify-center">
+                         <Shield className="w-1.5 h-1.5 md:w-6 md:h-6 text-[#24525c]" />
                      </div>
                  }
              >
@@ -109,10 +109,10 @@ const ServicesAccordion = () => {
              </Circle>
              <Circle 
                  style={{ y, x: xCircle4, opacity: circleOpacity }} 
-                 className="bg-black shadow-lg"
+                 className="bg-[#1D1D1F] shadow-lg"
                  icon={
-                     <div className="w-8 h-8 md:w-12 md:h-12 bg-white rounded-sm flex items-center justify-center">
-                         <Rocket className="w-4 h-4 md:w-6 md:h-6 text-[#24525c]" />
+                     <div className="w-3 h-3 md:w-12 md:h-12 bg-white rounded-sm flex items-center justify-center">
+                         <Rocket className="w-1.5 h-1.5 md:w-6 md:h-6 text-[#24525c]" />
                      </div>
                  }
              >

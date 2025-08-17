@@ -146,31 +146,31 @@ const Pricing = () => {
   ];
 
   return (
-    <section id="pricing" className="py-24 relative overflow-hidden">
+    <section id="pricing" className="py-8 md:py-24 relative overflow-hidden">
       {/* Background Elements */}
 
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <motion.div 
-          className="text-center mb-16"
+          className="text-center mb-8 md:mb-16"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
           <motion.div
-            className="inline-flex items-center gap-2 bg-[#24525c]/10 px-4 py-2 rounded-full text-[#24525c] text-sm font-medium mb-6"
+            className="inline-flex items-center gap-2 bg-[#24525c]/10 px-3 py-1.5 md:px-4 md:py-2 rounded-full text-[#24525c] text-xs md:text-sm font-medium mb-4 md:mb-6"
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2, duration: 0.5 }}
           >
-            <Star className="w-4 h-4" />
+            <Star className="w-3 h-3 md:w-4 md:h-4" />
             <span>Transparent Pricing</span>
           </motion.div>
           
           <motion.h2 
-            className="text-4xl lg:text-6xl font-bold text-gray-900 mb-6"
+            className="text-2xl md:text-4xl lg:text-6xl font-bold text-gray-900 mb-3 md:mb-6"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -181,7 +181,7 @@ const Pricing = () => {
           </motion.h2>
           
           <motion.p 
-            className="text-xl text-gray-600 max-w-2xl mx-auto"
+            className="text-base md:text-xl text-gray-600 max-w-2xl mx-auto"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -193,7 +193,7 @@ const Pricing = () => {
 
         <div 
           ref={cardsRef}
-          className={`grid lg:grid-cols-3 gap-6 pricing-cards-grid ${isCardsVisible ? 'is-visible' : ''}`}
+          className={`grid lg:grid-cols-3 gap-4 md:gap-6 pricing-cards-grid ${isCardsVisible ? 'is-visible' : ''}`}
         >
           {packages.map((pkg, index) => (
             <div key={index} className={`bg-white rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 border ${pkg.borderColor} ${pkg.hoverBg} transform hover:-translate-y-1 pricing-card`}>

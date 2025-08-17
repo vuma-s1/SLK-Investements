@@ -38,26 +38,26 @@ const ValueProposition = () => {
   ];
 
   return (
-    <section className="py-24 relative overflow-hidden">
+    <section className="py-2 md:py-8 relative overflow-hidden">
 
       <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
             {/* Video Controls */}
-            <div className="flex items-center justify-center gap-3 mb-8">
+            <div className="flex items-center justify-center gap-2 mb-3 md:mb-4">
               <button 
                 onClick={() => setIsPlaying(!isPlaying)}
-                className="flex items-center gap-2 bg-[#24525c] text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-[#1e424a] transition-all duration-300 hover:scale-105"
+                className="flex items-center gap-1 bg-[#24525c] text-white px-3 py-1.5 rounded-full text-xs font-medium hover:bg-[#1e424a] transition-all duration-300 hover:scale-105"
               >
-                {isPlaying ? <Pause size={16} /> : <Play size={16} />}
+                {isPlaying ? <Pause size={12} /> : <Play size={12} />}
                 {isPlaying ? 'Pause' : 'Play'} Demo
               </button>
-              <div className="flex items-center gap-2 text-[#24525c] text-sm">
-                <Volume2 size={16} />
+              <div className="flex items-center gap-1 text-[#24525c] text-xs">
+                <Volume2 size={12} />
                 <span>Live Financial Data</span>
               </div>
             </div>
 
-            <h2 className={`text-4xl lg:text-5xl font-bold text-gray-900 mb-8 transition-all duration-1000 ${
+            <h2 className={`text-xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-3 md:mb-4 transition-all duration-1000 ${
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}>
               From uncertainty to a 
@@ -66,7 +66,7 @@ const ValueProposition = () => {
               </span>
             </h2>
             
-            <p className={`text-xl text-gray-600 mb-12 leading-relaxed max-w-3xl mx-auto transition-all duration-1000 delay-300 ${
+            <p className={`text-sm md:text-xl text-gray-600 mb-4 md:mb-6 leading-relaxed max-w-3xl mx-auto transition-all duration-1000 delay-300 ${
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}>
               When cash feels tight or reports arrive late, decisions slow down. SLK Investments 
@@ -75,31 +75,31 @@ const ValueProposition = () => {
               real market insight.
             </p>
 
-            <div className="grid md:grid-cols-2 gap-6 mb-12">
+            <div className="grid md:grid-cols-2 gap-2 md:gap-6 mb-4 md:mb-6">
               {features.map((feature, index) => (
                 <div 
                   key={index} 
-                  className={`flex items-start gap-4 group hover:bg-white/80 backdrop-blur-sm rounded-lg p-6 transition-all duration-500 hover:scale-105 hover:shadow-lg border border-transparent hover:border-gray-100 ${
+                  className={`flex items-start gap-2 group hover:bg-white/80 backdrop-blur-sm rounded-lg p-2 md:p-6 transition-all duration-500 hover:scale-105 hover:shadow-lg border border-transparent hover:border-gray-100 ${
                     isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                   }`}
                   style={{ transitionDelay: `${feature.delay}ms` }}
                 >
-                  <div className="flex-shrink-0 w-12 h-12 bg-[#24525c]/10 rounded-lg flex items-center justify-center text-[#24525c] group-hover:bg-[#24525c] group-hover:text-white transition-all duration-300 group-hover:scale-110">
+                  <div className="flex-shrink-0 w-6 h-6 md:w-12 md:h-12 bg-[#24525c]/10 rounded-lg flex items-center justify-center text-[#24525c] group-hover:bg-[#24525c] group-hover:text-white transition-all duration-300 group-hover:scale-110">
                     {feature.icon}
                   </div>
                   <div className="text-left">
-                    <h3 className="font-semibold text-gray-900 mb-2 group-hover:text-[#24525c] transition-colors duration-300">{feature.title}</h3>
-                    <p className="text-gray-600 text-sm">{feature.description}</p>
+                    <h3 className="font-semibold text-gray-900 mb-0.5 group-hover:text-[#24525c] transition-colors duration-300 text-xs md:text-base">{feature.title}</h3>
+                    <p className="text-gray-600 text-xs md:text-sm">{feature.description}</p>
                   </div>
                 </div>
               ))}
             </div>
 
-            <button className={`bg-[#24525c] hover:bg-[#1e424a] text-white px-8 py-4 rounded-full font-semibold flex items-center gap-2 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-[#24525c]/25 transform hover:-translate-y-1 mx-auto ${
+            <button className={`bg-[#24525c] hover:bg-[#1e424a] text-white px-3 md:px-8 py-1.5 md:py-4 rounded-full font-semibold flex items-center gap-1 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-[#24525c]/25 transform hover:-translate-y-1 mx-auto text-xs md:text-base ${
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`} style={{ transitionDelay: '800ms' }}>
               See How We Work
-              <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform duration-300" />
+              <ArrowRight size={12} className="md:w-5 md:h-5 group-hover:translate-x-1 transition-transform duration-300" />
             </button>
         </div>
       </div>

@@ -119,14 +119,14 @@ const Pricing = () => {
       style={{ paddingTop: '80px' }}
     >
       {/* Main Content */}
-      <div className="py-16">
+      <div className="py-8 md:py-16">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Hero Section */}
           <motion.div
             initial={{ y: 50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.3 }}
-            className="text-center mb-16"
+            className="text-center mb-8 md:mb-16"
           >
             <h1 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
               Clear plans.
@@ -302,16 +302,16 @@ const Pricing = () => {
             initial={{ y: 50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.7 }}
-            className="mb-16"
+            className="mb-6 md:mb-16"
           >
-            <h2 className="text-2xl font-bold text-slate-900 mb-8 text-center">What we stand by</h2>
-            <div className="grid md:grid-cols-3 gap-6">
+            <h2 className="text-2xl font-bold text-slate-900 mb-4 md:mb-8 text-center">What we stand by</h2>
+            <div className="grid md:grid-cols-3 gap-3 md:gap-6">
               {benefits.map((benefit, index) => (
-                <div key={index} className="bg-white rounded-xl p-6 shadow-sm border border-gray-100 text-center">
-                  <div className="w-12 h-12 bg-gradient-to-br from-[#24525c]/10 to-[#24525c]/5 rounded-lg flex items-center justify-center mx-auto mb-4">
-                    <benefit.icon className="w-6 h-6 text-[#24525c]" />
+                <div key={index} className="bg-white rounded-xl p-3 md:p-6 shadow-sm border border-gray-100 text-center">
+                  <div className="w-8 h-8 md:w-12 md:h-12 bg-gradient-to-br from-[#24525c]/10 to-[#24525c]/5 rounded-lg flex items-center justify-center mx-auto mb-2 md:mb-4">
+                    <benefit.icon className="w-4 h-4 md:w-6 md:h-6 text-[#24525c]" />
                   </div>
-                  <h3 className="font-semibold text-slate-900 mb-2">{benefit.title}</h3>
+                  <h3 className="font-semibold text-slate-900 mb-1 md:mb-2">{benefit.title}</h3>
                   <p className="text-slate-600 text-sm">{benefit.description}</p>
                 </div>
               ))}

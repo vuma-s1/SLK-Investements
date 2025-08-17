@@ -97,14 +97,14 @@ const CaseStudies = () => {
       style={{ paddingTop: '80px' }}
     >
       {/* Main Content */}
-      <div className="py-16">
+      <div className="py-8 md:py-16">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Hero Section */}
           <motion.div
             initial={{ y: 50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.3 }}
-            className="text-center mb-16"
+            className="text-center mb-8 md:mb-16"
           >
             <h1 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
               Case

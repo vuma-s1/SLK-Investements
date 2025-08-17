@@ -52,18 +52,17 @@ const About = () => {
       style={{ paddingTop: '80px' }}
     >
       {/* Main Content */}
-      <div className="py-16">
+      <div className="py-8 md:py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Hero Section */}
           <motion.div
             initial={{ y: 50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.3 }}
-            className="text-center mb-16"
+            className="text-center mb-8 md:mb-16"
           >
-            <h1 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
-              About
-              <span className="text-[#24525c] block">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-4 md:mb-6">
+              <span className="text-[#24525c]">
                 SLK Investments Corporation
               </span>
             </h1>
@@ -74,13 +73,13 @@ const About = () => {
             initial={{ y: 50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.5 }}
-            className="prose prose-lg max-w-none mb-16"
+            className="prose prose-lg max-w-none mb-8 md:mb-16"
           >
-            <p className="text-lg text-slate-700 leading-relaxed mb-6">
+            <p className="text-base md:text-lg text-slate-700 leading-relaxed mb-4 md:mb-6">
               We help Indian businesses plan, operate, and scale with confidence. We install a simple finance rhythm—weekly cash control, on-time MIS, monthly reviews—so you always know where you stand. Budgets and forecasts are built for action, collections tighten, working capital improves, risks have owners, and unit economics stay profitable.
             </p>
             
-            <p className="text-lg text-slate-700 leading-relaxed mb-8">
+            <p className="text-base md:text-lg text-slate-700 leading-relaxed mb-6 md:mb-8">
               Our mission is to grow value and protect downside—one clear decision at a time. We partner with your CA and team as a fractional finance lead, and prepare clean data rooms and lender-ready metrics when you fundraise. Everything is anchored in integrity, personalised service, and deep market expertise—clear numbers, calm execution.
             </p>
           </motion.div>
@@ -90,14 +89,14 @@ const About = () => {
             initial={{ y: 50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.7 }}
-            className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16"
+            className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mb-8 md:mb-16"
           >
             {stats.map((stat, index) => (
               <div key={index} className="text-center">
-                <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
-                  <stat.icon className="w-8 h-8 text-[#24525c] mx-auto mb-3" />
-                  <div className="text-2xl font-bold text-slate-900 mb-1">{stat.number}</div>
-                  <div className="text-sm text-slate-600">{stat.label}</div>
+                <div className="bg-white rounded-xl p-4 md:p-6 shadow-sm border border-gray-100">
+                  <stat.icon className="w-6 h-6 md:w-8 md:h-8 text-[#24525c] mx-auto mb-2 md:mb-3" />
+                  <div className="text-lg md:text-2xl font-bold text-slate-900 mb-1">{stat.number}</div>
+                  <div className="text-xs md:text-sm text-slate-600">{stat.label}</div>
                 </div>
               </div>
             ))}
@@ -108,17 +107,17 @@ const About = () => {
             initial={{ y: 50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.9 }}
-            className="mb-16"
+            className="mb-8 md:mb-16"
           >
-            <h2 className="text-2xl font-bold text-slate-900 mb-8 text-center">What we stand for</h2>
-            <div className="grid md:grid-cols-3 gap-6">
+            <h2 className="text-xl md:text-2xl font-bold text-slate-900 mb-6 md:mb-8 text-center">What we stand for</h2>
+            <div className="grid md:grid-cols-3 gap-4 md:gap-6">
               {values.map((value, index) => (
-                <div key={index} className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
-                  <div className={`w-12 h-12 bg-gradient-to-br ${value.bgColor} rounded-lg flex items-center justify-center mb-4`}>
-                    <value.icon className={`w-6 h-6 ${value.color}`} />
+                <div key={index} className="bg-white rounded-xl p-4 md:p-6 shadow-sm border border-gray-100">
+                  <div className={`w-8 h-8 md:w-12 md:h-12 bg-gradient-to-br ${value.bgColor} rounded-lg flex items-center justify-center mb-3 md:mb-4`}>
+                    <value.icon className={`w-4 h-4 md:w-6 md:h-6 ${value.color}`} />
                   </div>
-                  <h3 className="font-semibold text-slate-900 mb-2">{value.title}</h3>
-                  <p className="text-slate-600 text-sm leading-relaxed">{value.description}</p>
+                  <h3 className="font-semibold text-slate-900 mb-2 text-sm md:text-base">{value.title}</h3>
+                  <p className="text-slate-600 text-xs md:text-sm leading-relaxed">{value.description}</p>
                 </div>
               ))}
             </div>
@@ -131,10 +130,10 @@ const About = () => {
             transition={{ delay: 1.1 }}
             className="text-center"
           >
-            <div className="bg-gradient-to-r from-slate-800 to-slate-900 rounded-2xl p-6 text-white max-w-2xl mx-auto">
-              <h3 className="text-xl font-bold mb-3">Ready to transform your financial operations?</h3>
-              <p className="text-slate-300 mb-4 text-sm">Let's discuss how we can help you achieve clarity, control, and confidence in your financial decisions.</p>
-              <button className="bg-white text-slate-900 px-6 py-2.5 rounded-full font-semibold hover:bg-gray-50 transition-all duration-300 text-sm">
+            <div className="bg-gradient-to-r from-slate-800 to-slate-900 rounded-2xl p-4 md:p-6 text-white max-w-2xl mx-auto">
+              <h3 className="text-lg md:text-xl font-bold mb-2 md:mb-3">Ready to transform your financial operations?</h3>
+              <p className="text-slate-300 mb-3 md:mb-4 text-xs md:text-sm">Let's discuss how we can help you achieve clarity, control, and confidence in your financial decisions.</p>
+              <button className="bg-white text-slate-900 px-4 md:px-6 py-2 md:py-2.5 rounded-full font-semibold hover:bg-gray-50 transition-all duration-300 text-xs md:text-sm">
                 Book a Call
               </button>
             </div>

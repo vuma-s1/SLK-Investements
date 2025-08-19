@@ -14,85 +14,85 @@ const Features = () => {
       icon: <BarChart3 className="w-6 h-6" />,
       title: 'Board-ready forecasts',
       description: 'Rolling forecasts, budgets, and scenarios on a fixed cadence.',
-      color: 'from-blue-500 to-blue-600'
+      color: 'from-blue-500 to-blue-600',
+      buttonText: 'View Forecasts'
     },
     {
       icon: <Clock className="w-6 h-6" />,
       title: 'On-time MIS',
       description: 'Monthly closes and dashboards delivered consistently.',
-      color: 'from-green-500 to-green-600'
+      color: 'from-green-500 to-green-600',
+      buttonText: 'See Dashboards'
     },
     {
       icon: <DollarSign className="w-6 h-6" />,
       title: 'Cash runway clarity',
       description: 'Live view of inflows, outflows, and weeks of runway.',
-      color: 'from-purple-500 to-purple-600'
+      color: 'from-purple-500 to-purple-600',
+      buttonText: 'Track Cash Flow'
     },
     {
       icon: <TrendingUp className="w-6 h-6" />,
       title: 'Weekly cash rhythm',
       description: '13-week cash model with a clear collections cadence.',
-      color: 'from-orange-500 to-orange-600'
+      color: 'from-orange-500 to-orange-600',
+      buttonText: 'Start Modeling'
     },
     {
       icon: <Zap className="w-6 h-6" />,
       title: 'Faster collections',
       description: 'Structured follow-ups and measurable DSO reduction.',
-      color: 'from-red-500 to-red-600'
+      color: 'from-red-500 to-red-600',
+      buttonText: 'Speed Up Collections'
     },
     {
       icon: <Users className="w-6 h-6" />,
       title: 'Optimized vendor terms',
       description: 'Negotiated terms with a disciplined payment calendar.',
-      color: 'from-teal-500 to-teal-600'
+      color: 'from-teal-500 to-teal-600',
+      buttonText: 'Optimize Terms'
     },
     {
       icon: <Shield className="w-6 h-6" />,
       title: 'Spend controls',
       description: 'Approval guardrails and variance checks that hold.',
-      color: 'from-indigo-500 to-indigo-600'
+      color: 'from-indigo-500 to-indigo-600',
+      buttonText: 'Set Controls'
     },
     {
       icon: <FileText className="w-6 h-6" />,
       title: 'Governance installed',
       description: 'Review cadence, owners, and SLAs embedded.',
-      color: 'from-pink-500 to-pink-600'
+      color: 'from-pink-500 to-pink-600',
+      buttonText: 'Install Governance'
     },
     {
       icon: <Target className="w-6 h-6" />,
       title: 'Risk ownership',
       description: 'Risk register with triggers and accountable owners.',
-      color: 'from-yellow-500 to-yellow-600'
+      color: 'from-yellow-500 to-yellow-600',
+      buttonText: 'Manage Risks'
     },
     {
       icon: <PieChart className="w-6 h-6" />,
       title: 'Data-backed pricing',
       description: 'Contribution margins and price tests you can trust.',
-      color: 'from-emerald-500 to-emerald-600'
-    },
-    {
-      icon: <Users className="w-6 h-6" />,
-      title: 'Hiring signals',
-      description: 'Capacity models tied to demand and delivery.',
-      color: 'from-cyan-500 to-cyan-600'
+      color: 'from-emerald-500 to-emerald-600',
+      buttonText: 'Optimize Pricing'
     },
     {
       icon: <BarChart3 className="w-6 h-6" />,
       title: 'Unit economics',
       description: 'Profit by product, channel, and cohort made visible.',
-      color: 'from-violet-500 to-violet-600'
+      color: 'from-violet-500 to-violet-600',
+      buttonText: 'Analyze Units'
     },
     {
       icon: <Globe className="w-6 h-6" />,
       title: 'Channel ROI',
       description: 'CAC, LTV, and payback tracked with clarity.',
-      color: 'from-rose-500 to-rose-600'
-    },
-    {
-      icon: <Phone className="w-6 h-6" />,
-      title: 'On-call support',
-      description: 'Rapid decision support for time-sensitive moves.',
-      color: 'from-slate-500 to-slate-600'
+      color: 'from-rose-500 to-rose-600',
+      buttonText: 'Track ROI'
     }
   ];
 
@@ -159,7 +159,7 @@ const Features = () => {
                 
                 {/* CTA Button */}
                 <button className="w-full bg-white text-[#24525c] px-3 md:px-4 py-2 md:py-2.5 rounded-lg font-semibold text-sm md:text-sm hover:bg-gray-50 transition-all duration-300 flex items-center justify-center gap-2 group-hover:scale-105">
-                  Get in Touch
+                  {feature.buttonText}
                   <ArrowRight size={14} className="md:w-4 md:h-4" />
                 </button>
               </div>

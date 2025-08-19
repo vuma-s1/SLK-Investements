@@ -1,139 +1,114 @@
-import React, { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
-import { TrendingUp, DollarSign, Shield, Rocket } from 'lucide-react';
-
-// A simple Circle component for reusability
-const Circle = ({ children, style, className, icon }: { children: React.ReactNode; style?: any; className: string; icon: React.ReactNode }) => (
-  <motion.div
-    style={style}
-    className={`w-32 h-32 md:w-40 md:h-40 rounded-full flex flex-col items-center justify-center ${className}`}
-  >
-    <div className="w-8 h-8 md:w-12 md:h-12 bg-white rounded-lg flex items-center justify-center mb-2 md:mb-3 shadow-sm">
-      {icon}
-    </div>
-    <div className="text-center px-1 md:px-4">
-      <p className="font-semibold text-xs md:text-sm leading-tight text-black whitespace-normal">{children}</p>
-    </div>
-  </motion.div>
-);
+import React from 'react';
+import { motion } from 'framer-motion';
+import { TrendingUp, DollarSign, Shield, Rocket, ArrowRight } from 'lucide-react';
 
 const ServicesAccordion = () => {
-  const targetRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: targetRef,
-    offset: ["start end", "end start"],
-  });
-
-  // --- Desktop Transformations (restored animation) ---
-  const y = useTransform(scrollYProgress, [0.1, 0.7], ["0%", "-120%"]);
-  const xCircle1 = useTransform(scrollYProgress, [0.1, 0.7], ["0%", "155%"]);
-  const xCircle2 = useTransform(scrollYProgress, [0.1, 0.7], ["0%", "55%"]);
-  const xCircle3 = useTransform(scrollYProgress, [0.1, 0.7], ["0%", "-55%"]);
-  const xCircle4 = useTransform(scrollYProgress, [0.1, 0.7], ["0%", "-155%"]);
-
-  // --- Shared Transformations ---
-  const textOpacity = useTransform(scrollYProgress, [0.3, 0.5, 0.8], [0, 1, 0]);
-  const textY = useTransform(scrollYProgress, [0.1, 0.7], ["100%", "-100%"]);
-  const circleOpacity = useTransform(scrollYProgress, [0.7, 0.8], [1, 0]);
-  const pathLength = useTransform(scrollYProgress, [0.15, 0.4], [0, 1]);
-
   const services = [
     {
+      icon: <TrendingUp className="w-8 h-8 text-[#24525c]" />,
       title: 'FINANCIAL PLANNING & STRATEGY',
-      icon: <TrendingUp className="w-4 h-4 md:w-6 md:h-6 text-[#24525c]" />
+      description: 'Comprehensive financial planning and strategic advisory to drive sustainable growth and optimize business performance.',
+      color: 'from-blue-500 to-blue-600'
     },
     {
+      icon: <DollarSign className="w-8 h-8 text-[#24525c]" />,
       title: 'CASH FLOW MANAGEMENT & OPTIMIZATION',
-      icon: <DollarSign className="w-4 h-4 md:w-6 md:h-6 text-[#24525c]" />
+      description: 'Expert cash flow analysis and optimization strategies to ensure liquidity and maximize working capital efficiency.',
+      color: 'from-green-500 to-green-600'
     },
     {
+      icon: <Shield className="w-8 h-8 text-[#24525c]" />,
       title: 'RISK ASSESSMENT & MITIGATION',
-      icon: <Shield className="w-4 h-4 md:w-6 md:h-6 text-[#24525c]" />
+      description: 'Proactive risk identification and mitigation strategies to protect your business and ensure financial stability.',
+      color: 'from-purple-500 to-purple-600'
     },
     {
+      icon: <Rocket className="w-8 h-8 text-[#24525c]" />,
       title: 'GROWTH ACCELERATION & SCALING',
-      icon: <Rocket className="w-4 h-4 md:w-6 md:h-6 text-[#24525c]" />
+      description: 'Strategic guidance and operational frameworks to accelerate growth and scale your business efficiently.',
+      color: 'from-orange-500 to-orange-600'
     }
   ];
 
   return (
-    <section ref={targetRef} className="relative h-[100vh] md:h-[350vh]">
-      <div className="sticky top-0 h-screen flex flex-col items-center justify-center overflow-hidden">
-        {/* Central Text */}
-        <motion.div style={{ opacity: textOpacity, y: textY }} className="absolute text-center max-w-3xl mx-auto z-10 bottom-10 md:top-1/2 md:-mt-4 md:mt-20">
-          <h2 className="text-xs md:text-5xl font-bold text-gray-900 whitespace-nowrap">ROOTED IN CASH DISCIPLINE & DATA</h2>
-        </motion.div>
-        
-
-
-        {/* SVG Connector Lines - Desktop only */}
-        <motion.svg 
-          width="800" 
-          height="400" 
-          viewBox="0 0 800 400" 
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 hidden md:block"
-          style={{ opacity: circleOpacity }}
+    <section className="py-16 md:py-24 bg-gradient-to-br from-slate-50 to-blue-50/30">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Header Section */}
+        <motion.div
+          initial={{ y: 50, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="text-center mb-8 md:mb-12"
         >
-          <motion.path d="M 100 200 Q 250 200 400 200" stroke="#E5E7EB" strokeWidth="2" fill="none" style={{pathLength}} />
-          <motion.path d="M 260 200 Q 330 200 400 200" stroke="#E5E7EB" strokeWidth="2" fill="none" style={{pathLength}} />
-          <motion.path d="M 540 200 Q 470 200 400 200" stroke="#E5E7EB" strokeWidth="2" fill="none" style={{pathLength}} />
-          <motion.path d="M 700 200 Q 550 200 400 200" stroke="#E5E7EB" strokeWidth="2" fill="none" style={{pathLength}} />
-        </motion.svg>
-        
-        {/* Desktop Circles - Collapse Animation */}
-        <div className="hidden md:flex items-center space-x-8">
-                      <Circle 
-              style={{ y, x: xCircle1, opacity: circleOpacity }} 
-              className="bg-gray-500/80 shadow-lg"
-              icon={services[0].icon}
-            >
-              {services[0].title}
-            </Circle>
-            <Circle 
-              style={{ y, x: xCircle2, opacity: circleOpacity }} 
-              className="bg-gray-500/80 shadow-lg"
-              icon={services[1].icon}
-            >
-              {services[1].title}
-            </Circle>
-            <Circle 
-              style={{ y, x: xCircle3, opacity: circleOpacity }} 
-              className="bg-gray-500/80 shadow-lg"
-              icon={services[2].icon}
-            >
-              {services[2].title}
-            </Circle>
-            <Circle 
-              style={{ y, x: xCircle4, opacity: circleOpacity }} 
-              className="bg-gray-500/80 shadow-lg"
-              icon={services[3].icon}
-            >
-              {services[3].title}
-            </Circle>
-        </div>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+            ROOTED IN CASH DISCIPLINE & DATA
+          </h2>
+          <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
+            Our comprehensive approach combines financial expertise with data-driven insights to transform your business operations.
+          </p>
+        </motion.div>
 
-        {/* Mobile Vertical Layout - Static */}
-        <div className="md:hidden relative flex flex-col items-center justify-center min-h-screen pb-20">
-          {/* Mobile Headline */}
-          <div className="text-center mb-8">
-            <h2 className="text-lg font-bold text-gray-900 whitespace-nowrap">ROOTED IN CASH DISCIPLINE & DATA</h2>
-          </div>
-          
+        {/* Services Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
           {services.map((service, index) => (
-            <div key={index} className="flex justify-center mb-8">
-              <Circle 
-                className="bg-gray-500/80 shadow-lg relative z-10"
-                icon={service.icon}
-              >
-                {service.title}
-              </Circle>
-            </div>
+            <motion.div
+              key={index}
+              initial={{ y: 50, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              viewport={{ once: true }}
+                             className="group relative bg-white rounded-2xl p-3 md:p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border border-gray-100"
+            >
+              {/* Background Pattern */}
+              <div className="absolute inset-0 opacity-5">
+                <div className="absolute top-4 right-4 w-24 h-24 bg-gradient-to-br from-[#24525c] to-transparent rounded-full blur-xl"></div>
+                <div className="absolute bottom-4 left-4 w-16 h-16 bg-gradient-to-tr from-[#24525c] to-transparent rounded-full"></div>
+              </div>
+
+              {/* Content */}
+              <div className="relative z-10">
+                {/* Icon */}
+                                 <div className="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-br from-slate-100 to-slate-200 rounded-xl flex items-center justify-center mb-3 md:mb-4 group-hover:scale-110 transition-transform duration-300">
+                  {service.icon}
+                </div>
+                
+                {/* Title */}
+                                 <h3 className="font-bold text-gray-900 mb-2 md:mb-3 text-base md:text-xl leading-tight">
+                  {service.title}
+                </h3>
+                
+                {/* Description */}
+                                 <p className="text-gray-600 text-xs md:text-base leading-relaxed mb-3 md:mb-4">
+                  {service.description}
+                </p>
+                
+                {/* CTA Button */}
+                                 <button className="inline-flex items-center gap-2 text-[#24525c] font-semibold text-xs md:text-base hover:text-[#1e424a] transition-colors duration-300 group-hover:gap-3">
+                  Learn More
+                  <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-1" />
+                </button>
+              </div>
+
+              {/* Hover Effect Border */}
+              <div className="absolute inset-0 rounded-2xl border-2 border-transparent group-hover:border-[#24525c]/20 transition-colors duration-300"></div>
+            </motion.div>
           ))}
-          
-
-          
-
         </div>
+
+        {/* Bottom CTA */}
+        <motion.div
+          initial={{ y: 50, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          viewport={{ once: true }}
+          className="text-center mt-12 md:mt-16"
+        >
+          <button className="bg-[#24525c] hover:bg-[#1e424a] text-white px-8 py-4 rounded-full font-semibold text-base md:text-lg transition-all duration-300 hover:scale-105 hover:shadow-xl flex items-center gap-3 mx-auto">
+            Explore Our Services
+            <ArrowRight size={20} />
+          </button>
+        </motion.div>
       </div>
     </section>
   );

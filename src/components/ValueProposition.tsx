@@ -57,7 +57,7 @@ const ValueProposition = () => {
               </div>
             </div>
 
-            <h2 className={`text-xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-3 md:mb-4 transition-all duration-1000 ${
+            <h2 className={`text-xl md:text-4xl lg:text-5xl font-light text-gray-900 mb-3 md:mb-4 leading-tight transition-all duration-1000 ${
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}>
               From uncertainty to a 

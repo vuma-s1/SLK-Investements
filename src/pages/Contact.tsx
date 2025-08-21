@@ -78,7 +78,7 @@ const Contact = () => {
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.3 }}
             >
-              <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+              <h2 className="text-4xl lg:text-5xl font-light text-gray-900 mb-6 leading-tight">
                 Let's talk
               </h2>
               
@@ -148,7 +148,7 @@ const Contact = () => {
               transition={{ delay: 0.5 }}
             >
               <form onSubmit={handleSubmit} className="bg-white rounded-xl p-8 shadow-sm border border-gray-100">
-                <h3 className="text-2xl font-bold text-gray-900 mb-6">Send us a message</h3>
+                <h3 className="text-2xl font-semibold text-gray-900 mb-6">Send us a message</h3>
                 
                 <div className="space-y-6">
                   {/* Name */}
@@ -310,7 +310,7 @@ const Contact = () => {
             className="mt-16 text-center"
           >
             <div className="bg-gradient-to-r from-slate-800 to-slate-900 rounded-2xl p-6 text-white max-w-2xl mx-auto">
-              <h3 className="text-xl font-bold mb-3">Book a 30-minute consultation</h3>
+              <h3 className="text-xl font-semibold mb-3">Book a 30-minute consultation</h3>
               <p className="text-slate-300 mb-4 text-sm">Pick a time that suits you. We'll review your goals and suggest next steps.</p>
               <button className="bg-white text-slate-900 px-6 py-2.5 rounded-full font-semibold hover:bg-gray-50 transition-all duration-300 text-sm">
                 Book a Call

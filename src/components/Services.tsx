@@ -170,10 +170,10 @@ const Services = () => {
             
             {/* Foundation Text */}
             <div className="bg-white px-12 py-8 inline-block">
-              <p className="text-3xl font-bold text-gray-900 leading-tight">
+              <p className="text-3xl font-light text-gray-900 leading-tight">
                 Rooted in data & analytics.
               </p>
-              <p className="text-3xl font-bold text-gray-900 leading-tight">
+              <p className="text-3xl font-light text-gray-900 leading-tight">
                 Powered by AI & technology.
               </p>
             </div>
@@ -190,7 +190,7 @@ const Services = () => {
         {/* Service Cards Section */}
         <div className="mt-20">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl font-light text-gray-900 mb-4 leading-tight">
             Make decisions with confidence
           </h2>
             <p className="text-lg text-gray-600">

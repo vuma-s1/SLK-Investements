@@ -42,7 +42,7 @@ const UseCases = () => {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         {/* Header */}
         <div className="text-center mb-8 md:mb-16">
-          <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-4 md:mb-4">
+          <h2 className="text-2xl md:text-4xl font-light text-gray-900 mb-4 md:mb-4 leading-tight">
             Where we're most effective
           </h2>
         </div>

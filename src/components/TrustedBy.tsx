@@ -59,7 +59,7 @@ const TrustedBy = () => {
              <span className="w-1.5 h-1.5 md:w-2 md:h-2 bg-[#24525c] rounded-full"></span>
              Trusted by Leading Companies
            </div>
-                     <h2 className="text-2xl md:text-3xl md:text-4xl font-bold text-gray-900 mb-3 md:mb-4">
+                     <h2 className="text-2xl md:text-3xl md:text-4xl font-light text-gray-900 mb-3 md:mb-4 leading-tight">
              Trusted by <span className="text-[#24525c]">500+ Companies</span> Across India
            </h2>
           <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto">
@@ -77,7 +77,7 @@ const TrustedBy = () => {
                     {stat.icon}
                   </div>
                   <div>
-                    <div className="text-lg md:text-2xl font-bold text-gray-900">{stat.number}</div>
+                    <div className="text-lg md:text-2xl font-semibold text-gray-900">{stat.number}</div>
                     <div className="text-gray-600 text-xs md:text-sm">{stat.label}</div>
                   </div>
                 </div>
@@ -94,7 +94,7 @@ const TrustedBy = () => {
           {companies.map((company, index) => (
             <div key={index} className="group marquee-item flex-shrink-0 px-2 md:px-6">
               <div className="text-center">
-                                                  <h4 className="font-bold text-black text-xs md:text-base mb-0.5 md:mb-1">{company.logo}</h4>
+                                                  <h4 className="font-semibold text-black text-xs md:text-base mb-0.5 md:mb-1">{company.logo}</h4>
                  <h4 className="font-semibold text-black text-xs md:text-sm mb-0.5 md:mb-1">{company.name}</h4>
                  <p className="text-gray-500 text-xs">{company.industry}</p>
               </div>

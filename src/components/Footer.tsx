@@ -36,7 +36,7 @@ const Footer = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="lg:col-span-2">
-            <h3 className="text-xl font-bold mb-4">SLK Investments Corporation</h3>
+            <h3 className="text-xl font-semibold mb-4">SLK Investments Corporation</h3>
             <p className="text-white/80 mb-6 leading-relaxed">
               We help Indian businesses plan, operate, and scale with confidence. 
               Clear numbers, calm execution.

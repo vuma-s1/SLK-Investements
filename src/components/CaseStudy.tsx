@@ -53,7 +53,7 @@ const CaseStudy = () => {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         {/* Header */}
         <div className="text-center mb-4 md:mb-16">
-          <h2 className="text-xl md:text-4xl font-bold text-gray-900 mb-1 md:mb-4">
+          <h2 className="text-xl md:text-4xl font-light text-gray-900 mb-1 md:mb-4 leading-tight">
             Case Study
           </h2>
           <p className="text-base md:text-xl text-gray-600">
@@ -65,7 +65,7 @@ const CaseStudy = () => {
         <div className="grid lg:grid-cols-2 gap-4 md:gap-12 items-start">
           {/* What We Did */}
           <div className="bg-white rounded-xl p-4 md:p-8 shadow-sm border border-gray-100 h-full">
-            <h3 className="text-lg md:text-2xl font-bold text-gray-900 mb-3 md:mb-6">What we did:</h3>
+            <h3 className="text-lg md:text-2xl font-semibold text-gray-900 mb-3 md:mb-6">What we did:</h3>
             <ul className="space-y-2 md:space-y-4">
               {whatWeDid.map((item, index) => (
                 <li key={index} className="flex items-start gap-2 md:gap-3">
@@ -78,7 +78,7 @@ const CaseStudy = () => {
 
           {/* Results */}
           <div className="bg-white rounded-xl p-4 md:p-8 shadow-sm border border-gray-100 h-full">
-            <h3 className="text-lg md:text-2xl font-bold text-gray-900 mb-3 md:mb-6">Results in 90 days:</h3>
+            <h3 className="text-lg md:text-2xl font-semibold text-gray-900 mb-3 md:mb-6">Results in 90 days:</h3>
             <div className="space-y-2 md:space-y-4">
               {results.map((result, index) => (
                 <div key={index} className="flex items-start gap-2 md:gap-3 p-2 md:p-4 bg-gray-50 rounded-lg">

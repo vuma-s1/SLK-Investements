@@ -128,7 +128,7 @@ const Pricing = () => {
             transition={{ delay: 0.3 }}
             className="text-center mb-8 md:mb-16"
           >
-            <h1 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
+            <h1 className="text-4xl lg:text-5xl font-light text-slate-900 mb-6 leading-tight">
               Clear plans.
               <span className="text-[#24525c] block">
                 Custom quotes.
@@ -158,7 +158,7 @@ const Pricing = () => {
                   
                   <div className="p-6">
                     <div className="mb-6">
-                      <h3 className="text-xl font-bold text-slate-900 mb-2">{plan.name}</h3>
+                      <h3 className="text-xl font-semibold text-slate-900 mb-2">{plan.name}</h3>
                       <div className="text-sm text-slate-500 mb-4">{plan.duration}</div>
                       <p className="text-slate-600 text-sm leading-relaxed mb-4">{plan.purpose}</p>
                       <p className="text-slate-700 text-sm font-medium">Best for: {plan.bestFor}</p>
@@ -263,7 +263,7 @@ const Pricing = () => {
                   
                   <div className="p-3">
                     <div className="mb-3">
-                      <h3 className="text-lg font-bold text-slate-900 mb-1">{plan.name}</h3>
+                      <h3 className="text-lg font-semibold text-slate-900 mb-1">{plan.name}</h3>
                       <div className="text-xs text-slate-500 mb-2">{plan.duration}</div>
                       <p className="text-slate-600 text-xs leading-relaxed mb-2">{plan.purpose}</p>
                     </div>
@@ -304,7 +304,7 @@ const Pricing = () => {
             transition={{ delay: 0.7 }}
             className="mb-6 md:mb-16"
           >
-            <h2 className="text-2xl font-bold text-slate-900 mb-4 md:mb-8 text-center">What we stand by</h2>
+            <h2 className="text-2xl font-light text-slate-900 mb-4 md:mb-8 text-center leading-tight">What we stand by</h2>
             <div className="grid md:grid-cols-3 gap-3 md:gap-6">
               {benefits.map((benefit, index) => (
                 <div key={index} className="bg-white rounded-xl p-3 md:p-6 shadow-sm border border-gray-100 text-center">
@@ -326,7 +326,7 @@ const Pricing = () => {
             className="text-center"
           >
             <div className="bg-gradient-to-r from-slate-800 to-slate-900 rounded-2xl p-6 text-white max-w-2xl mx-auto">
-              <h3 className="text-xl font-bold mb-3">Ready to get started?</h3>
+              <h3 className="text-xl font-semibold mb-3">Ready to get started?</h3>
               <p className="text-slate-300 mb-4 text-sm">Book a quick call to discuss your needs and get a custom quote.</p>
               <button className="bg-white text-slate-900 px-6 py-2.5 rounded-full font-semibold hover:bg-gray-50 transition-all duration-300 text-sm">
                 Book a Call

@@ -44,7 +44,7 @@ const FAQ = () => {
     <section id="faqs" className="py-8 md:py-20">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-6 md:mb-16">
-          <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-3 md:mb-6">
+          <h2 className="text-2xl md:text-4xl lg:text-5xl font-light text-gray-900 mb-3 md:mb-6 leading-tight">
             Frequently asked questions
           </h2>
         </div>

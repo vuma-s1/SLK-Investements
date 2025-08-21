@@ -170,7 +170,7 @@ const Pricing = () => {
           </motion.div>
           
           <motion.h2 
-            className="text-2xl md:text-4xl lg:text-6xl font-bold text-gray-900 mb-3 md:mb-6"
+            className="text-2xl md:text-4xl lg:text-6xl font-light text-gray-900 mb-3 md:mb-6 leading-tight"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}

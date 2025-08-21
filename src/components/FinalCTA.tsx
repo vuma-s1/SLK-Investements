@@ -6,7 +6,7 @@ const FinalCTA = () => {
     <section className="py-16 bg-gradient-to-r from-slate-800 to-slate-900">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="relative">
-          <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
+          <h2 className="text-3xl lg:text-4xl font-light text-white mb-4 leading-tight">
             Ready to grow—without the guesswork?
           </h2>
           

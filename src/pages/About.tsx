@@ -61,7 +61,7 @@ const About = () => {
             transition={{ delay: 0.3 }}
             className="text-center mb-8 md:mb-16"
           >
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-4 md:mb-6">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-light text-slate-900 mb-4 md:mb-6 leading-tight">
               <span className="text-[#24525c]">
                 SLK Investments Corporation
               </span>
@@ -95,7 +95,7 @@ const About = () => {
               <div key={index} className="text-center">
                 <div className="bg-white rounded-xl p-4 md:p-6 shadow-sm border border-gray-100">
                   <stat.icon className="w-6 h-6 md:w-8 md:h-8 text-[#24525c] mx-auto mb-2 md:mb-3" />
-                  <div className="text-lg md:text-2xl font-bold text-slate-900 mb-1">{stat.number}</div>
+                  <div className="text-lg md:text-2xl font-semibold text-slate-900 mb-1">{stat.number}</div>
                   <div className="text-xs md:text-sm text-slate-600">{stat.label}</div>
                 </div>
               </div>
@@ -109,7 +109,7 @@ const About = () => {
             transition={{ delay: 0.9 }}
             className="mb-8 md:mb-16"
           >
-            <h2 className="text-xl md:text-2xl font-bold text-slate-900 mb-6 md:mb-8 text-center">What we stand for</h2>
+            <h2 className="text-xl md:text-2xl font-semibold text-slate-900 mb-6 md:mb-8 text-center">What we stand for</h2>
             <div className="grid md:grid-cols-3 gap-4 md:gap-6">
               {values.map((value, index) => (
                 <div key={index} className="bg-white rounded-xl p-4 md:p-6 shadow-sm border border-gray-100">
@@ -131,7 +131,7 @@ const About = () => {
             className="text-center"
           >
             <div className="bg-gradient-to-r from-slate-800 to-slate-900 rounded-2xl p-4 md:p-6 text-white max-w-2xl mx-auto">
-              <h3 className="text-lg md:text-xl font-bold mb-2 md:mb-3">Ready to transform your financial operations?</h3>
+              <h3 className="text-lg md:text-xl font-semibold mb-2 md:mb-3">Ready to transform your financial operations?</h3>
               <p className="text-slate-300 mb-3 md:mb-4 text-xs md:text-sm">Let's discuss how we can help you achieve clarity, control, and confidence in your financial decisions.</p>
               <button className="bg-white text-slate-900 px-4 md:px-6 py-2 md:py-2.5 rounded-full font-semibold hover:bg-gray-50 transition-all duration-300 text-xs md:text-sm">
                 Book a Call

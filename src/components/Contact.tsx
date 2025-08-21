@@ -62,7 +62,7 @@ const Contact = () => {
         <div className="grid lg:grid-cols-2 gap-16">
           {/* Left Column - Contact Info */}
           <div>
-            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+            <h2 className="text-4xl lg:text-5xl font-light text-gray-900 mb-6 leading-tight">
               Let's talk
             </h2>
             
@@ -251,7 +251,7 @@ const Contact = () => {
 
         {/* Call Booking Section */}
         <div className="mt-20 text-center bg-white rounded-xl p-8 shadow-lg">
-          <h3 className="text-3xl font-bold text-gray-900 mb-4">
+          <h3 className="text-3xl font-semibold text-gray-900 mb-4">
             Book a 30-minute consultation
           </h3>
           <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">

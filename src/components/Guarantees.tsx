@@ -27,7 +27,7 @@ const Guarantees = () => {
     <section className="py-20 bg-blue-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
+          <h2 className="text-4xl lg:text-5xl font-light text-white mb-6 leading-tight">
             What we stand by
           </h2>
         </div>
@@ -39,7 +39,7 @@ const Guarantees = () => {
                 <div className={`${guarantee.color} p-6 rounded-2xl text-white inline-flex mb-6 group-hover:scale-110 transition-transform duration-300`}>
                   {guarantee.icon}
                 </div>
-                <h3 className="text-xl font-bold text-white mb-3">{guarantee.title}</h3>
+                <h3 className="text-xl font-semibold text-white mb-3">{guarantee.title}</h3>
                 <p className="text-blue-100 leading-relaxed">{guarantee.description}</p>
               </div>
             </div>

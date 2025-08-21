@@ -75,7 +75,7 @@ const Header = () => {
               onClick={scrollToTop}
               className="transition-transform duration-300 hover:scale-105"
             >
-              <h1 className={`text-sm md:text-xl font-bold transition-colors duration-300 ${
+              <h1 className={`text-sm md:text-xl font-semibold transition-colors duration-300 ${
                 isScrolled ? 'text-[#1a1a1a]' : 'text-[#1a1a1a]'
               }`}>
                 SLK Investments Corporation

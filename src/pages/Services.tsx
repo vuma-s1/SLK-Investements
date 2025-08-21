@@ -80,7 +80,7 @@ const Services = () => {
         <service.icon className={`w-5 h-5 ${service.color}`} />
       </div>
       
-      <h3 className="text-lg font-bold text-slate-900 mb-2">{service.title}</h3>
+      <h3 className="text-lg font-semibold text-slate-900 mb-2">{service.title}</h3>
       <p className="text-slate-600 mb-3 leading-relaxed text-sm flex-shrink-0">{service.oneLiner}</p>
       
       <div className="space-y-3 mb-4 flex-1">
@@ -126,7 +126,7 @@ const Services = () => {
             transition={{ delay: 0.3 }}
             className="text-center mb-16"
           >
-            <h1 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
+            <h1 className="text-4xl lg:text-5xl font-light text-slate-900 mb-6 leading-tight">
               Make decisions with
               <span className="text-[#24525c] block">
                 confidence
@@ -148,7 +148,7 @@ const Services = () => {
               <div key={index} className="text-center">
                 <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
                   <stat.icon className="w-8 h-8 text-[#24525c] mx-auto mb-3" />
-                  <div className="text-2xl font-bold text-slate-900 mb-1">{stat.number}</div>
+                  <div className="text-2xl font-semibold text-slate-900 mb-1">{stat.number}</div>
                   <div className="text-sm text-slate-600">{stat.label}</div>
                 </div>
               </div>
@@ -167,7 +167,7 @@ const Services = () => {
               {/* Text Card Component (same size as service cards) */}
               <div className="bg-white/95 backdrop-blur-sm shadow-lg rounded-2xl p-6 w-[450px] h-[400px] flex-shrink-0 border border-gray-100 flex flex-col">
                 <p className="text-[#24525c] font-semibold mb-3 text-sm uppercase tracking-wide">Our Services</p>
-                <h2 className="text-xl font-bold leading-tight text-slate-900 mb-3">
+                <h2 className="text-xl font-semibold leading-tight text-slate-900 mb-3">
                   Comprehensive solutions for your business growth
                 </h2>
                 <p className="text-slate-600 text-sm leading-relaxed mb-4 flex-1">
@@ -205,7 +205,7 @@ const Services = () => {
           {/* Mobile Text Card */}
           <div className="bg-white/95 backdrop-blur-sm shadow-lg rounded-2xl p-4 mb-4 border border-gray-100">
             <p className="text-[#24525c] font-semibold mb-2 text-xs uppercase tracking-wide">Our Services</p>
-            <h2 className="text-lg font-bold leading-tight text-slate-900 mb-2">
+            <h2 className="text-lg font-semibold leading-tight text-slate-900 mb-2">
               Comprehensive solutions for your business growth
             </h2>
             <p className="text-slate-600 text-xs leading-relaxed mb-3">
@@ -237,7 +237,7 @@ const Services = () => {
                   <service.icon className={`w-4 h-4 ${service.color}`} />
                 </div>
                 
-                <h3 className="text-base font-bold text-slate-900 mb-1">{service.title}</h3>
+                <h3 className="text-base font-semibold text-slate-900 mb-1">{service.title}</h3>
                 <p className="text-slate-600 mb-2 leading-relaxed text-xs">{service.oneLiner}</p>
                 
                 <div className="space-y-2 mb-3">
@@ -278,7 +278,7 @@ const Services = () => {
             transition={{ delay: 0.9 }}
             className="mb-16"
           >
-            <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">A simple, reliable way to work together</h2>
+            <h2 className="text-3xl font-light text-slate-900 mb-8 text-center leading-tight">A simple, reliable way to work together</h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               {[
                 {
@@ -307,7 +307,7 @@ const Services = () => {
                 }
               ].map((process, index) => (
                 <div key={index} className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
-                  <div className="w-8 h-8 bg-[#24525c] text-white rounded-full flex items-center justify-center text-sm font-bold mb-4">
+                  <div className="w-8 h-8 bg-[#24525c] text-white rounded-full flex items-center justify-center text-sm font-semibold mb-4">
                     {process.step}
                   </div>
                   <h3 className="font-semibold text-slate-900 mb-2">{process.title}</h3>
@@ -326,7 +326,7 @@ const Services = () => {
             className="text-center"
           >
             <div className="bg-gradient-to-r from-slate-800 to-slate-900 rounded-2xl p-6 text-white max-w-2xl mx-auto">
-              <h3 className="text-xl font-bold mb-3">Ready to get started?</h3>
+              <h3 className="text-xl font-semibold mb-3">Ready to get started?</h3>
               <p className="text-slate-300 mb-4 text-sm">Start with a 30-min call to discuss your needs and see how we can help.</p>
               <button className="bg-white text-slate-900 px-6 py-2.5 rounded-full font-semibold hover:bg-gray-50 transition-all duration-300 text-sm">
                 Start with a 30-min Call

@@ -41,7 +41,7 @@ const ServicesAccordion = () => {
           viewport={{ once: true }}
           className="text-center mb-8 md:mb-12"
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 mb-6 leading-tight">
             ROOTED IN CASH DISCIPLINE & DATA
           </h2>
           <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
@@ -74,7 +74,7 @@ const ServicesAccordion = () => {
                 </div>
                 
                 {/* Title */}
-                                 <h3 className="font-bold text-gray-900 mb-2 md:mb-3 text-base md:text-xl leading-tight">
+                                 <h3 className="font-semibold text-gray-900 mb-2 md:mb-3 text-base md:text-xl leading-tight">
                   {service.title}
                 </h3>
                 

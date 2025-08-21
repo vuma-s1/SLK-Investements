@@ -7,7 +7,7 @@ const ContactInfo = () => {
     <section id="contact" className="py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+          <h2 className="text-4xl lg:text-5xl font-light text-gray-900 mb-6 leading-tight">
             Ready to get started?
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -71,7 +71,7 @@ const ContactInfo = () => {
         {/* CTA Section */}
         <div className="text-center">
           <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-3xl p-12 border border-blue-100">
-            <h3 className="text-3xl font-bold text-gray-900 mb-4">
+            <h3 className="text-3xl font-semibold text-gray-900 mb-4">
               Need a detailed consultation?
             </h3>
             <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">

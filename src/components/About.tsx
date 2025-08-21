@@ -46,7 +46,7 @@ const About = () => {
             <span className="w-2 h-2 bg-blue-500 rounded-full"></span>
             About Us
           </div>
-          <h1 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
+          <h1 className="text-4xl lg:text-5xl font-light text-slate-900 mb-6 leading-tight">
             About <span className="text-[#24525c]">SLK Investments</span>
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -64,7 +64,7 @@ const About = () => {
                     {stat.icon}
                   </div>
                   <div>
-                    <div className="text-3xl font-bold text-gray-900">{stat.number}</div>
+                    <div className="text-3xl font-semibold text-gray-900">{stat.number}</div>
                     <div className="text-gray-600 text-sm">{stat.label}</div>
                   </div>
                 </div>
@@ -101,7 +101,7 @@ const About = () => {
 
           {/* Values */}
           <div className="space-y-6">
-            <h3 className="text-2xl font-bold text-gray-900 mb-8">What we stand for</h3>
+            <h3 className="text-2xl font-semibold text-gray-900 mb-8">What we stand for</h3>
             {values.map((value, index) => (
               <div key={index} className="group">
                 <div className={`${value.bgColor} rounded-2xl p-6 border border-gray-100 hover:border-gray-200 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1`}>

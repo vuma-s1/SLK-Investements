@@ -110,7 +110,7 @@ const Features = () => {
             <span className="mr-2">✨</span>
             What you get—beyond advice
           </div>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 md:mb-6">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 mb-4 md:mb-6 leading-tight">
             10 proven systems to
             <span className="text-[#24525c] block"> transform your finance function</span>
           </h2>
@@ -149,7 +149,7 @@ const Features = () => {
                 </div>
                 
                 {/* Title */}
-                <h3 className="font-bold text-white mb-2 md:mb-3 text-base md:text-lg leading-tight">{feature.title}</h3>
+                <h3 className="font-semibold text-white mb-2 md:mb-3 text-base md:text-lg leading-tight">{feature.title}</h3>
                 
                 {/* Description */}
                 <p className="text-white/80 text-sm md:text-sm leading-relaxed mb-3 md:mb-6">{feature.description}</p>

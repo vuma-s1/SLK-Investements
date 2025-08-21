@@ -59,7 +59,7 @@ const FAQ = () => {
               transition={{ delay: index * 0.1 }}
             >
               <button
-                className="w-full px-4 md:px-6 py-3 md:py-5 text-left bg-white hover:bg-gray-50 flex items-center justify-between transition-all duration-300 group border-b border-gray-200 focus:outline-none focus:ring-0"
+                className="w-full px-4 md:px-6 py-3 md:py-5 text-left bg-transparent hover:bg-gray-50 flex items-center justify-between transition-all duration-300 group border-b border-gray-200 focus:outline-none focus:ring-0"
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
               >
                 <span className="font-semibold text-gray-900 pr-4 group-hover:text-[#24525c] transition-colors duration-300 text-sm md:text-base">

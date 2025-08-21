@@ -17,7 +17,7 @@ const ContactInfo = () => {
 
         <div className="grid lg:grid-cols-3 gap-8 mb-16">
           {/* Contact Methods */}
-          <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+          <div className="bg-transparent rounded-2xl p-8 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
             <div className="text-center">
               <div className="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center text-blue-600 mx-auto mb-4">
                 <Mail className="w-8 h-8" />
@@ -33,7 +33,7 @@ const ContactInfo = () => {
             </div>
           </div>
 
-          <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+          <div className="bg-transparent rounded-2xl p-8 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
             <div className="text-center">
               <div className="w-16 h-16 bg-green-50 rounded-2xl flex items-center justify-center text-green-600 mx-auto mb-4">
                 <Phone className="w-8 h-8" />
@@ -49,7 +49,7 @@ const ContactInfo = () => {
             </div>
           </div>
 
-          <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+          <div className="bg-transparent rounded-2xl p-8 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
             <div className="text-center">
               <div className="w-16 h-16 bg-green-50 rounded-2xl flex items-center justify-center text-green-600 mx-auto mb-4">
                 <MessageCircle className="w-8 h-8" />

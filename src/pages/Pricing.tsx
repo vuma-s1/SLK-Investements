@@ -149,7 +149,7 @@ const Pricing = () => {
             {/* Desktop Layout */}
             <div className="hidden lg:grid lg:grid-cols-3 gap-8">
               {plans.map((plan, index) => (
-                <div key={index} className={`bg-white rounded-xl shadow-sm border border-gray-100 ${plan.popular ? 'ring-2 ring-[#24525c]' : ''}`}>
+                <div key={index} className={`bg-transparent rounded-xl shadow-sm border border-gray-100 ${plan.popular ? 'ring-2 ring-[#24525c]' : ''}`}>
                   {plan.popular && (
                     <div className="bg-[#24525c] text-white text-center py-2 rounded-t-xl text-sm font-semibold">
                       Most Popular
@@ -254,7 +254,7 @@ const Pricing = () => {
             {/* Mobile Layout - Minimal Design */}
             <div className="lg:hidden space-y-4 max-w-sm mx-auto">
               {plans.map((plan, index) => (
-                <div key={index} className={`bg-white rounded-lg shadow-sm border border-gray-100 ${plan.popular ? 'ring-1 ring-[#24525c]' : ''}`}>
+                <div key={index} className={`bg-transparent rounded-lg shadow-sm border border-gray-100 ${plan.popular ? 'ring-1 ring-[#24525c]' : ''}`}>
                   {plan.popular && (
                     <div className="bg-[#24525c] text-white text-center py-1.5 rounded-t-lg text-xs font-medium">
                       Most Popular
@@ -307,7 +307,7 @@ const Pricing = () => {
             <h2 className="text-2xl font-light text-slate-900 mb-4 md:mb-8 text-center leading-tight">What we stand by</h2>
             <div className="grid md:grid-cols-3 gap-3 md:gap-6">
               {benefits.map((benefit, index) => (
-                <div key={index} className="bg-white rounded-xl p-3 md:p-6 shadow-sm border border-gray-100 text-center">
+                <div key={index} className="bg-transparent rounded-xl p-3 md:p-6 shadow-sm border border-gray-100 text-center">
                   <div className="w-8 h-8 md:w-12 md:h-12 bg-gradient-to-br from-[#24525c]/10 to-[#24525c]/5 rounded-lg flex items-center justify-center mx-auto mb-2 md:mb-4">
                     <benefit.icon className="w-4 h-4 md:w-6 md:h-6 text-[#24525c]" />
                   </div>

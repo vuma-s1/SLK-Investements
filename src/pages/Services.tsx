@@ -75,7 +75,7 @@ const Services = () => {
 
   // Service Card Component
   const ServiceCard = ({ service, index }: { service: any; index: number }) => (
-    <div className="bg-white/95 backdrop-blur-sm shadow-lg rounded-2xl p-6 w-[450px] h-[400px] flex-shrink-0 border border-gray-100 hover:shadow-xl transition-all duration-300 flex flex-col">
+    <div className="bg-transparent backdrop-blur-sm shadow-lg rounded-2xl p-6 w-[450px] h-[400px] flex-shrink-0 border border-gray-100 hover:shadow-xl transition-all duration-300 flex flex-col">
       <div className={`w-10 h-10 bg-gradient-to-br ${service.bgColor} rounded-lg flex items-center justify-center mb-3`}>
         <service.icon className={`w-5 h-5 ${service.color}`} />
       </div>
@@ -146,7 +146,7 @@ const Services = () => {
           >
             {stats.map((stat, index) => (
               <div key={index} className="text-center">
-                <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+                <div className="bg-transparent rounded-xl p-6 shadow-sm border border-gray-100">
                   <stat.icon className="w-8 h-8 text-[#24525c] mx-auto mb-3" />
                   <div className="text-2xl font-semibold text-slate-900 mb-1">{stat.number}</div>
                   <div className="text-sm text-slate-600">{stat.label}</div>
@@ -158,14 +158,14 @@ const Services = () => {
       </div>
 
       {/* Sticky Horizontal Scroll Section */}
-      <section ref={targetRef} className="relative h-[150vh] bg-gradient-to-br from-slate-50 to-blue-50/30 pt-20 lg:pt-40 hidden lg:block">
+      <section ref={targetRef} className="relative h-[150vh] bg-[#f5f5f0] pt-20 lg:pt-40 hidden lg:block">
         {/* Desktop: Sticky container */}
         <div className="hidden lg:block sticky top-20 h-screen flex items-center justify-center overflow-hidden">
           <div className="flex justify-center">
             {/* All Cards in Horizontal Row - Centered */}
             <motion.div style={{ x }} className="flex gap-8">
               {/* Text Card Component (same size as service cards) */}
-              <div className="bg-white/95 backdrop-blur-sm shadow-lg rounded-2xl p-6 w-[450px] h-[400px] flex-shrink-0 border border-gray-100 flex flex-col">
+              <div className="bg-transparent backdrop-blur-sm shadow-lg rounded-2xl p-6 w-[450px] h-[400px] flex-shrink-0 border border-gray-100 flex flex-col">
                 <p className="text-[#24525c] font-semibold mb-3 text-sm uppercase tracking-wide">Our Services</p>
                 <h2 className="text-xl font-semibold leading-tight text-slate-900 mb-3">
                   Comprehensive solutions for your business growth
@@ -200,10 +200,10 @@ const Services = () => {
       </section>
 
       {/* Mobile: Separate Services Section */}
-      <section className="lg:hidden bg-gradient-to-br from-slate-50 to-blue-50/30 py-4">
+              <section className="lg:hidden bg-[#f5f5f0] py-4">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Mobile Text Card */}
-          <div className="bg-white/95 backdrop-blur-sm shadow-lg rounded-2xl p-4 mb-4 border border-gray-100">
+          <div className="bg-transparent backdrop-blur-sm shadow-lg rounded-2xl p-4 mb-4 border border-gray-100">
             <p className="text-[#24525c] font-semibold mb-2 text-xs uppercase tracking-wide">Our Services</p>
             <h2 className="text-lg font-semibold leading-tight text-slate-900 mb-2">
               Comprehensive solutions for your business growth
@@ -232,7 +232,7 @@ const Services = () => {
           {/* Mobile Service Cards */}
           <div className="grid grid-cols-1 gap-8">
             {services.map((service, index) => (
-              <div key={index} className="bg-white/95 backdrop-blur-sm shadow-lg rounded-2xl p-4 border border-gray-100">
+              <div key={index} className="bg-transparent backdrop-blur-sm shadow-lg rounded-2xl p-4 border border-gray-100">
                 <div className={`w-8 h-8 bg-gradient-to-br ${service.bgColor} rounded-lg flex items-center justify-center mb-2`}>
                   <service.icon className={`w-4 h-4 ${service.color}`} />
                 </div>
@@ -270,7 +270,7 @@ const Services = () => {
       </section>
 
       {/* Process Section */}
-      <div className="py-4 md:py-20 bg-gradient-to-br from-slate-50 to-blue-50/30 mt-20 lg:mt-0">
+              <div className="py-4 md:py-20 bg-[#f5f5f0] mt-20 lg:mt-0">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ y: 50, opacity: 0 }}
@@ -306,7 +306,7 @@ const Services = () => {
                   result: 'You get: steady growth and stronger controls.'
                 }
               ].map((process, index) => (
-                <div key={index} className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+                <div key={index} className="bg-transparent rounded-xl p-6 shadow-sm border border-gray-100">
                   <div className="w-8 h-8 bg-[#24525c] text-white rounded-full flex items-center justify-center text-sm font-semibold mb-4">
                     {process.step}
                   </div>

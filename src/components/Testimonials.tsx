@@ -43,7 +43,7 @@ const Testimonials = () => {
         <div className="grid md:grid-cols-3 gap-4 md:gap-8">
           {testimonials.map((testimonial, index) => (
             <div key={index} className="group">
-              <div className="bg-white rounded-xl p-4 md:p-8 shadow-sm border border-gray-100 hover:shadow-md transition-all duration-300 h-full">
+              <div className="bg-transparent rounded-xl p-4 md:p-8 shadow-sm border border-gray-100 hover:shadow-md transition-all duration-300 h-full">
                 <div className="flex items-start gap-3 md:gap-4 mb-4 md:mb-6">
                                   <div className="w-8 h-8 md:w-12 md:h-12 bg-[#24525c]/10 rounded-full flex items-center justify-center flex-shrink-0">
                   <Quote className="w-4 h-4 md:w-6 md:h-6 text-[#24525c]" />

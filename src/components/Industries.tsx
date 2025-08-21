@@ -45,7 +45,7 @@ const Industries = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {industries.map((industry, index) => (
             <div key={index} className="group">
-              <div className="text-center p-6 rounded-xl bg-gray-50 hover:bg-white shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 hover:border-gray-200 transform hover:-translate-y-1">
+              <div className="text-center p-6 rounded-xl bg-transparent hover:bg-gray-50 shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 hover:border-gray-200 transform hover:-translate-y-1">
                 <div className={`${industry.color} p-4 rounded-xl text-white inline-flex mb-4 group-hover:scale-105 transition-transform duration-300`}>
                   {industry.icon}
                 </div>

@@ -196,7 +196,7 @@ const Pricing = () => {
           className={`grid lg:grid-cols-3 gap-4 md:gap-6 pricing-cards-grid ${isCardsVisible ? 'is-visible' : ''}`}
         >
           {packages.map((pkg, index) => (
-            <div key={index} className={`bg-white rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 border ${pkg.borderColor} ${pkg.hoverBg} transform hover:-translate-y-1 pricing-card`}>
+                            <div key={index} className={`bg-transparent rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 border ${pkg.borderColor} ${pkg.hoverBg} transform hover:-translate-y-1 pricing-card`}>
               {/* Header - Compact */}
               <div className="p-4 border-b border-gray-100">
                 <div className="flex items-center gap-3 mb-3">

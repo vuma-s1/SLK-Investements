@@ -58,7 +58,7 @@ const About = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
           {stats.map((stat, index) => (
             <div key={index} className="group">
-              <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-blue-200 transform hover:-translate-y-2">
+              <div className="bg-transparent rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-blue-200 transform hover:-translate-y-2">
                 <div className="flex items-center gap-4 mb-4">
                   <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center text-white group-hover:scale-110 transition-transform duration-300">
                     {stat.icon}
@@ -77,7 +77,7 @@ const About = () => {
           {/* Main Content */}
           <div className="lg:col-span-2">
             <div className="prose prose-lg max-w-none">
-              <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
+              <div className="bg-transparent rounded-2xl p-8 shadow-lg border border-gray-100">
                 <p className="text-xl text-gray-700 leading-relaxed mb-8 font-medium">
                   We help Indian businesses plan, operate, and scale with confidence. We install a simple 
                   finance rhythm—weekly cash control, on-time MIS, monthly reviews—so you always know where 

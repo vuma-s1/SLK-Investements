@@ -64,7 +64,7 @@ const CaseStudy = () => {
         {/* Content Grid */}
         <div className="grid lg:grid-cols-2 gap-4 md:gap-12 items-start">
           {/* What We Did */}
-          <div className="bg-white rounded-xl p-4 md:p-8 shadow-sm border border-gray-100 h-full">
+          <div className="bg-transparent rounded-xl p-4 md:p-8 shadow-sm border border-gray-100 h-full">
             <h3 className="text-lg md:text-2xl font-semibold text-gray-900 mb-3 md:mb-6">What we did:</h3>
             <ul className="space-y-2 md:space-y-4">
               {whatWeDid.map((item, index) => (
@@ -77,7 +77,7 @@ const CaseStudy = () => {
           </div>
 
           {/* Results */}
-          <div className="bg-white rounded-xl p-4 md:p-8 shadow-sm border border-gray-100 h-full">
+          <div className="bg-transparent rounded-xl p-4 md:p-8 shadow-sm border border-gray-100 h-full">
             <h3 className="text-lg md:text-2xl font-semibold text-gray-900 mb-3 md:mb-6">Results in 90 days:</h3>
             <div className="space-y-2 md:space-y-4">
               {results.map((result, index) => (

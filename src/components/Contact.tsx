@@ -109,7 +109,7 @@ const Contact = () => {
           </div>
 
           {/* Right Column - Contact Form */}
-          <div className="bg-white rounded-xl p-6 shadow-lg">
+                        <div className="bg-transparent rounded-xl p-6 shadow-lg">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
@@ -250,7 +250,7 @@ const Contact = () => {
         </div>
 
         {/* Call Booking Section */}
-        <div className="mt-20 text-center bg-white rounded-xl p-8 shadow-lg">
+        <div className="mt-20 text-center bg-transparent rounded-xl p-8 shadow-lg">
           <h3 className="text-3xl font-semibold text-gray-900 mb-4">
             Book a 30-minute consultation
           </h3>

@@ -31,7 +31,7 @@ const ServicesAccordion = () => {
   ];
 
   return (
-    <section className="py-16 md:py-24 bg-gradient-to-br from-slate-50 to-blue-50/30">
+    <section className="py-16 md:py-24 bg-[#f5f5f0]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header Section */}
         <motion.div
@@ -58,7 +58,7 @@ const ServicesAccordion = () => {
               whileInView={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
-                             className="group relative bg-white rounded-2xl p-3 md:p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border border-gray-100"
+                             className="group relative bg-transparent rounded-2xl p-3 md:p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border border-gray-100"
             >
               {/* Background Pattern */}
               <div className="absolute inset-0 opacity-5">

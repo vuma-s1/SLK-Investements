@@ -107,10 +107,7 @@ const CaseStudies = () => {
             className="text-center mb-8 md:mb-16"
           >
             <h1 className="text-4xl lg:text-5xl font-light text-slate-900 mb-6 leading-tight">
-              Case
-              <span className="text-[#24525c] block">
-                Studies
-              </span>
+              Case Studies
             </h1>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
               Real results from real businesses. See how we've helped companies across India achieve their financial goals.
@@ -126,7 +123,7 @@ const CaseStudies = () => {
           >
             {stats.map((stat, index) => (
               <div key={index} className="text-center">
-                <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+                <div className="bg-transparent rounded-xl p-6 shadow-sm border border-gray-100">
                   <stat.icon className="w-8 h-8 text-[#24525c] mx-auto mb-3" />
                   <div className="text-2xl font-semibold text-slate-900 mb-1">{stat.number}</div>
                   <div className="text-sm text-slate-600">{stat.label}</div>
@@ -142,7 +139,7 @@ const CaseStudies = () => {
           className={`grid lg:grid-cols-3 gap-8 mb-16 max-w-[1800px] mx-auto px-4 case-studies-grid ${isCardsVisible ? 'is-visible' : ''}`}
         >
             {caseStudies.map((study, index) => (
-              <div key={index} className="bg-white rounded-xl p-8 shadow-sm border border-gray-100 w-full min-w-[240px] case-study-card">
+              <div key={index} className="bg-transparent rounded-xl p-8 shadow-sm border border-gray-100 w-full min-w-[240px] case-study-card">
                 <div className="mb-6">
                   <span className="inline-block bg-[#24525c]/10 text-[#24525c] px-3 py-1 rounded-full text-xs font-medium mb-3">
                     {study.industry}

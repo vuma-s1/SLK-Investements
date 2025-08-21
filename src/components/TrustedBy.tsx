@@ -71,7 +71,7 @@ const TrustedBy = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 mb-4 md:mb-16">
           {stats.map((stat, index) => (
             <div key={index} className="group">
-              <div className="bg-white rounded-2xl p-4 md:p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-blue-200 transform hover:-translate-y-1">
+                              <div className="bg-transparent rounded-2xl p-4 md:p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-blue-200 transform hover:-translate-y-1">
                 <div className="flex items-center gap-3 md:gap-4">
                                      <div className="w-8 h-8 md:w-12 md:h-12 bg-[#24525c] rounded-xl flex items-center justify-center text-white group-hover:scale-110 transition-transform duration-300">
                     {stat.icon}

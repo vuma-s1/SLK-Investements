@@ -35,7 +35,7 @@ const Team = () => {
         <div className="grid md:grid-cols-3 gap-8">
           {teamMembers.map((member, index) => (
             <div key={index} className="group">
-              <div className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 hover:border-gray-200 transform hover:-translate-y-1 text-center">
+              <div className="bg-transparent rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 hover:border-gray-200 transform hover:-translate-y-1 text-center">
                 {/* Avatar */}
                 <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center text-white text-xl font-semibold mx-auto mb-4 group-hover:scale-105 transition-transform duration-300">
                   {member.initials}

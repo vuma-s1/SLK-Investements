@@ -51,7 +51,7 @@ const UseCases = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
           {useCases.map((useCase, index) => (
             <div key={index} className="group">
-              <div className="bg-white rounded-xl p-4 md:p-6 shadow-sm border border-gray-100 hover:shadow-md transition-all duration-300 h-full text-center">
+              <div className="bg-transparent rounded-xl p-4 md:p-6 shadow-sm border border-gray-100 hover:shadow-md transition-all duration-300 h-full text-center">
                 <div className="w-10 h-10 md:w-12 md:h-12 bg-[#24525c]/10 rounded-lg flex items-center justify-center mx-auto mb-3 md:mb-4 group-hover:scale-110 transition-transform duration-300">
                   <useCase.icon className="w-5 h-5 md:w-6 md:h-6 text-[#24525c]" />
                 </div>

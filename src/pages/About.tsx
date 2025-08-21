@@ -93,7 +93,7 @@ const About = () => {
           >
             {stats.map((stat, index) => (
               <div key={index} className="text-center">
-                <div className="bg-white rounded-xl p-4 md:p-6 shadow-sm border border-gray-100">
+                <div className="bg-transparent rounded-xl p-4 md:p-6 shadow-sm border border-gray-100">
                   <stat.icon className="w-6 h-6 md:w-8 md:h-8 text-[#24525c] mx-auto mb-2 md:mb-3" />
                   <div className="text-lg md:text-2xl font-semibold text-slate-900 mb-1">{stat.number}</div>
                   <div className="text-xs md:text-sm text-slate-600">{stat.label}</div>
@@ -112,7 +112,7 @@ const About = () => {
             <h2 className="text-xl md:text-2xl font-semibold text-slate-900 mb-6 md:mb-8 text-center">What we stand for</h2>
             <div className="grid md:grid-cols-3 gap-4 md:gap-6">
               {values.map((value, index) => (
-                <div key={index} className="bg-white rounded-xl p-4 md:p-6 shadow-sm border border-gray-100">
+                <div key={index} className="bg-transparent rounded-xl p-4 md:p-6 shadow-sm border border-gray-100">
                   <div className={`w-8 h-8 md:w-12 md:h-12 bg-gradient-to-br ${value.bgColor} rounded-lg flex items-center justify-center mb-3 md:mb-4`}>
                     <value.icon className={`w-4 h-4 md:w-6 md:h-6 ${value.color}`} />
                   </div>

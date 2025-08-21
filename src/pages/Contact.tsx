@@ -87,7 +87,7 @@ const Contact = () => {
               </p>
 
               <div className="space-y-6 mb-10">
-                <div className="flex items-center gap-3 p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-300">
+                <div className="flex items-center gap-3 p-3 bg-transparent rounded-lg shadow-sm hover:shadow-md transition-all duration-300">
                   <div className="w-10 h-10 bg-[#24525c]/10 rounded-lg flex items-center justify-center text-[#24525c]">
                     <Mail className="w-6 h-6" />
                   </div>
@@ -97,7 +97,7 @@ const Contact = () => {
                   </div>
                 </div>
 
-                <div className="flex items-center gap-3 p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-300">
+                <div className="flex items-center gap-3 p-3 bg-transparent rounded-lg shadow-sm hover:shadow-md transition-all duration-300">
                   <div className="w-10 h-10 bg-[#24525c]/10 rounded-lg flex items-center justify-center text-[#24525c]">
                     <Phone className="w-6 h-6" />
                   </div>
@@ -107,7 +107,7 @@ const Contact = () => {
                   </div>
                 </div>
 
-                <div className="flex items-center gap-3 p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-300">
+                <div className="flex items-center gap-3 p-3 bg-transparent rounded-lg shadow-sm hover:shadow-md transition-all duration-300">
                   <div className="w-10 h-10 bg-[#24525c]/10 rounded-lg flex items-center justify-center text-[#24525c]">
                     <MessageCircle className="w-6 h-6" />
                   </div>
@@ -147,7 +147,7 @@ const Contact = () => {
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.5 }}
             >
-              <form onSubmit={handleSubmit} className="bg-white rounded-xl p-8 shadow-sm border border-gray-100">
+              <form onSubmit={handleSubmit} className="bg-transparent rounded-xl p-8 shadow-sm border border-gray-100">
                 <h3 className="text-2xl font-semibold text-gray-900 mb-6">Send us a message</h3>
                 
                 <div className="space-y-6">

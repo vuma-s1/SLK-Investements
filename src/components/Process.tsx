@@ -53,7 +53,7 @@ const Process = () => {
 
   // Process Card Component
   const ProcessCard = ({ step, index }: { step: any; index: number }) => (
-    <div className="bg-white/95 backdrop-blur-sm shadow-lg rounded-2xl p-6 w-[400px] h-[300px] flex-shrink-0 border border-gray-100 hover:shadow-xl transition-all duration-300 flex flex-col">
+    <div className="bg-transparent backdrop-blur-sm shadow-lg rounded-2xl p-6 w-[400px] h-[300px] flex-shrink-0 border border-gray-100 hover:shadow-xl transition-all duration-300 flex flex-col">
       <div className="flex items-center gap-3 mb-4">
                         <div className="w-10 h-10 bg-[#24525c] text-white rounded-full flex items-center justify-center text-sm font-semibold">
           {step.step}
@@ -71,7 +71,7 @@ const Process = () => {
 
   // Text Card Component (same size as process cards)
   const TextCard = () => (
-    <div className="bg-white/95 backdrop-blur-sm shadow-lg rounded-2xl p-5 w-[400px] h-[300px] flex-shrink-0 border border-gray-100 flex flex-col">
+    <div className="bg-transparent backdrop-blur-sm shadow-lg rounded-2xl p-5 w-[400px] h-[300px] flex-shrink-0 border border-gray-100 flex flex-col">
                       <p className="text-[#24525c] font-semibold mb-2 text-sm uppercase tracking-wide">Our Process</p>
       <h2 className="text-lg font-semibold leading-tight text-gray-900 mb-2">
         A simple, reliable way to work together
@@ -117,7 +117,7 @@ const Process = () => {
       <div className="lg:hidden py-8 pt-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Mobile Text Card */}
-          <div className="bg-white/95 backdrop-blur-sm shadow-lg rounded-2xl p-4 mb-6 border border-gray-100">
+          <div className="bg-transparent backdrop-blur-sm shadow-lg rounded-2xl p-4 mb-6 border border-gray-100">
             <p className="text-[#24525c] font-semibold mb-2 text-xs uppercase tracking-wide">Our Process</p>
             <h2 className="text-lg font-semibold leading-tight text-gray-900 mb-2">
               A simple, reliable way to work together
@@ -145,7 +145,7 @@ const Process = () => {
           {/* Mobile Process Cards */}
           <div className="grid grid-cols-1 gap-8">
             {steps.map((step, index) => (
-              <div key={index} className="bg-white/95 backdrop-blur-sm shadow-lg rounded-2xl p-4 border border-gray-100">
+              <div key={index} className="bg-transparent backdrop-blur-sm shadow-lg rounded-2xl p-4 border border-gray-100">
                 <div className="flex items-center gap-3 mb-3">
                   <div className="w-10 h-10 bg-[#24525c] text-white rounded-full flex items-center justify-center text-sm font-semibold">
                     {step.step}

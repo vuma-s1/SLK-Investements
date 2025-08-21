@@ -134,7 +134,7 @@ const Services = () => {
   ];
 
   return (
-    <section id="services" className="py-20 bg-white">
+    <section id="services" className="py-20 bg-[#f5f5f0]">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Diagram Container */}
         <div className="relative">
@@ -169,7 +169,7 @@ const Services = () => {
             </div>
             
             {/* Foundation Text */}
-            <div className="bg-white px-12 py-8 inline-block">
+            <div className="bg-transparent px-12 py-8 inline-block">
               <p className="text-3xl font-light text-gray-900 leading-tight">
                 Rooted in data & analytics.
               </p>
@@ -200,7 +200,7 @@ const Services = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {serviceCards.map((card, index) => (
-              <div key={index} className="bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 hover:border-blue-200">
+              <div key={index} className="bg-transparent rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 hover:border-blue-200">
                 {/* Header */}
                 <div className="flex items-start gap-3 mb-4">
                   <div className={`${card.iconBg} p-2.5 rounded-full`}>

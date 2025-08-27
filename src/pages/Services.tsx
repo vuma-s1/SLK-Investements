@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { BarChart3, TrendingUp, Shield, Zap, CheckCircle, Users, Target, Award, ArrowRight } from 'lucide-react';
+import { BarChart3, TrendingUp, Shield, Zap, CheckCircle, Users, Target, Award, ArrowRight, Rocket, DollarSign, Home, Building, Handshake, GraduationCap, UserCheck, Heart, Cpu, BookOpen, Settings, Leaf } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import Footer from '../components/Footer';
 
@@ -13,56 +13,244 @@ const Services = () => {
     setIsVisible(true);
   }, []);
 
-  // Scroll progress for horizontal scroll effect
+  // Scroll progress for horizontal scroll effect - start immediately
   const { scrollYProgress } = useScroll({
     target: targetRef,
     offset: ["start end", "end start"],
   });
 
-  // Transform scroll progress to horizontal movement
-  const x = useTransform(scrollYProgress, [0.3, 0.8], ["25%", "-35%"]);
-  const textX = useTransform(scrollYProgress, [0.3, 0.8], ["0%", "-25%"]);
+  // Transform scroll progress to horizontal movement - start from center properly
+  const x = useTransform(scrollYProgress, [0.1, 0.9], ["0%", "-70%"]);
 
   const services = [
     {
-      icon: BarChart3,
-      title: 'Financial planning and strategy',
-      oneLiner: 'Turn goals into a 12–18-month operating plan you actually use.',
-      youGet: ['Operating plan', 'Budgets & forecasts (with scenarios)', 'Clear runway', 'Board-ready dashboard'],
-      idealFor: 'Founders/CFOs in bootstrapped or VC-backed companies',
-      setup: 'Initial plan in 2–3 weeks, then monthly reviews',
-              bgColor: 'from-[#24525c]/10 to-[#24525c]/5',
-        color: 'text-[#24525c]'
+      icon: Shield,
+      title: 'Compliances Health Check up',
+      oneLiner: 'Comprehensive compliance audit and health assessment to ensure regulatory adherence.',
+      youGet: ['Compliance audit', 'Regulatory gap analysis', 'Risk assessment', 'Remediation roadmap'],
+      idealFor: 'Businesses needing compliance assurance',
+      setup: '2-3 weeks for full assessment; quarterly reviews',
+      bgColor: 'from-[#24525c]/10 to-[#24525c]/5',
+      color: 'text-[#24525c]',
+      buttonText: 'Get Audit'
     },
     {
       icon: TrendingUp,
-      title: 'Cash Flow Management & Optimisation',
-      oneLiner: 'See cash early, collect faster, spend with intent.',
-      youGet: ['Rolling 13-week cash forecast', 'Collections cadence & DSO targets', 'Vendor-term playbook', 'Expense controls'],
-      idealFor: 'Businesses with variable or seasonal revenue',
-      setup: 'Live in 2 weeks; weekly cash huddles + monthly oversight',
+      title: 'Debt & Equity Consultation',
+      oneLiner: 'Expert guidance on debt financing, equity investments, and capital structure optimization.',
+      youGet: ['Capital structure analysis', 'Funding strategy', 'Investor relations', 'Financial modeling'],
+      idealFor: 'Companies seeking funding or restructuring',
+      setup: '4-6 weeks for comprehensive strategy; ongoing support',
       bgColor: 'from-[#24525c]/10 to-[#24525c]/5',
-      color: 'text-[#24525c]'
+      color: 'text-[#24525c]',
+      buttonText: 'Get Funding'
+    },
+    {
+      icon: Rocket,
+      title: 'Start-up Consultation',
+      oneLiner: 'End-to-end startup advisory from ideation to execution and scaling.',
+      youGet: ['Business model validation', 'Go-to-market strategy', 'Funding preparation', 'Growth planning'],
+      idealFor: 'Early-stage startups and entrepreneurs',
+      setup: 'Ongoing advisory; milestone-based deliverables',
+      bgColor: 'from-[#24525c]/10 to-[#24525c]/5',
+      color: 'text-[#24525c]',
+      buttonText: 'Start Journey'
+    },
+    {
+      icon: BarChart3,
+      title: 'Project Consultancy',
+      oneLiner: 'Specialized project management and consultancy for successful delivery.',
+      youGet: ['Project planning', 'Risk management', 'Stakeholder coordination', 'Performance monitoring'],
+      idealFor: 'Organizations with complex projects',
+      setup: 'Project-based engagement; flexible timelines',
+      bgColor: 'from-[#24525c]/10 to-[#24525c]/5',
+      color: 'text-[#24525c]',
+      buttonText: 'Plan Project'
+    },
+    {
+      icon: DollarSign,
+      title: 'Financial Planning and Consultation',
+      oneLiner: 'Comprehensive financial planning and strategic advisory for sustainable growth.',
+      youGet: ['Strategic planning', 'Budget forecasting', 'Investment planning', 'Performance analysis'],
+      idealFor: 'Businesses seeking financial optimization',
+      setup: 'Initial plan in 2-3 weeks; monthly reviews',
+      bgColor: 'from-[#24525c]/10 to-[#24525c]/5',
+      color: 'text-[#24525c]',
+      buttonText: 'Plan Finance'
     },
     {
       icon: Shield,
-      title: 'Risk Assessment & Mitigation',
-      oneLiner: 'Make risks visible—and manageable.',
-      youGet: ['Risk register with owners & triggers', 'Control library & SOPs', 'Compliance calendar', 'Insurance review'],
-      idealFor: 'Teams scaling operations or credit exposure',
-      setup: '2–4 weeks for full assessment; quarterly refresh',
+      title: 'Risk Management',
+      oneLiner: 'Proactive risk identification and mitigation strategies for business protection.',
+      youGet: ['Risk assessment', 'Mitigation strategies', 'Insurance review', 'Compliance monitoring'],
+      idealFor: 'Organizations prioritizing risk control',
+      setup: '2-4 weeks assessment; quarterly updates',
+      bgColor: 'from-[#24525c]/10 to-[#24525c]/5',
+      color: 'text-[#24525c]',
+      buttonText: 'Assess Risk'
+    },
+    {
+      icon: Users,
+      title: 'Enterprise Management',
+      oneLiner: 'Comprehensive enterprise management solutions for organizational excellence.',
+      youGet: ['Process optimization', 'Performance management', 'Change management', 'Leadership development'],
+      idealFor: 'Large organizations seeking transformation',
+      setup: 'Phased implementation; 6-12 month programs',
+      bgColor: 'from-[#24525c]/10 to-[#24525c]/5',
+      color: 'text-[#24525c]',
+      buttonText: 'Optimize Enterprise'
+    },
+    {
+      icon: Home,
+      title: 'Estate Planning',
+      oneLiner: 'Strategic estate planning and wealth preservation for financial legacy.',
+      youGet: ['Wealth preservation', 'Succession planning', 'Tax optimization', 'Asset protection'],
+      idealFor: 'High-net-worth individuals and families',
+      setup: 'Comprehensive planning; annual reviews',
+      bgColor: 'from-[#24525c]/10 to-[#24525c]/5',
+      color: 'text-[#24525c]',
+      buttonText: 'Plan Estate'
+    },
+    {
+      icon: Building,
+      title: 'Financial Vehicle / SPE',
+      oneLiner: 'Specialized financial vehicle structuring for complex transactions.',
+      youGet: ['Vehicle structuring', 'Regulatory compliance', 'Tax optimization', 'Transaction support'],
+      idealFor: 'Complex financial transactions',
+      setup: 'Project-based; flexible timelines',
+      bgColor: 'from-[#24525c]/10 to-[#24525c]/5',
+      color: 'text-[#24525c]',
+      buttonText: 'Structure Vehicle'
+    },
+    {
+      icon: Handshake,
+      title: 'Public-Private Partnership Consultation',
+      oneLiner: 'Expert guidance on PPP projects and government collaborations.',
+      youGet: ['PPP strategy', 'Government relations', 'Project structuring', 'Compliance management'],
+      idealFor: 'Organizations seeking government partnerships',
+      setup: 'Project-based engagement; ongoing support',
+      bgColor: 'from-[#24525c]/10 to-[#24525c]/5',
+      color: 'text-[#24525c]',
+      buttonText: 'Partner Up'
+    },
+    {
+      icon: GraduationCap,
+      title: 'Skill Development Program Technology Consultation',
+      oneLiner: 'Technology-focused skill development to enhance workforce capabilities.',
+      youGet: ['Training programs', 'Technology assessment', 'Skill gap analysis', 'Implementation support'],
+      idealFor: 'Organizations upgrading technology skills',
+      setup: 'Customized programs; flexible duration',
       bgColor: 'from-[#24525c]/10 to-[#24525c]/5',
       color: 'text-[#24525c]'
     },
     {
-      icon: Zap,
-      title: 'Growth Acceleration & Scaling',
-      oneLiner: 'Scale on solid unit economics.',
-      youGet: ['Pricing & contribution margins', 'Channel ROI map', 'Capacity & hiring plan', 'Scale-up operating cadence'],
-      idealFor: 'Teams ready to grow without chaos',
-      setup: '4–6 weeks to design; quarterly execution cycles',
+      icon: UserCheck,
+      title: 'Promoting Self Employment',
+      oneLiner: 'Comprehensive support for entrepreneurs and self-employed professionals.',
+      youGet: ['Business setup', 'Financial planning', 'Marketing support', 'Growth strategies'],
+      idealFor: 'Aspiring entrepreneurs and freelancers',
+      setup: 'Ongoing support; milestone-based guidance',
+      bgColor: 'from-[#24525c]/10 to-[#24525c]/5',
+      color: 'text-[#24525c]',
+      buttonText: 'Start Business'
+    },
+    {
+      icon: Heart,
+      title: 'Financial Support and Guidance',
+      oneLiner: 'Personalized financial support to achieve your financial goals.',
+      youGet: ['Personal finance planning', 'Investment guidance', 'Debt management', 'Financial education'],
+      idealFor: 'Individuals seeking financial guidance',
+      setup: 'Ongoing advisory; flexible engagement',
+      bgColor: 'from-[#24525c]/10 to-[#24525c]/5',
+      color: 'text-[#24525c]',
+      buttonText: 'Get Support'
+    },
+    {
+      icon: Users,
+      title: 'Collaborative Growth',
+      oneLiner: 'Strategic partnerships and collaborative growth initiatives.',
+      youGet: ['Partnership strategy', 'Market expansion', 'Resource sharing', 'Joint ventures'],
+      idealFor: 'Organizations seeking growth partnerships',
+      setup: 'Strategic planning; ongoing collaboration',
+      bgColor: 'from-[#24525c]/10 to-[#24525c]/5',
+      color: 'text-[#24525c]',
+      buttonText: 'Collaborate'
+    },
+    {
+      icon: TrendingUp,
+      title: 'Idea to IPO Support',
+      oneLiner: 'End-to-end support from business idea to IPO preparation and execution.',
+      youGet: ['Business development', 'IPO preparation', 'Regulatory compliance', 'Investor relations'],
+      idealFor: 'High-growth companies targeting IPO',
+      setup: 'Long-term engagement; milestone-based',
+      bgColor: 'from-[#24525c]/10 to-[#24525c]/5',
+      color: 'text-[#24525c]',
+      buttonText: 'Go Public'
+    },
+    {
+      icon: Cpu,
+      title: 'Tech-Based Incubation',
+      oneLiner: 'Technology-focused incubation services for innovative ventures.',
+      youGet: ['Technology validation', 'Product development', 'Market access', 'Investor connections'],
+      idealFor: 'Tech startups and innovative ventures',
+      setup: 'Incubation programs; 6-18 month cycles',
+      bgColor: 'from-[#24525c]/10 to-[#24525c]/5',
+      color: 'text-[#24525c]',
+      buttonText: 'Incubate'
+    },
+    {
+      icon: BookOpen,
+      title: 'Customised Technical Training Support',
+      oneLiner: 'Tailored technical training programs to enhance organizational capabilities.',
+      youGet: ['Custom training programs', 'Skill assessment', 'Certification support', 'Implementation guidance'],
+      idealFor: 'Organizations upgrading technical skills',
+      setup: 'Customized programs; flexible duration',
       bgColor: 'from-[#24525c]/10 to-[#24525c]/5',
       color: 'text-[#24525c]'
+    },
+    {
+      icon: Handshake,
+      title: 'Investors Partnering',
+      oneLiner: 'Strategic investor partnerships and networking for investment opportunities.',
+      youGet: ['Investor matching', 'Due diligence support', 'Deal structuring', 'Post-investment support'],
+      idealFor: 'Companies seeking investment',
+      setup: 'Ongoing networking; deal-based engagement',
+      bgColor: 'from-[#24525c]/10 to-[#24525c]/5',
+      color: 'text-[#24525c]',
+      buttonText: 'Find Investors'
+    },
+    {
+      icon: Settings,
+      title: 'Resource Optimization',
+      oneLiner: 'Comprehensive resource optimization strategies for efficiency and cost reduction.',
+      youGet: ['Process optimization', 'Cost analysis', 'Efficiency improvement', 'Performance monitoring'],
+      idealFor: 'Organizations seeking operational efficiency',
+      setup: 'Assessment phase; implementation support',
+      bgColor: 'from-[#24525c]/10 to-[#24525c]/5',
+      color: 'text-[#24525c]',
+      buttonText: 'Optimize'
+    },
+    {
+      icon: Leaf,
+      title: 'Fueling Sustainable Growth',
+      oneLiner: 'Sustainable growth strategies for long-term business success.',
+      youGet: ['Sustainability strategy', 'ESG compliance', 'Green financing', 'Performance tracking'],
+      idealFor: 'Organizations prioritizing sustainability',
+      setup: 'Strategic planning; ongoing implementation',
+      bgColor: 'from-[#24525c]/10 to-[#24525c]/5',
+      color: 'text-[#24525c]',
+      buttonText: 'Grow Sustainably'
+    },
+    {
+      icon: Award,
+      title: 'Delivering Exceptional Results',
+      oneLiner: 'Commitment to delivering exceptional results through proven methodologies.',
+      youGet: ['Performance guarantees', 'Quality assurance', 'Continuous improvement', 'Client satisfaction'],
+      idealFor: 'Organizations seeking excellence',
+      setup: 'Ongoing commitment; performance-based',
+      bgColor: 'from-[#24525c]/10 to-[#24525c]/5',
+      color: 'text-[#24525c]',
+      buttonText: 'Get Results'
     }
   ];
 
@@ -75,7 +263,21 @@ const Services = () => {
 
   // Service Card Component
   const ServiceCard = ({ service, index }: { service: any; index: number }) => (
-    <div className="bg-transparent backdrop-blur-sm shadow-lg rounded-2xl p-6 w-[450px] h-[400px] flex-shrink-0 border border-gray-100 hover:shadow-xl transition-all duration-300 flex flex-col">
+    <motion.div 
+      initial={{ y: 30, opacity: 0, scale: 0.95 }}
+      whileInView={{ y: 0, opacity: 1, scale: 1 }}
+      transition={{ 
+        duration: 0.5, 
+        delay: index * 0.1,
+        ease: "easeOut"
+      }}
+      viewport={{ once: true, margin: "-50px" }}
+      whileHover={{ 
+        scale: 1.02,
+        transition: { duration: 0.2 }
+      }}
+      className="bg-transparent backdrop-blur-sm shadow-lg rounded-2xl p-5 w-[400px] h-[300px] flex-shrink-0 border border-gray-100 hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
+    >
       <div className={`w-10 h-10 bg-gradient-to-br ${service.bgColor} rounded-lg flex items-center justify-center mb-3`}>
         <service.icon className={`w-5 h-5 ${service.color}`} />
       </div>
@@ -83,7 +285,7 @@ const Services = () => {
       <h3 className="text-lg font-semibold text-slate-900 mb-2">{service.title}</h3>
       <p className="text-slate-600 mb-3 leading-relaxed text-sm flex-shrink-0">{service.oneLiner}</p>
       
-      <div className="space-y-3 mb-4 flex-1">
+      <div className="space-y-3 flex-1">
         <div>
           <h4 className="font-semibold text-slate-900 mb-2 text-sm">You get:</h4>
           <ul className="space-y-1">
@@ -96,17 +298,14 @@ const Services = () => {
           </ul>
         </div>
         
-        <div>
-          <h4 className="font-semibold text-slate-900 mb-1 text-sm">Ideal for:</h4>
-          <p className="text-xs text-slate-600 leading-tight">{service.idealFor}</p>
-        </div>
+
       </div>
       
-                  <button className="bg-[#24525c] text-white px-6 py-2.5 rounded-lg font-semibold hover:bg-[#1e424a] transition-all duration-300 flex items-center gap-2 text-sm flex-shrink-0">
-        Get a quote
+                  <button className="bg-[#24525c] text-white px-6 py-2.5 rounded-lg font-semibold hover:bg-[#1e424a] transition-all duration-300 flex items-center justify-center gap-2 text-sm w-full">
+        {service.buttonText || 'Get Quote'}
         <ArrowRight className="w-4 h-4" />
       </button>
-    </div>
+    </motion.div>
   );
 
   return (
@@ -158,14 +357,13 @@ const Services = () => {
       </div>
 
       {/* Sticky Horizontal Scroll Section */}
-      <section ref={targetRef} className="relative h-[150vh] bg-[#f5f5f0] pt-20 lg:pt-40 hidden lg:block">
-        {/* Desktop: Sticky container */}
-        <div className="hidden lg:block sticky top-20 h-screen flex items-center justify-center overflow-hidden">
-          <div className="flex justify-center">
-            {/* All Cards in Horizontal Row - Centered */}
-            <motion.div style={{ x }} className="flex gap-8">
+      <section ref={targetRef} className="relative h-[200vh] bg-[#f5f5f0] hidden lg:block">
+        {/* Desktop: Horizontal scroll animation */}
+        <div className="sticky top-0 h-screen flex items-center justify-center overflow-hidden">
+          <div className="flex justify-center w-full">
+            <motion.div style={{ x }} className="flex gap-4 justify-center">
               {/* Text Card Component (same size as service cards) */}
-              <div className="bg-transparent backdrop-blur-sm shadow-lg rounded-2xl p-6 w-[450px] h-[400px] flex-shrink-0 border border-gray-100 flex flex-col">
+              <div className="bg-transparent backdrop-blur-sm shadow-lg rounded-2xl p-5 w-[400px] h-[300px] flex-shrink-0 border border-gray-100 flex flex-col">
                 <p className="text-[#24525c] font-semibold mb-3 text-sm uppercase tracking-wide">Our Services</p>
                 <h2 className="text-xl font-semibold leading-tight text-slate-900 mb-3">
                   Comprehensive solutions for your business growth
@@ -253,14 +451,11 @@ const Services = () => {
                     </ul>
                   </div>
                   
-                  <div>
-                    <h4 className="font-semibold text-slate-900 mb-0.5 text-xs">Ideal for:</h4>
-                    <p className="text-xs text-slate-600 leading-tight">{service.idealFor}</p>
-                  </div>
+
                 </div>
                 
                 <button className="bg-[#24525c] text-white px-4 py-2 rounded-lg font-semibold hover:bg-[#1e424a] transition-all duration-300 flex items-center gap-1 text-xs">
-                  Get a quote
+                  {service.buttonText || 'Get Quote'}
                   <ArrowRight className="w-3 h-3" />
                 </button>
               </div>

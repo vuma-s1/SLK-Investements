@@ -251,6 +251,39 @@ const Services = () => {
       bgColor: 'from-[#24525c]/10 to-[#24525c]/5',
       color: 'text-[#24525c]',
       buttonText: 'Get Results'
+    },
+    {
+      icon: Cpu,
+      title: 'Technology Consultation',
+      oneLiner: 'Choose and implement tools that improve decisions.',
+      youGet: ['Current-state audit', 'Tool shortlist and demos', 'Integration plan', 'Data hygiene standards', 'Adoption playbook'],
+      idealFor: 'Teams modernising finance, BI, or ERP workflows',
+      setup: '3–5 weeks; phased rollout plan',
+      bgColor: 'from-[#24525c]/10 to-[#24525c]/5',
+      color: 'text-[#24525c]',
+      buttonText: 'Modernize Tools'
+    },
+    {
+      icon: GraduationCap,
+      title: 'Skill Development Program',
+      oneLiner: 'Build the finance skills your team uses weekly.',
+      youGet: ['Role-based curriculum', 'Case workshops', 'Toolkits and templates', 'Assessments with scores', 'Certificates'],
+      idealFor: 'Finance and operations teams needing practical upskilling',
+      setup: '4–6 weeks; live sessions weekly',
+      bgColor: 'from-[#24525c]/10 to-[#24525c]/5',
+      color: 'text-[#24525c]',
+      buttonText: 'Develop Skills'
+    },
+    {
+      icon: BookOpen,
+      title: 'Customised Technical Training Support',
+      oneLiner: 'Train teams on tools and processes that matter.',
+      youGet: ['Needs analysis', 'Tailored curriculum', 'Sandbox exercises', 'Job aids', 'Post-training helpdesk'],
+      idealFor: 'Finance, ops, and plant teams adopting new systems',
+      setup: '2–4 weeks design; delivery in cohorts',
+      bgColor: 'from-[#24525c]/10 to-[#24525c]/5',
+      color: 'text-[#24525c]',
+      buttonText: 'Custom Training'
     }
   ];
 
@@ -326,10 +359,7 @@ const Services = () => {
             className="text-center mb-16"
           >
             <h1 className="text-4xl lg:text-5xl font-light text-slate-900 mb-6 leading-tight">
-              Make decisions with
-              <span className="text-[#24525c] block">
-                confidence
-              </span>
+              Make decisions with <span className="text-[#24525c]">confidence</span>
             </h1>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
               Simple to start. Easy to run. Built for Indian businesses.

@@ -81,6 +81,13 @@ const Features = () => {
       buttonText: 'Optimize Pricing'
     },
     {
+      icon: <Users className="w-6 h-6" />,
+      title: 'Hiring signals',
+      description: 'Capacity models tied to demand and delivery.',
+      color: 'from-amber-500 to-amber-600',
+      buttonText: 'Plan Hiring'
+    },
+    {
       icon: <BarChart3 className="w-6 h-6" />,
       title: 'Unit economics',
       description: 'Profit by product, channel, and cohort made visible.',
@@ -93,6 +100,13 @@ const Features = () => {
       description: 'CAC, LTV, and payback tracked with clarity.',
       color: 'from-rose-500 to-rose-600',
       buttonText: 'Track ROI'
+    },
+    {
+      icon: <Phone className="w-6 h-6" />,
+      title: 'On-call support',
+      description: 'Rapid decision support for time-sensitive moves.',
+      color: 'from-cyan-500 to-cyan-600',
+      buttonText: 'Get Support'
     }
   ];
 

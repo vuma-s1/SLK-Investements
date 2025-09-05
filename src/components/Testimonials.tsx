@@ -10,16 +10,16 @@ const Testimonials = () => {
 
   const testimonials = [
     {
-      quote: "SLK Investments transformed our financial planning. Their strategic approach helped us scale from ₹5Cr to ₹25Cr in just 18 months.",
-      author: "Rahul Sharma, CEO TechCorp"
-    },
-    {
       quote: "We finally have numbers we trust—and a plan we follow.",
       author: "Founder, D2C brand"
     },
     {
       quote: "Cash anxiety is gone. The team knows the guardrails.",
       author: "CEO, Services firm"
+    },
+    {
+      quote: "They cut noise, showed us true unit economics, and we grew sanely.",
+      author: "Director, Manufacturing"
     }
   ];
 

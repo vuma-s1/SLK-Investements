@@ -9,6 +9,7 @@ const Footer = () => {
     main: [
       { name: 'About', href: '/about' },
       { name: 'Services', href: '/services' },
+      { name: 'Process', href: '/process' },
       { name: 'Case Studies', href: '/case-studies' },
       { name: 'Pricing', href: '/pricing' },
       { name: 'Contact', href: '/contact' }

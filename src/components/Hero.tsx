@@ -33,6 +33,22 @@ const Hero = () => {
             and grow with confidence this quarter.
           </p>
 
+          {/* Key Benefits */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8 max-w-4xl mx-auto">
+            <div className="text-center">
+              <div className="text-sm font-semibold text-[#24525c] mb-1">Cash clarity</div>
+            </div>
+            <div className="text-center">
+              <div className="text-sm font-semibold text-[#24525c] mb-1">Risk control</div>
+            </div>
+            <div className="text-center">
+              <div className="text-sm font-semibold text-[#24525c] mb-1">Predictable runway</div>
+            </div>
+            <div className="text-center">
+              <div className="text-sm font-semibold text-[#24525c] mb-1">Assured scaling</div>
+            </div>
+          </div>
+
           {/* CTA Button */}
           <div className="hero-button">
             <button className="bg-[#24525c] hover:bg-[#1e424a] text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 flex items-center gap-2 hover:scale-105 hover:-translate-y-1 shadow-xl hover:shadow-2xl mx-auto">

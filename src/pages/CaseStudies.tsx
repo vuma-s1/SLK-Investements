@@ -51,39 +51,15 @@ const CaseStudies = () => {
 
   const caseStudies = [
     {
-      title: 'D2C E-commerce Growth',
-      industry: 'E-commerce',
-      challenge: 'Scaling from ₹5Cr to ₹25Cr in 18 months while maintaining profitability',
-      solution: 'Implemented unit economics tracking, optimized pricing strategy, and established cash flow controls',
+      title: 'Case Study',
+      subtitle: 'What changed in 90 days',
+      whatWeDid: 'Ran a quick diagnostic, created a 12-month operating plan, and set a governance calendar with owners. Implemented on-time MIS, a 13-week cash forecast, collections cadence, and a disciplined payment calendar. Installed spend controls and variance checks to stop leaks.',
       results: [
-        'Revenue growth: 400% in 18 months',
-        'Profit margins improved by 15%',
-        'Cash runway extended by 8 weeks',
-        'DSO reduced by 12 days'
-      ]
-    },
-    {
-      title: 'Manufacturing Efficiency',
-      industry: 'Manufacturing',
-      challenge: 'Managing working capital and optimizing production costs',
-      solution: 'Developed comprehensive cost control systems and vendor management strategies',
-      results: [
-        'Working capital reduced by 25%',
-        'Production costs down by 18%',
-        'Vendor terms optimized by 15 days',
-        'Cash flow predictability improved by 40%'
-      ]
-    },
-    {
-      title: 'Professional Services Scaling',
-      industry: 'Professional Services',
-      challenge: 'Scaling operations while maintaining service quality',
-      solution: 'Implemented capacity planning and pricing optimization models',
-      results: [
-        'Revenue per employee increased by 35%',
-        'Client retention improved to 95%',
-        'Profit margins enhanced by 22%',
-        'Operational efficiency up by 30%'
+        'On-time MIS every month (close by Day +7)',
+        'DSO reduced by ~12–15 days',
+        'Cash runway extended by 6–8 weeks',
+        'Non-essential spend down ~8–10%',
+        'Clear accountability across finance and ops'
       ]
     }
   ];
@@ -133,37 +109,30 @@ const CaseStudies = () => {
           </motion.div>
         </div>
 
-        {/* Case Studies Grid - BREAK OUT OF PARENT CONTAINER */}
+        {/* Case Study Section */}
         <div
           ref={cardsRef}
-          className={`grid lg:grid-cols-3 gap-8 mb-16 max-w-[1800px] mx-auto px-4 case-studies-grid ${isCardsVisible ? 'is-visible' : ''}`}
+          className={`max-w-4xl mx-auto px-4 case-studies-grid ${isCardsVisible ? 'is-visible' : ''}`}
         >
             {caseStudies.map((study, index) => (
-              <div key={index} className="bg-transparent rounded-xl p-8 shadow-sm border border-gray-100 w-full min-w-[240px] case-study-card">
+              <div key={index} className="bg-transparent rounded-xl p-8 shadow-sm border border-gray-100 case-study-card">
                 <div className="mb-6">
-                  <span className="inline-block bg-[#24525c]/10 text-[#24525c] px-3 py-1 rounded-full text-xs font-medium mb-3">
-                    {study.industry}
-                  </span>
-                  <h3 className="text-xl font-semibold text-slate-900 mb-3">{study.title}</h3>
+                  <h3 className="text-2xl font-semibold text-slate-900 mb-2">{study.title}</h3>
+                  <p className="text-lg text-[#24525c] font-medium mb-6">{study.subtitle}</p>
                 </div>
 
-                <div className="space-y-4 mb-6">
+                <div className="space-y-6 mb-8">
                   <div>
-                    <h4 className="font-semibold text-slate-900 mb-2">Challenge:</h4>
-                    <p className="text-sm text-slate-600">{study.challenge}</p>
+                    <h4 className="font-semibold text-slate-900 mb-3">What we did:</h4>
+                    <p className="text-slate-600 leading-relaxed">{study.whatWeDid}</p>
                   </div>
                   
                   <div>
-                    <h4 className="font-semibold text-slate-900 mb-2">Solution:</h4>
-                    <p className="text-sm text-slate-600">{study.solution}</p>
-                  </div>
-                  
-                  <div>
-                    <h4 className="font-semibold text-slate-900 mb-2">Results:</h4>
-                    <ul className="space-y-1">
+                    <h4 className="font-semibold text-slate-900 mb-3">Results in 90 days:</h4>
+                    <ul className="space-y-2">
                       {study.results.map((result, idx) => (
-                        <li key={idx} className="flex items-center gap-2 text-sm text-slate-600">
-                          <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
+                        <li key={idx} className="flex items-center gap-3 text-slate-600">
+                          <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
                           {result}
                         </li>
                       ))}

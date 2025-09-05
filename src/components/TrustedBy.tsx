@@ -60,7 +60,7 @@ const TrustedBy = () => {
              Trusted by Leading Companies
            </div>
                      <h2 className="text-2xl md:text-3xl md:text-4xl font-light text-gray-900 mb-3 md:mb-4 leading-tight">
-             Trusted by <span className="text-[#24525c]">500+ Companies</span> Across India
+             Trusted by
            </h2>
           <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto">
             From startups to enterprises, we've helped businesses of all sizes achieve financial clarity and sustainable growth.
